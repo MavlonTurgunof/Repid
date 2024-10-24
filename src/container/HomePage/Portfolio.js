@@ -78,6 +78,24 @@ function Portfolio() {
     ],
   };
 
+  const buttonCarouselSettings = {
+    dots: false,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 3, // Show 3 buttons at once on mobile
+    slidesToScroll: 1,
+    arrows: false, // Disable arrows for mobile
+    responsive: [
+      {
+        breakpoint: 1024, // Only for smaller screens
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
   return (
     <section className="bg-white text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -88,8 +106,28 @@ function Portfolio() {
           </h2>
         </div>
 
-        {/* Filter Buttons */}
-        <div className="flex flex-wrap justify-center items-center space-x-4 space-y-4 sm:space-y-0 py-4">
+        {/* Button Carousel for Mobile */}
+        <div className="block sm:hidden mb-4">
+          <Slider {...buttonCarouselSettings}>
+            {buttons.map((button) => (
+              <div key={button} className="px-2">
+                <button
+                  onClick={() => setSelected(button)}
+                  className={`w-full px-4 py-2 rounded-full border border-gray-300 transition-transform transform ${
+                    selected === button
+                      ? "bg-[#1D1C34] text-white scale-110"
+                      : "bg-white text-black hover:scale-105"
+                  }`}
+                >
+                  {button}
+                </button>
+              </div>
+            ))}
+          </Slider>
+        </div>
+
+        {/* Button Grid for Desktop */}
+        <div className="hidden sm:flex flex-wrap justify-center items-center space-x-4 space-y-4 sm:space-y-0 py-4">
           {buttons.map((button) => (
             <button
               key={button}
@@ -106,7 +144,7 @@ function Portfolio() {
         </div>
 
         {/* Portfolio Carousel for Mobile */}
-        <div className="block sm:hidden">
+        <div className="block sm:hidden overflow-hidden">
           <Slider {...settings}>
             {projects.map((project, index) => (
               <div

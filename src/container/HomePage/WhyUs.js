@@ -2,7 +2,7 @@ import React from "react";
 
 function WhyUs() {
   return (
-    <div className="container mx-auto mt-20 w-11/12 overflow-hidden lg:px-20">
+    <div className="container mx-auto lg:mt-20 mt-4 w-11/12 overflow-hidden lg:px-20">
       <h3 className="px-3 text-center text-5xl leading-[72px] max-sm:text-[30px]">
         <span className="text-[#f48c06] transition-all font-bold">Nega</span>{" "}
         aynan biz?
@@ -82,9 +82,7 @@ function WhyUs() {
         <div className="h-full">
           <div className="flex h-full flex-col items-center justify-center gap-5 rounded-xl border border-[#e3e5fa] p-6 px-10 transition-all hover:-translate-y-1 hover:scale-105 hover:border-none hover:shadow-2xl">
             <div className="rounded-xl bg-[#5b72ee] p-8"></div>
-            <h4 className="text-center text-xl font-bold">
-              Chegirmalar va aktsiyalar
-            </h4>
+            <h4 className="text-center text-xl font-bold">Chegirmalar</h4>
             <p className="text-center">
               Biz mijozlar uchun chegirmalar tizimini taqdim etamiz: Birinchi
               xizmatdan foydalanganda, ikkinchi xizmatga 30% chegirma olasiz.

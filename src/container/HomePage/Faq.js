@@ -37,7 +37,7 @@ function Faq() {
   };
 
   return (
-    <div className="container mx-auto px-4 sm:mb-40">
+    <div className="container mx-auto px-4 lg:mb-20 mb-16">
       {/* FAQ Section */}
       <div className="mt-32  max-w-3xl mx-auto">
         {faqs.map((faq, index) => (

@@ -1,29 +1,32 @@
-import React from "react";
+import React, { useRef } from "react";
 import Services from "@/container/HomePage/Services";
 import WhyUs from "@/container/HomePage/WhyUs";
 import Footer from "@/components/Footer";
-import Contact from "@/container/HomePage/Contact";
+import Contact from "@/container/Contacts/Contact";
 import Faq from "@/container/HomePage/Faq";
-import Process from "@/container/HomePage/Process";
-import Partners from "@/container/HomePage/Partners";
 import Navbar from "@/components/Navbar";
 import MainHeader from "@/container/HomePage/MainHeader";
 import Clock from "@/container/HomePage/Clock";
 import Portfolio from "@/container/HomePage/Portfolio";
+import Partners from "@/container/HomePage/Partners";
 
 function index() {
+  const contactRef = useRef(null);
+
   return (
     <div>
       <Navbar />
       <MainHeader />
-      <Clock />
+      <Clock contactRef={contactRef} />
       <WhyUs />
       <Services />
-      <Contact />
+      <div ref={contactRef}>
+        <Contact />
+      </div>
       <Faq />
+      <Clock contactRef={contactRef} />
       <Portfolio />
       <Partners />
-      <Process />
       <Footer />
     </div>
   );

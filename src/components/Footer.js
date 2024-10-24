@@ -13,7 +13,7 @@ function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="mt-10">
+    <footer className="">
       <div className="overflow-hidden bg-[#222341] py-10  text-white">
         <div className="container mx-auto px-6 lg:px-20">
           <div className="grid-cols-1 flex-col gap-8 max-md:flex max-md:items-center max-md:justify-center md:grid md:grid-cols-3">
@@ -28,10 +28,7 @@ function Footer() {
                 />
               </Link>
               <div className="mt-4 flex items-center justify-center space-x-4 max-md:mb-6 max-md:w-full max-md:gap-10">
-                <Link
-                  href={"/"}
-                  className="max-md:scale-125"
-                >
+                <Link href={"/"} className="max-md:scale-125">
                   <Image
                     src={Telegram}
                     width={30}
@@ -50,10 +47,7 @@ function Footer() {
                     alt="facebook icon"
                   />
                 </Link>
-                <Link
-                  href="/"
-                  className="max-md:scale-125"
-                >
+                <Link href="/" className="max-md:scale-125">
                   <Image
                     src={YouTube}
                     width={30}
@@ -61,10 +55,7 @@ function Footer() {
                     alt="facebook icon"
                   />
                 </Link>
-                <Link
-                  href="/"
-                  className="max-md:scale-125"
-                >
+                <Link href="/" className="max-md:scale-125">
                   <Image
                     src={Facebook}
                     width={30}
