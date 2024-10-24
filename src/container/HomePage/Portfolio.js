@@ -1,51 +1,48 @@
-import Image from "next/image";
 import React, { useState } from "react";
+import Image from "next/image";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 function BigPortfolio() {
   const [selected, setSelected] = useState("All");
 
   const projects = [
     {
-      image: "/img/Portfolio1.png",
-      title: "Fortknox Chat Application",
-      category: "Branding & Design",
-      width: 596,
-      height: 738,
+      image: "/img/Portfolio2.jpg",
+      title: "GoldenEld All",
+      category: "GoldenEld all",
+      url: "https://golden-eld.com/",
     },
     {
-      image: "/img/Portfolio2.png",
-      title: "Boston RealEstate App",
-      category: "Branding & UI",
-      width: 596,
-      height: 738,
+      image: "/img/Portfolio1.jpg",
+      title: "Shaxsiy Brend",
+      category: "Shaxsiy Brend",
+      url: "https://instavibe.uz/",
     },
     {
-      image: "/img/Portfolio3.png",
-      title: "Portfolio",
-      category: "Design & Development",
-      width: 596,
-      height: 738,
+      image: "/img/Portfolio3.jpg",
+      title: "English Campus",
+      category: "English Campus",
+      url: "https://www.theneweducation.uz/",
     },
     {
-      image: "/img/Portfolio4.png",
-      title: "Croma - Agency",
+      image: "/img/Portfolio4.jpg",
+      title: "Saidoff - Agency",
       category: "Branding & Web",
-      width: 596,
-      height: 738,
+      url: "https://www.saidoff-academy.uz/",
     },
     {
       image: "/img/Portfolio5.png",
       title: "Portfolio",
       category: "Design & Development",
-      width: 596,
-      height: 738,
+      url: "https://elements.envato.com/...",
     },
     {
       image: "/img/Portfolio6.png",
       title: "Croma - Agency",
       category: "Branding & Web",
-      width: 596,
-      height: 738,
+      url: "https://golden-eld.com/",
     },
   ];
 
@@ -58,6 +55,14 @@ function BigPortfolio() {
     "CRM",
   ];
 
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+
   return (
     <section className="bg-white text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -66,11 +71,6 @@ function BigPortfolio() {
           <h2 className="text-[36px] sm:text-[42px] lg:text-[52px] text-[#282B4C] font-bold">
             Portfolio
           </h2>
-          {/* <p className="text-[14px] sm:text-[16px] lg:text-[18px] text-gray-400 mt-4">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum <br className="hidden lg:block" /> has been
-            the industry's standard dummy text ever since the 1500s.....
-          </p> */}
         </div>
 
         {/* Filter Buttons */}
@@ -79,8 +79,7 @@ function BigPortfolio() {
             <button
               key={button}
               onClick={() => setSelected(button)}
-              className={`px-4 py-2 rounded-full border border-gray-300 transition-transform transform
-              ${
+              className={`px-4 py-2 rounded-full border border-gray-300 transition-transform transform ${
                 selected === button
                   ? "bg-[#1D1C34] text-white scale-110" // Selected state
                   : "bg-white text-black hover:scale-105" // Default state
@@ -91,21 +90,56 @@ function BigPortfolio() {
           ))}
         </div>
 
-        {/* Portfolio Grid */}
-        <div className="grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-3 lg:gap-20  justify-items-center">
+        <div className="block sm:hidden">
+          <Slider {...settings}>
+            {projects.map((project, index) => (
+              <a
+                key={index}
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative overflow-hidden shadow-lg w-full h-[400px]"
+              >
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  layout="fill"
+                  objectFit="cover"
+                />
+                <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-[#1D1C34] to-[#2B2F53] rounded-[6px]">
+                  <h3 className="text-lg font-semibold">{project.title}</h3>
+                  <p className="text-sm text-gray-400">
+                    {project.category}
+                  </p>
+                </div>
+              </a>
+            ))}
+          </Slider>
+        </div>
+
+        <div className="hidden sm:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:gap-20 justify-items-center">
           {projects.map((project, index) => (
-            <div
+            <a
               key={index}
-              className="relative overflow-hidden shadow-lg w-full sm:w-[417px] h-[400px] sm:h-[409px]"
-              style={{ backgroundImage: `url(${project.image})` }}
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative overflow-hidden object-cover shadow-lg w-full sm:w-[417px] h-[400px] sm:h-[277px]"
             >
+              <Image
+                src={project.image}
+                alt={project.title}
+                width={596}
+                height={738}
+                objectFit="cover"
+              />
               <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-[#1D1C34] to-[#2B2F53] rounded-[6px]">
                 <h3 className="text-lg sm:text-xl font-semibold">
                   {project.title}
                 </h3>
                 <p className="text-sm text-gray-400">{project.category}</p>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>

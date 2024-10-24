@@ -38,16 +38,16 @@ const Navbar = () => {
           Home
         </Link>
         <Link href="/Aboutpage" className="hover:text-[#F7941D]">
-          About us
+          Biz Haqimizda
         </Link>
         <Link href="/OurServices" className="hover:text-[#F7941D]">
-          Our services
+          Xizmatlarimiz
         </Link>
         <Link href="/Portfolio" className="hover:text-[#F7941D]">
           Portfolio
         </Link>
         <Link href="/Contactpage" className="hover:text-[#F7941D]">
-          Contact us
+          Bog'lanish
         </Link>
       </div>
 
@@ -87,13 +87,13 @@ const Navbar = () => {
               href="/Aboutpage"
               className="text-xl font-semibold text-white hover:text-[#F7941D]"
             >
-              About us
+              Biz Haqimizda
             </Link>
             <Link
               href="/OurServices"
               className="text-xl font-semibold text-white hover:text-[#F7941D]"
             >
-              Our services
+              Xizmatlarimiz
             </Link>
             <Link
               href="/Portfolio"
@@ -105,7 +105,7 @@ const Navbar = () => {
               href="/Contactpage"
               className="text-xl font-semibold text-white hover:text-[#F7941D]"
             >
-              Contact us
+              Bog'lanish
             </Link>
             <button className="bg-[#F7941D] text-white font-semibold py-2 px-6 rounded-md transition duration-200">
               Ro'yxatdan o'tish
