@@ -31,7 +31,7 @@ function Services() {
       id: 4,
       title: "Logo Xizmati",
       description:
-        "bu kompaniya, brend yoki mahsulotning o'ziga xos vizual identifikatsiyasini yaratish jarayonidir. Yaxshi logo kompaniyaning asosiy qadriyatlarini, missiyasini va biznesini vizual tarzda aks ettiradi.",
+        "Bu kompaniya brend yoki mahsulotning o'ziga xos vizual identifikatsiyasini yaratish jarayonidir. Yaxshi logo kompaniyaning asosiy qadriyatlarini, missiyasini va biznesini vizual tarzda aks ettiradi.",
       image: "/img/image3.png",
     },
     {
