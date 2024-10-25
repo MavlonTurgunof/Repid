@@ -16,13 +16,13 @@ function BigPortfolio() {
       image: "/img/portfolio1.png",
       title: "Shaxsiy Brend",
       category: "Shaxsiy Brend",
-      url: "https://instavibe.uz/",
+      url: "https://www.theneweducation.uz/",
     },
     {
       image: "/img/portfolio3.png",
       title: "English Campus",
       category: "English Campus",
-      url: "https://www.theneweducation.uz/",
+      url: "https://instavibe.uz/",
     },
     {
       image: "/img/Portfolio4.jpg",
