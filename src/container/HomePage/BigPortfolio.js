@@ -13,13 +13,13 @@ function BigPortfolio() {
 
   const projects = [
     {
-      image: "/img/portfolio1.png",
+      image: "/img/Portfolio1.svg",
       title: "Shaxsiy Brend",
       category: "Shaxsiy Brend",
       url: "https://www.theneweducation.uz/",
     },
     {
-      image: "/img/portfolio3.png",
+      image: "/img/Portfolio3.svg",
       title: "English Campus",
       category: "English Campus",
       url: "https://instavibe.uz/",
@@ -31,49 +31,49 @@ function BigPortfolio() {
       url: "https://www.saidoff-academy.uz/",
     },
     {
-      image: "/img/Portfolio5.png",
+      image: "/img/Portfolio5.svg",
       title: "Bumen",
       category: "Branding & Web",
       url: "https://bumen-guw1i9ofn-oybeks-projects-ffe4c3af.vercel.app/",
     },
     {
-      image: "/img/Portfolio6.png",
+      image: "/img/Portfolio6.svg",
       title: "Chery",
       category: "Branding & Business",
       url: "https://golden-eld.com/",
     },
     {
-      image: "/img/Portfolio7.png",
+      image: "/img/Portfolio7.svg",
       title: "Gohang",
       category: "Branding",
       url: "#",
     },
     {
-      image: "/img/Portfolio8.png",
+      image: "/img/Portfolio8.svg",
       title: "Rosmell",
       category: "Branding",
       url: "#",
     },
     {
-      image: "/img/Portfolio9.png",
+      image: "/img/Portfolio9.svg",
       title: "Kork",
       category: "Branding",
       url: "#",
     },
     {
-      image: "/img/Portfolio10.png",
+      image: "/img/Portfolio10.svg",
       title: "Premium Education",
       category: "Branding ",
       url: "#",
     },
     {
-      image: "/img/Portfolio11.png",
+      image: "/img/Portfolio11.svg",
       title: "Golden Eld",
       category: "Branding",
       url: "#",
     },
     {
-      image: "/img/12.png",
+      image: "/img/12.svg",
       title: "Tajaraa",
       category: "Branding",
       url: "#",
