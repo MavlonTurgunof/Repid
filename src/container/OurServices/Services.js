@@ -20,17 +20,17 @@ function Services() {
             height={421}
           />
         </div>
-        <div className="lg:max-w-[42%] lg:mt-0 mt-8">
+        <div className="lg:max-w-[42%] lg:mt-0 mt-8 mx-[2%]">
           <h1 className="lg:text-left text-center text-[#0B0B0B] text-[28px] font-bold mb-4">
             Bizning Xizmatlar
           </h1>
-          <p className="lg:text-left text-center text-[#0B0B0B] text-[14px] font-medium leading-10 mb-4">
+          <p className="text-left text-[#0B0B0B] text-[14px] font-medium leading-10 mb-4">
             Repid Agentligida biz mijozlarimizning o'ziga xos ehtiyojlariga mos
             keladigan keng ko'lamli IT xizmatlarini taqdim etamiz. Bizning
             maqsadimiz o'sishni rag'batlantiruvchi, samaradorlikni oshiruvchi va
             raqamli tajribani yengillashtiruvchi yechimlarni taqdim etishdir.
           </p>
-          <p className="lg:text-left text-center text-[#0B0B0B] text-[14px] font-medium leading-10">
+          <p className="text-left text-[#0B0B0B] text-[14px] font-medium leading-10">
             -Maxsus Veb-sayt Dizayni va Ishlab Chiqish: Biznesingiz maqsadlariga
             moslashtirilgan individual yechimlarni yaratish.
             <br />

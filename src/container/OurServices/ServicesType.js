@@ -1,54 +1,46 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
-function ServicesTypes() {
+function ServicesType() {
   const [selected, setSelected] = useState("All");
 
   const projects = [
     {
-      image: "/img/Portfolio1.png",
-      title: "Fortknox Chat Application",
-      category: "Branding & Design",
-      width: 596,
-      height: 738,
+      image: "/img/Portfolio2.jpg",
+      title: "GoldenEld All",
+      category: "GoldenEld all",
+      url: "https://golden-eld.com/",
     },
     {
-      image: "/img/Portfolio2.png",
-      title: "Boston RealEstate App",
-      category: "Branding & UI",
-      width: 596,
-      height: 738,
+      image: "/img/Portfolio1.jpg",
+      title: "Shaxsiy Brend",
+      category: "Shaxsiy Brend",
+      url: "https://instavibe.uz/",
     },
     {
-      image: "/img/Portfolio3.png",
-      title: "Portfolio",
-      category: "Design & Development",
-      width: 596,
-      height: 738,
+      image: "/img/Portfolio3.jpg",
+      title: "English Campus",
+      category: "English Campus",
+      url: "https://www.theneweducation.uz/",
     },
     {
-      image: "/img/Portfolio4.png",
-      title: "Croma - Agency",
+      image: "/img/Portfolio4.jpg",
+      title: "Saidoff - Agency",
       category: "Branding & Web",
-      width: 596,
-      height: 738,
+      url: "https://www.saidoff-academy.uz/",
     },
     {
       image: "/img/Portfolio5.png",
       title: "Portfolio",
       category: "Design & Development",
-      width: 596,
-      height: 738,
+      url: "https://elements.envato.com/...",
     },
     {
       image: "/img/Portfolio6.png",
       title: "Croma - Agency",
       category: "Branding & Web",
-      width: 596,
-      height: 738,
+      url: "https://golden-eld.com/",
     },
   ];
 
@@ -107,13 +99,13 @@ function ServicesTypes() {
         </div>
 
         {/* Button Carousel for Mobile */}
-        <div className="block sm:hidden mb-4">
+        <div className="block lg:hidden mb-4 w-auto">
           <Slider {...buttonCarouselSettings}>
             {buttons.map((button) => (
               <div key={button} className="px-2">
                 <button
                   onClick={() => setSelected(button)}
-                  className={`w-full px-4 py-2 rounded-full border border-gray-300 transition-transform transform ${
+                  className={`text-[10px] w-full px-4 py-2 rounded-full border border-gray-300 transition-transform transform ${
                     selected === button
                       ? "bg-[#1D1C34] text-white scale-110"
                       : "bg-white text-black hover:scale-105"
@@ -127,12 +119,12 @@ function ServicesTypes() {
         </div>
 
         {/* Button Grid for Desktop */}
-        <div className="hidden sm:flex flex-wrap justify-center items-center space-x-4 space-y-4 sm:space-y-0 py-4">
+        <div className="hidden lg:flex flex-row gap-4 mb-4">
           {buttons.map((button) => (
             <button
               key={button}
               onClick={() => setSelected(button)}
-              className={`px-4 py-2 rounded-full border border-gray-300 transition-transform transform ${
+              className={`w-full px-4 py-2 rounded-full border border-gray-300 transition-transform transform ${
                 selected === button
                   ? "bg-[#1D1C34] text-white scale-110"
                   : "bg-white text-black hover:scale-105"
@@ -143,47 +135,48 @@ function ServicesTypes() {
           ))}
         </div>
 
-        {/* Portfolio Carousel for Mobile */}
-        <div className="block sm:hidden overflow-hidden">
+        <div className="block lg:hidden">
           <Slider {...settings}>
             {projects.map((project, index) => (
-              <div
+              <a
                 key={index}
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="relative overflow-hidden shadow-lg w-full h-[400px]"
               >
-                <img
+                <Image
                   src={project.image}
                   alt={project.title}
-                  className="object-cover w-full h-full"
+                  layout="fill"
+                  objectFit="cover"
                 />
                 <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-[#1D1C34] to-[#2B2F53] rounded-[6px]">
-                  <h3 className="text-lg sm:text-xl font-semibold">
-                    {project.title}
-                  </h3>
+                  <h3 className="text-lg font-semibold">{project.title}</h3>
                   <p className="text-sm text-gray-400">{project.category}</p>
                 </div>
-              </div>
+              </a>
             ))}
           </Slider>
         </div>
 
-        {/* Portfolio Grid for Desktop */}
-        <div className="hidden sm:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:gap-20 justify-items-center">
+        <div className="hidden lg:grid grid-cols-1 md:grid-cols-3 xl:gap-8 lg:gap-4 justify-items-center">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="relative overflow-hidden shadow-lg w-full sm:w-[417px] h-[400px] sm:h-[409px]"
+              className=" overflow-hidden shadow-lg w-full h-[300px] bg-cover bg-center  rounded-lg"
+              style={{ backgroundImage: `url(${project.image})` }}
             >
-              <img
-                src={project.image}
-                alt={project.title}
-                className="object-cover w-full h-full"
-              />
-              <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-[#1D1C34] to-[#2B2F53] rounded-[6px]">
-                <h3 className="text-lg sm:text-xl font-semibold">
-                  {project.title}
-                </h3>
-                <p className="text-sm text-gray-400">{project.category}</p>
+              <div
+                className="mt-[55%] rounded-[6px] mx-[4%] p-[4%]"
+                style={{
+                  backgroundImage: `linear-gradient(270deg,  rgba(29,28,52,1) 30%, rgba(43,47,83,1) 100%)`,
+                }}
+              >
+                <a href={project.url} target="_blank" rel="noopener noreferrer">
+                  <h3 className="text-xl font-semibold">{project.title}</h3>
+                  <p className="text-sm text-gray-400">{project.category}</p>
+                </a>
               </div>
             </div>
           ))}
@@ -193,4 +186,4 @@ function ServicesTypes() {
   );
 }
 
-export default ServicesTypes;
+export default ServicesType;

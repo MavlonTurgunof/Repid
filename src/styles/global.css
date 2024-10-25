@@ -31,3 +31,16 @@ body {
     --radius: 0.5rem;
   }
 }
+.swiper-slide-active {
+  transform: scale(1.1); /* Larger center slide */
+  transition: transform 0.3s ease;
+}
+
+.swiper-slide {
+  opacity: 0.6; /* Slightly faded side slides */
+  transition: opacity 0.3s ease;
+}
+
+.swiper-slide-active {
+  opacity: 1; /* Fully visible center slide */
+}

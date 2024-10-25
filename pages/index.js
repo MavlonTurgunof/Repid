@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Services from "@/container/HomePage/Services";
 import WhyUs from "@/container/HomePage/WhyUs";
 import Footer from "@/components/Footer";
@@ -9,19 +9,26 @@ import MainHeader from "@/container/HomePage/MainHeader";
 import Clock from "@/container/HomePage/Clock";
 import Portfolio from "@/container/HomePage/Portfolio";
 import Partners from "@/container/HomePage/Partners";
+import { toast } from "react-toastify";
 
 function index() {
   const contactRef = useRef(null);
+  const [formSubmitted, setFormSubmitted] = useState(false);
+
+  const handleFormSubmit = () => {
+    setFormSubmitted(true);
+    toast.success("Congratulations! You've received the discount!");
+  };
 
   return (
     <div>
       <Navbar />
-      <MainHeader />
-      <Clock contactRef={contactRef} />
+      <MainHeader contactRef={contactRef} />
+      <Clock contactRef={contactRef} formSubmitted={formSubmitted} />
       <WhyUs />
       <Services />
       <div ref={contactRef}>
-        <Contact />
+        <Contact handleFormSubmit={handleFormSubmit} />
       </div>
       <Faq />
       <Clock contactRef={contactRef} />

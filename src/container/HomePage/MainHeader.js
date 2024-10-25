@@ -1,13 +1,16 @@
+import Link from "next/link";
 import React from "react";
-import Image from "next/image";
-import SmallClock from "@/components/SmallClock";
 
-function MainHeader() {
+function MainHeader({ contactRef }) {
+  const scrollToContacts = () => {
+    contactRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <header className="relative bg-cover bg-no-repeat bg-[url('/img/Shade.png'),url('/img/MainHeader.png')] h-[600px] text-white lg:h-[500px] md:h-[450px] sm:h-[400px]">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row px-4">
         {/* Left side - Text content */}
-        <div className="lg:text-left text-center md:w-1/2 w-full mt-[8%] space-y-4">
+        <div className="lg:text-left text-center lg:w-1/2 w-full xl:mt-[8%] mt-[20%] space-y-4">
           <h1 className="text-[20px] font-bold sm:text-[18px]">
             Texnologiyalar va Innovatsiya Markazi
           </h1>
@@ -21,18 +24,24 @@ function MainHeader() {
             tezroq erishishga yordam beradi. Texnologiyalar orqali raqobatda
             yetakchilik qiling.
           </p>
-          <div className="mt-6 flex flex-col sm:flex-row gap-4 sm:gap-6">
-            <button className="bg-[#F5941F] w-full sm:w-auto text-white px-6 py-3 rounded-lg font-medium">
+          <div className="mt-[10%] flex felx-row gap-6 lg:justify-start justify-center items-center">
+            <button
+              onClick={scrollToContacts}
+              className="bg-[#F5941F] w-full sm:w-auto text-white xl:px-6 px-4 py-3 rounded-lg font-medium"
+            >
               Biz bilan bog'laning
             </button>
-            <button className="w-full sm:w-auto border border-gray-300 text-white px-6 py-3 rounded-lg hover:bg-gray-700 font-medium">
+            {/* <Link className="w-full sm:w-auto border border-gray-300 text-white px-6 py-3 rounded-lg hover:bg-gray-700 font-medium">
+              <a>Barcha xizmatlar</a>
+            </Link> */}
+            <Link
+              href="/OurServices"
+              className="w-full sm:w-auto border border-gray-300 text-white px-6 py-3 rounded-lg hover:bg-gray-700 font-medium"
+            >
               Barcha xizmatlar
-            </button>
+            </Link>
           </div>
         </div>
-
-        {/* Right side - Optional additional content */}
-        <div className="md:w-1/2 w-full mt-8 md:mt-0"></div>
       </div>
     </header>
   );

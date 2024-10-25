@@ -4,32 +4,31 @@ import { AiOutlinePlus, AiOutlineClose } from "react-icons/ai";
 const faqs = [
   {
     id: 1,
-    question: " Siz aniq qanday xizmatlar ko'rsatasiz?",
+    question: " Sizda qanday hizmat turlari mavjud?",
     answer:
-      "Biz texnologiyalarga asoslangan kreativ agentlikmiz. Sizning biznesingizga zamonaviy IT yechimlar, raqamli marketing va brend strategiyasini shakllantirishda yordam beramiz.",
+      "Bizda, Nameng,Logo , Brendbook va Guidebook, Web sayt, yasab berish,  Seo yoqish, App yasash ,Hizmatlarimiz mavjud diyiladi",
   },
   {
     id: 2,
-    question:
-      "Men brend strategiyasiga muhtoj emasman, ammo kampaniyamni amalga oshirishda yordam kerak. Hamkorlik qila olamizmi?",
+    question: "Loyihani yakunlash uchun qancha vaqt kerak bo‘ladi?",
     answer:
-      "Albatta! Biz kampaniyalarni amalga oshirish va texnik qo‘llab-quvvatlashda mutaxassismiz.",
+      "Loyihaning muddati xizmat turiga va loyiha hajmiga bog‘liq. Odatda, kichik loyihalar bir necha haftada yakunlanadi, kattaroq loyihalar esa bir necha oy davom etishi mumkin. Har doim mijozlar bilan kelishilgan muddatlarda ishlashga harakat qilamiz.",
   },
   {
     id: 3,
-    question: "Sizning narxlaringiz raqobatbardoshmi?",
-    answer: "Biz yuqori sifatni mos narxlarda taqdim etamiz.",
+    question: "Xizmatlaringiz narxi qanday belgilanadi?",
+    answer:
+      "Narxlar xizmat turiga, loyihaning hajmi va murakkabligiga qarab o‘zgaradi. Biz har bir mijozga individual yondashamiz va loyihaga ko‘ra narxni aniqlaymiz. Dastlabki maslahat bepul bo‘lib, uning davomida biz sizga taxminiy narx taklif qilamiz.",
   },
   {
     id: 4,
-    question: " Nima uchun sizda oylik loyihalar chegarasi mavjud?",
+    question: "Loyihani amalga oshirish jarayoni qanday?",
     answer:
-      "Bu sifatni ta’minlash va har bir mijozga yetarlicha e'tibor qaratish uchun qo‘llaniladi.",
+      "Loyihani amalga oshirish quyidagi bosqichlardan iborat: dastlabki maslahat, ehtiyojlarni tahlil qilish, taklif tayyorlash, loyiha ishlab chiqish, tasdiqlash va yakunlash. Har bir qadamda mijozlarimiz bilan yaqin aloqada bo‘lib, ularning fikrlarini inobatga olamiz.",
   },
 ];
 
 function Faq() {
-  // Set the first FAQ to be open by default (index 0)
   const [activeIndex, setActiveIndex] = useState(0);
 
   const toggleFAQ = (index) => {
@@ -39,7 +38,7 @@ function Faq() {
   return (
     <div className="container mx-auto px-4 lg:mb-20 mb-16">
       {/* FAQ Section */}
-      <div className="mt-32  max-w-3xl mx-auto">
+      <div className="mt-32  max-w-7xl mx-auto">
         {faqs.map((faq, index) => (
           <div
             key={index}

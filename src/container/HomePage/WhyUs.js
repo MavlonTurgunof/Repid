@@ -14,7 +14,7 @@ function WhyUs() {
       </p>
       <div className="grid grid-cols-3 gap-5 pb-20 max-xl:grid-cols-2 max-md:grid-cols-1">
         <div className="h-full">
-          <div className="flex h-full flex-col items-center justify-center gap-5 rounded-xl border border-[#e3e5fa] p-6 px-10 transition-all hover:-translate-y-1 hover:scale-105 hover:border-none hover:shadow-2xl">
+          <div className="flex h-full flex-col items-center justify-center gap-5 rounded-xl border border-[#e3e5fa] p-6 px-10 md:transition-all md:hover:-translate-y-1 md:hover:scale-105 md:hover:border-none md:hover:shadow-2xl">
             <div className="rounded-xl bg-[#9848ff] p-8"></div>
             <h4 className="text-center text-xl font-bold">Tajribali jamoa</h4>
             <p className="text-center">
@@ -26,7 +26,7 @@ function WhyUs() {
           </div>
         </div>
         <div className="h-full">
-          <div className="flex h-full flex-col items-center justify-center gap-5 rounded-xl border border-[#e3e5fa] p-6 px-10 transition-all hover:-translate-y-1 hover:scale-105 hover:border-none hover:shadow-2xl">
+          <div className="flex h-full flex-col items-center justify-center gap-5 rounded-xl border border-[#e3e5fa] p-6 px-10 md:transition-all md:hover:-translate-y-1 md:hover:scale-105 md:hover:border-none md:hover:shadow-2xl">
             <div className="rounded-xl bg-[#ffcf59] p-8"></div>
             <h4 className="text-center text-xl font-bold ">Kuchli portfolio</h4>
             <p className="text-center">
@@ -38,7 +38,7 @@ function WhyUs() {
           </div>
         </div>
         <div className="h-full">
-          <div className="flex h-full flex-col items-center justify-center gap-5 rounded-xl border border-[#e3e5fa] p-6 px-10 transition-all hover:-translate-y-1 hover:scale-105 hover:border-none hover:shadow-2xl">
+          <div className="flex h-full flex-col items-center justify-center gap-5 rounded-xl border border-[#e3e5fa] p-6 px-10 md:transition-all md:hover:-translate-y-1 md:hover:scale-105 md:hover:border-none md:hover:shadow-2xl">
             <div className="rounded-xl bg-[#f66742] p-8"></div>
             <h4 className="text-center text-xl font-bold">
               Shartnoma asosida ishlaymiz
@@ -52,7 +52,7 @@ function WhyUs() {
           </div>
         </div>
         <div className="h-full">
-          <div className="flex h-full flex-col items-center justify-center gap-5 rounded-xl border border-[#e3e5fa] p-6 px-10 transition-all hover:-translate-y-1 hover:scale-105 hover:border-none hover:shadow-2xl">
+          <div className="flex h-full flex-col items-center justify-center gap-5 rounded-xl border border-[#e3e5fa] p-6 px-10 md:transition-all md:hover:-translate-y-1 md:hover:scale-105 md:hover:border-none md:hover:shadow-2xl">
             <div className="rounded-xl bg-[#29b9e7] p-8"></div>
             <h4 className="text-center text-xl font-bold">
               Natija kafolati yoki 100% pulni qaytarish
@@ -66,7 +66,7 @@ function WhyUs() {
           </div>
         </div>
         <div className="h-full">
-          <div className="flex h-full flex-col items-center justify-center gap-5 rounded-xl border border-[#e3e5fa] p-6 px-10 transition-all hover:-translate-y-1 hover:scale-105 hover:border-none hover:shadow-2xl">
+          <div className="flex h-full flex-col items-center justify-center gap-5 rounded-xl border border-[#e3e5fa] p-6 px-10 md:transition-all md:hover:-translate-y-1 md:hover:scale-105 md:hover:border-none md:hover:shadow-2xl">
             <div className="rounded-xl bg-[#f48c06] p-8"></div>
             <h4 className="text-center text-xl font-bold">
               Bepul qo'llab-quvvatlash xizmatlari
@@ -80,7 +80,7 @@ function WhyUs() {
           </div>
         </div>
         <div className="h-full">
-          <div className="flex h-full flex-col items-center justify-center gap-5 rounded-xl border border-[#e3e5fa] p-6 px-10 transition-all hover:-translate-y-1 hover:scale-105 hover:border-none hover:shadow-2xl">
+          <div className="flex h-full flex-col items-center justify-center gap-5 rounded-xl border border-[#e3e5fa] p-6 px-10 md:transition-all md:hover:-translate-y-1 md:hover:scale-105 md:hover:border-none md:hover:shadow-2xl">
             <div className="rounded-xl bg-[#5b72ee] p-8"></div>
             <h4 className="text-center text-xl font-bold">Chegirmalar</h4>
             <p className="text-center">

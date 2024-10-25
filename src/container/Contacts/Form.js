@@ -4,7 +4,7 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-function Form(props) {
+function Form({ onSubmit }) {
   const REACT_APP_BOT_TOKEN = "7898444291:AAEsP2fA6hz1YgRflnx0qt3faxXq7ovhblg";
   const REACT_APP_CHAT_ID = "1589263429";
   const [inputValue, setInputValue] = useState({
@@ -20,11 +20,13 @@ function Form(props) {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    // toast('Salom!')
     axios
       .post(url)
-      .then((r) => toast.success("Rahmat: " + inputValue.name))
-      .catch((err) => toast(err.message))
+      .then((r) => {
+        toast.success("Rahmat: " + inputValue.name);
+        onSubmit(); // Call the onSubmit prop function to stop the clock
+      })
+      .catch((err) => toast.error(err.message))
       .finally(() => setInputValue({ name: "", phone: "", textarea: "" }));
   };
   return (

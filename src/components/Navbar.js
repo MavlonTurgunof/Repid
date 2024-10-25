@@ -7,11 +7,9 @@ import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
-
   useEffect(() => {
     if (menuOpen) {
       document.body.style.backgroundColor = "#1D1E5A";
@@ -22,6 +20,7 @@ const Navbar = () => {
 
   return (
     <nav className="flex justify-between items-center py-4 px-8 container mx-auto relative">
+      {/* Logo */}
       <div className="flex items-center space-x-2">
         <Link href="/">
           <Image
@@ -32,25 +31,25 @@ const Navbar = () => {
           />
         </Link>
       </div>
-
+      {/* Desktop version */}
       <div className="hidden md:flex space-x-8 text-[#1D1E5A] font-semibold text-xl">
         <Link href="/" className="hover:text-[#F7941D]">
           Home
         </Link>
         <Link href="/Aboutpage" className="hover:text-[#F7941D]">
-          About us
+          Biz haqimizda
         </Link>
         <Link href="/OurServices" className="hover:text-[#F7941D]">
-          Our services
+          Xizmatlarimiz
         </Link>
         <Link href="/Portfolio" className="hover:text-[#F7941D]">
           Portfolio
         </Link>
         <Link href="/Contactpage" className="hover:text-[#F7941D]">
-          Contact us
+          Bog'lanish
         </Link>
       </div>
-
+      {/* Mobile version */}
       <div className="hidden md:flex">
         <button className="bg-[#F7941D] text-white font-semibold py-2 px-6 rounded-md transition duration-200">
           Ro'yxatdan o'tish
@@ -87,13 +86,13 @@ const Navbar = () => {
               href="/Aboutpage"
               className="text-xl font-semibold text-white hover:text-[#F7941D]"
             >
-              About us
+              Biz Haqimizda
             </Link>
             <Link
               href="/OurServices"
               className="text-xl font-semibold text-white hover:text-[#F7941D]"
             >
-              Our services
+              Xizmatlarimiz
             </Link>
             <Link
               href="/Portfolio"
@@ -105,7 +104,7 @@ const Navbar = () => {
               href="/Contactpage"
               className="text-xl font-semibold text-white hover:text-[#F7941D]"
             >
-              Contact us
+              Bog'lanish
             </Link>
             <button className="bg-[#F7941D] text-white font-semibold py-2 px-6 rounded-md transition duration-200">
               Ro'yxatdan o'tish
