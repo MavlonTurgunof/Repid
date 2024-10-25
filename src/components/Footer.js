@@ -39,7 +39,7 @@ function Footer() {
               </Link>
               <div className="mt-4 flex items-center justify-center space-x-4 max-md:mb-6 max-md:w-full max-md:gap-10">
                 <Link
-                  href={"/"}
+                  href={"https://t.me/repidagency6600"}
                   className="max-md:scale-125"
                   data-aos="zoom-in"
                   data-aos-duration="1000"
