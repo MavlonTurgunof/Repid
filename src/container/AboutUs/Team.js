@@ -7,7 +7,7 @@ import "aos/dist/aos.css"; // Import AOS styles
 const coworkers = [
   {
     id: "1",
-    name: "Oybek Tojiyev",
+    name: " Oybek Tojiyev",
     position: "Kompaniya Boshlig'i",
     img: "img/Oybek.png",
     rating: 4,
@@ -20,7 +20,7 @@ const coworkers = [
   },
   {
     id: "2",
-    name: "Tahirov Bahrom",
+    name: "Bahrom  Tahirov",
     position: "Marketing Bo'limi Boshlig'i",
     img: "img/Bahrom.png",
     rating: 5,
@@ -46,7 +46,7 @@ const coworkers = [
   },
   {
     id: "4",
-    name: "Soliyev Nodirbek",
+    name: " Nodirbek Soliyev",
     position: "SEO Mutahasisi",
     img: "img/Nodirbek.png",
     rating: 5,
