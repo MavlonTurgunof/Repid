@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FaCircleCheck } from "react-icons/fa6";
 import { toast } from "react-toastify";
-import AOS from "aos"; 
+import AOS from "aos";
 
 const Clock = ({ contactRef, formSubmitted }) => {
   const [time, setTime] = useState({
@@ -9,7 +9,6 @@ const Clock = ({ contactRef, formSubmitted }) => {
     minutes: 0,
     seconds: 0,
   });
-
   const [discountStatus, setDiscountStatus] = useState(null);
 
   useEffect(() => {
@@ -71,15 +70,15 @@ const Clock = ({ contactRef, formSubmitted }) => {
         style={{
           backgroundImage: `linear-gradient(135deg, rgba(43,47,83,1) 0%, rgba(29,28,52,1) 100%)`,
         }}
-        data-aos="fade-up" // AOS animation
+        data-aos="fade-up"
       >
         {discountStatus === "granted" && (
-          <p className="text-[#28a745] text-2xl text-center font-bold mb-6">
+          <p className="text-[#28a745] text-xl sm:text-2xl text-center font-bold mb-6">
             Siz allaqachon chegirma olgansiz!
           </p>
         )}
         {discountStatus === "missed" && (
-          <p className="text-[#dc3545] text-2xl text-center font-bold mb-6">
+          <p className="text-[#dc3545] text-xl sm:text-2xl text-center font-bold mb-6">
             Siz imkonni qoldan chiqardingiz!
           </p>
         )}
@@ -87,101 +86,84 @@ const Clock = ({ contactRef, formSubmitted }) => {
         {discountStatus === null && (
           <div className="flex flex-col items-center justify-center">
             <h1
-              className="text-2xl sm:text-3xl lg:text-6xl font-extrabold mb-4 sm:mb-6 lg:mb-8 text-center max-w-[600px] text-[#F5941F]"
-              data-aos="fade-right" // AOS animation for heading
+              className="text-2xl sm:text-3xl lg:text-5xl font-extrabold mb-4 sm:mb-6 lg:mb-8 text-center max-w-[600px] text-[#F5941F]"
+              data-aos="fade-right"
             >
               Aksiya!
             </h1>
             <p
-              className="text-[#D8D8D8] mb-6 sm:mb-8 lg:mb-10 w-full max-w-[790px] text-center px-4 sm:px-6"
-              data-aos="fade-left" // AOS animation for paragraph
+              className="text-[#D8D8D8] mb-4 sm:mb-6 lg:mb-10 w-full max-w-[790px] text-center px-4 sm:px-6"
+              data-aos="fade-left"
             >
               Agar hoziroq murojaat qilsangiz, barcha xizmatlarimizga 30%
               chegirma taqdim etiladi. Shoshiling, imkoniyatni qo‘ldan boy
               bermang!
             </p>
 
-            <div className="flex flex-col items-center justify-center h-auto text-black max-w-7xl mx-auto rounded-lg mb-8">
-              <div
-                className="flex items-center space-x-4 flex-row [@media(max-width:330px)]:flex-col"
-                data-aos="zoom-in"
-              >
-                {/* Hours */}
-                <div className=" flex-col items-center text-[#D8D8D8] xl:inline-block hidden">
-                  <div className="flex space-x-2">
-                    {formatDigits(time.hours).map((digit, index) => (
-                      <div
-                        key={`hour-${index}`}
-                        className="p-2 sm:p-4 rounded-xl shadow-lg shadow-black text-5xl sm:text-8xl w-[80px] h-[80px] sm:w-[150px] sm:h-[150px] flex justify-center items-center"
-                        style={{
-                          backgroundImage: `linear-gradient(135deg, rgba(27, 51, 81, 0.3) 30%, rgba(155, 97, 149, 0.3) 70%)`,
-                        }}
-                      >
-                        {digit}
-                      </div>
-                    ))}
-                  </div>
-                  <div className="mt-2 text-md sm:text-lg ml-32 text-[#D8D8D8]">
-                    Hours
-                  </div>
+            <div className="flex items-center justify-center space-x-4 sm:space-x-8 flex-wrap lg:flex-nowrap mb-8">
+              <div className="flex flex-col items-center text-[#D8D8D8]" data-aos="zoom-in">
+                <div className="flex space-x-1 sm:space-x-2">
+                  {formatDigits(time.hours).map((digit, index) => (
+                    <div
+                      key={`hour-${index}`}
+                      className="p-2 sm:p-4 rounded-xl shadow-lg text-2xl sm:text-4xl lg:text-6xl w-12 sm:w-16 lg:w-24 h-12 sm:h-16 lg:h-24 flex justify-center items-center"
+                      style={{
+                        backgroundImage: `linear-gradient(135deg, rgba(27, 51, 81, 0.3) 30%, rgba(155, 97, 149, 0.3) 70%)`,
+                      }}
+                    >
+                      {digit}
+                    </div>
+                  ))}
                 </div>
-
-                <span className="text-3xl sm:text-4xl text-[#FAD007] mb-4 xl:inline-block hidden">
-                  :
-                </span>
-
-                {/* Minutes */}
-                <div className="flex flex-col items-center text-[#D8D8D8]">
-                  <div className="flex space-x-2">
-                    {formatDigits(time.minutes).map((digit, index) => (
-                      <div
-                        key={`minute-${index}`}
-                        className="p-2 sm:p-4 rounded-xl shadow-lg shadow-black text-4xl md:text-8xl w-[60px] h-[60px] md:w-[150px] md:h-[150px] [@media(max-width:390px)]:w-[50px] [@media(max-width:390px)]:h-[50px] flex justify-center items-center"
-                        style={{
-                          backgroundImage: `linear-gradient(135deg, rgba(27, 51, 81, 0.3) 30%, rgba(155, 97, 149, 0.3) 70%)`,
-                        }}
-                      >
-                        {digit}
-                      </div>
-                    ))}
-                  </div>
-                  <span className="mt-2 text-md sm:text-lg text-[#D8D8D8]">
-                    Minutes
-                  </span>
-                </div>
-                <span className="text-3xl sm:text-4xl text-[#FAD007] mb-4">
-                  :
-                </span>
-
-                {/* Seconds */}
-                <div className="flex flex-col items-center text-[#D8D8D8]">
-                  <div className="flex space-x-2">
-                    {formatDigits(time.seconds).map((digit, index) => (
-                      <div
-                        key={`second-${index}`}
-                        className="p-2 sm:p-4 rounded-xl shadow-lg shadow-black text-4xl md:text-8xl w-[60px] h-[60px] md:w-[150px] md:h-[150px] [@media(max-width:390px)]:w-[50px] [@media(max-width:390px)]:h-[50px] flex justify-center items-center"
-                        style={{
-                          backgroundImage: `linear-gradient(135deg, rgba(27, 51, 81, 0.3) 30%, rgba(155, 97, 149, 0.3) 70%)`,
-                        }}
-                      >
-                        {digit}
-                      </div>
-                    ))}
-                  </div>
-                  <span className="mt-2 text-md sm:text-lg text-[#D8D8D8]">
-                    Seconds
-                  </span>
-                </div>
+                <div className="mt-2 text-sm sm:text-lg text-center">Hours</div>
               </div>
 
-              <button
-                onClick={scrollToContacts}
-                className="w-64 h-12 bg-[#F5941F] text-white rounded-lg text-lg font-bold mt-6"
-                data-aos="fade-up" 
-              >
-                Murojaat qilish
-              </button>
+              <span className="text-xl sm:text-2xl lg:text-3xl text-[#FAD007]">:</span>
+
+              <div className="flex flex-col items-center text-[#D8D8D8]" data-aos="zoom-in">
+                <div className="flex space-x-1 sm:space-x-2">
+                  {formatDigits(time.minutes).map((digit, index) => (
+                    <div
+                      key={`minute-${index}`}
+                      className="p-2 sm:p-4 rounded-xl shadow-lg text-2xl sm:text-4xl lg:text-6xl w-12 sm:w-16 lg:w-24 h-12 sm:h-16 lg:h-24 flex justify-center items-center"
+                      style={{
+                        backgroundImage: `linear-gradient(135deg, rgba(27, 51, 81, 0.3) 30%, rgba(155, 97, 149, 0.3) 70%)`,
+                      }}
+                    >
+                      {digit}
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-2 text-sm sm:text-lg text-center">Minutes</div>
+              </div>
+
+              <span className="text-xl sm:text-2xl lg:text-3xl text-[#FAD007]">:</span>
+
+              <div className="flex flex-col items-center text-[#D8D8D8]" data-aos="zoom-in">
+                <div className="flex space-x-1 sm:space-x-2">
+                  {formatDigits(time.seconds).map((digit, index) => (
+                    <div
+                      key={`second-${index}`}
+                      className="p-2 sm:p-4 rounded-xl shadow-lg text-2xl sm:text-4xl lg:text-6xl w-12 sm:w-16 lg:w-24 h-12 sm:h-16 lg:h-24 flex justify-center items-center"
+                      style={{
+                        backgroundImage: `linear-gradient(135deg, rgba(27, 51, 81, 0.3) 30%, rgba(155, 97, 149, 0.3) 70%)`,
+                      }}
+                    >
+                      {digit}
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-2 text-sm sm:text-lg text-center">Seconds</div>
+              </div>
             </div>
+
+            <button
+              onClick={scrollToContacts}
+              className="w-full sm:w-64 h-10 sm:h-12 bg-[#F5941F] text-white rounded-lg text-lg font-bold mt-6"
+              data-aos="fade-up"
+            >
+              Murojaat qilish
+            </button>
           </div>
         )}
       </div>
