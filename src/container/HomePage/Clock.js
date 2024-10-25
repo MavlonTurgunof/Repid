@@ -64,7 +64,7 @@ const Clock = ({ contactRef, formSubmitted }) => {
   };
 
   return (
-    <div className="py-8 px-4 sm:px-6 lg:px-8 overflow-y-hidden">
+    <div className="py-8 px-4 sm:px-6 lg:px-8 overflow-x-hidden">
       <div
         className="flex flex-col items-center justify-center h-auto text-black max-w-7xl mx-auto rounded-[26px] py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8"
         style={{
