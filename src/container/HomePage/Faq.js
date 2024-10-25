@@ -6,7 +6,7 @@ import "aos/dist/aos.css";
 const faqs = [
   {
     id: 1,
-    question: " Agentlik qaysi IT xizmatlarini taqdim etadi?",
+    question: "Agentlik qaysi IT xizmatlarini taqdim etadi?",
     answer:
       "Agentligimiz quyidagi xizmatlarni taqdim etadi: Brand Book va Guidebook yaratish, Naming (brend nomini ishlab chiqish), Web-sayt yaratish, Mobil ilovalar ishlab chiqish, SMM xizmatlari, hamda CRM tizimlarini ishlab chiqish.",
   },
@@ -14,7 +14,7 @@ const faqs = [
     id: 2,
     question: "Loyihani boshlash uchun qanday qadamlar kerak?",
     answer:
-      "Biz bilan bog‘lanib, talablaringizni muhokama qilishingiz mumkin. Biz ehtiyojlaringizni tushunib, sizga loyha taklifini  va loyhani tugatish mudatini aytamiz",
+      "Biz bilan bog‘lanib, talablaringizni muhokama qilishingiz mumkin. Biz ehtiyojlaringizni tushunib, sizga loyha taklifini  va loyhani tugatish mudatini aytamiz.",
   },
   {
     id: 3,
@@ -57,7 +57,6 @@ function Faq() {
             className={`mb-4 p-4 border rounded-lg ${
               activeIndex === index ? "bg-[#fef6e4]" : "bg-white"
             } transition-all duration-600 shadow-md`}
-            data-aos="fade-up"
           >
             <button
               onClick={() => toggleFAQ(index)}
@@ -94,12 +93,12 @@ function Faq() {
               </div>
             </button>
 
-            {/* Answer Section */}
             <div
-              className={`mt-4 text-gray-600 text-sm md:text-base transition-[max-height] duration-500 ease-in-out overflow-hidden ${
-                activeIndex === index ? "max-h-40" : "max-h-0"
+              className={`mt-4 text-gray-600 text-sm md:text-base transition-all duration-500 ease-in-out overflow-hidden ${
+                activeIndex === index
+                  ? "max-h-40 opacity-100"
+                  : "max-h-0 opacity-0"
               }`}
-              data-aos="fade-down"
             >
               {faq.answer}
             </div>
