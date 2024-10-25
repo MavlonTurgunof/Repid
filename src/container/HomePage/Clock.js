@@ -72,12 +72,12 @@ const Clock = ({ contactRef, formSubmitted }) => {
         }}
       >
         {discountStatus === "granted" && (
-          <p className="text-[#28a745] mb-6">
+          <p className="text-[#28a745] text-2xl text-center font-bold mb-6">
             Siz allaqachon chegirma olgansiz!
           </p>
         )}
         {discountStatus === "missed" && (
-          <p className="text-[#dc3545] mb-6">
+          <p className="text-[#dc3545] text-2xl text-center font-bold mb-6">
             Siz imkonni qoldan chiqardingiz!
           </p>
         )}

@@ -99,7 +99,7 @@ function ServicesType() {
         </div>
 
         {/* Button Carousel for Mobile */}
-        <div className="block lg:hidden mb-4 w-auto">
+        <div className="block lg:hidden mb-4 w-auto overflow-hidden">
           <Slider {...buttonCarouselSettings}>
             {buttons.map((button) => (
               <div key={button} className="px-2">
@@ -135,7 +135,7 @@ function ServicesType() {
           ))}
         </div>
 
-        <div className="block lg:hidden">
+        <div className="block lg:hidden overflow-hidden">
           <Slider {...settings}>
             {projects.map((project, index) => (
               <a

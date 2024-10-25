@@ -10,7 +10,7 @@ const logos = [
 
 const Partners = () => {
   return (
-    <div className="bg-white py-20 container mx-auto">
+    <div className="bg-white py-20 container mx-auto overflow-hidden">
       <h3 className="text-center mb-12 text-4xl font-bold text-[#282B4C]">
         Hamkorlarimiz
       </h3>

@@ -40,7 +40,7 @@ function Services() {
         </p>
       </div>
 
-      <Slider {...settings} className="pb-10">
+      <Slider {...settings} className="pb-10 overflow-hidden">
         {/* Service Card 1 */}
         <div className="px-3">
           <div className="bg-white p-7 rounded-lg shadow-md">

@@ -17,7 +17,7 @@ function index() {
 
   const handleFormSubmit = () => {
     setFormSubmitted(true);
-    toast.success("Congratulations! You've received the discount!");
+    // toast.success("Congratulations! You've received the discount!");
   };
 
   return (
