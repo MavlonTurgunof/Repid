@@ -15,7 +15,7 @@ function Footer() {
   const currentYear = new Date().getFullYear();
 
   useEffect(() => {
-    AOS.init(); 
+    AOS.init();
   }, []);
 
   return (
@@ -23,7 +23,11 @@ function Footer() {
       <div className="overflow-hidden bg-[#222341] py-10 text-white">
         <div className="container mx-auto px-6 lg:px-20">
           <div className="grid-cols-1 flex-col gap-8 max-md:flex max-md:items-center max-md:justify-center md:grid md:grid-cols-3">
-            <div className="flex flex-col items-start gap-4" data-aos="fade-right" data-aos-duration="1000">
+            <div
+              className="flex flex-col items-start gap-4"
+              data-aos="fade-right"
+              data-aos-duration="1000"
+            >
               <Link href={"#"}>
                 <Image
                   src={Logo2}
@@ -34,7 +38,12 @@ function Footer() {
                 />
               </Link>
               <div className="mt-4 flex items-center justify-center space-x-4 max-md:mb-6 max-md:w-full max-md:gap-10">
-                <Link href={"/"} className="max-md:scale-125" data-aos="zoom-in" data-aos-duration="1000">
+                <Link
+                  href={"/"}
+                  className="max-md:scale-125"
+                  data-aos="zoom-in"
+                  data-aos-duration="1000"
+                >
                   <Image
                     src={Telegram}
                     width={30}
@@ -44,7 +53,11 @@ function Footer() {
                 </Link>
                 <Link
                   href={"https://www.instagram.com/repid.agency/"}
-                  className="max-md:scale-125" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
+                  className="max-md:scale-125"
+                  data-aos="zoom-in"
+                  data-aos-duration="1000"
+                  data-aos-delay="200"
+                >
                   <Image
                     src={Instagram}
                     width={30}
@@ -52,7 +65,13 @@ function Footer() {
                     alt="Instagram icon"
                   />
                 </Link>
-                <Link href="/" className="max-md:scale-125" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400">
+                <Link
+                  href="/"
+                  className="max-md:scale-125"
+                  data-aos="zoom-in"
+                  data-aos-duration="1000"
+                  data-aos-delay="400"
+                >
                   <Image
                     src={YouTube}
                     width={30}
@@ -60,7 +79,13 @@ function Footer() {
                     alt="YouTube icon"
                   />
                 </Link>
-                <Link href="/" className="max-md:scale-125" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="600">
+                <Link
+                  href="/"
+                  className="max-md:scale-125"
+                  data-aos="zoom-in"
+                  data-aos-duration="1000"
+                  data-aos-delay="600"
+                >
                   <Image
                     src={Facebook}
                     width={30}
@@ -71,7 +96,11 @@ function Footer() {
               </div>
             </div>
 
-            <div className="max-md:hidden" data-aos="fade-up" data-aos-duration="1000">
+            <div
+              className="max-md:hidden"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+            >
               <h3 className="mb-6 text-xl font-semibold">Sahifalar</h3>
               <ul className="mt-12 space-y-4">
                 <li>
@@ -97,9 +126,16 @@ function Footer() {
               </ul>
             </div>
 
-            <div data-aos="fade-up" data-aos-duration="1000" className="flex flex-col items-start">
-              <Link href="/Contactpage" className="mb-12 text-lg font-semibold max-md:hidden">
-              Bizga hoziroq qo'ng'iroq qiling
+            <div
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              className="flex flex-col items-start"
+            >
+              <Link
+                href="/Contactpage"
+                className="mb-12 text-lg font-semibold max-md:hidden"
+              >
+                Bizga hoziroq qo'ng'iroq qiling
               </Link>
               <p className="mb-4 text-lg max-md:hidden">Bog'lanish</p>
               <ul className="space-y-8 max-md:space-y-7">
@@ -113,6 +149,18 @@ function Footer() {
                   />
                   <Link href={"tel:+998971016600"} className="max-md:text-3xl">
                     (97) 101-66-00
+                  </Link>
+                </li>
+                <li className="flex items-center space-x-2 max-md:justify-center max-md:gap-2">
+                  <Image
+                    src={PhoneIcon}
+                    width={35}
+                    height={35}
+                    alt="Phone icon"
+                    className="max-md:translate-y-1 max-md:scale-125"
+                  />
+                  <Link href={"tel:+998971016600"} className="max-md:text-3xl">
+                    (97) 770-04-78
                   </Link>
                 </li>
               </ul>
