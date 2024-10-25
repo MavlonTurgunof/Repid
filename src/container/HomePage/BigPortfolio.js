@@ -4,7 +4,7 @@ import Slider from "react-slick";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-function Portfolio() {
+function BigPortfolio() {
   const [selected, setSelected] = useState("All");
 
   useEffect(() => {
@@ -12,12 +12,6 @@ function Portfolio() {
   }, []);
 
   const projects = [
-    {
-      image: "/img/Portfolio2.jpg",
-      title: "GoldenEld All",
-      category: "GoldenEld all",
-      url: "https://golden-eld.com/",
-    },
     {
       image: "/img/portfolio1.png",
       title: "Shaxsiy Brend",
@@ -83,6 +77,12 @@ function Portfolio() {
       title: "Tajaraa",
       category: "Branding",
       url: "#",
+    },
+    {
+      image: "/img/Portfolio2.jpg",
+      title: "GoldenEld All",
+      category: "GoldenEld all",
+      url: "https://golden-eld.com/",
     },
   ];
 
@@ -224,4 +224,4 @@ function Portfolio() {
   );
 }
 
-export default Portfolio;
+export default BigPortfolio;

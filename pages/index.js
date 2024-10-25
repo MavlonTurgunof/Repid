@@ -7,8 +7,8 @@ import Faq from "@/container/HomePage/Faq";
 import Navbar from "@/components/Navbar";
 import MainHeader from "@/container/HomePage/MainHeader";
 import Clock from "@/container/HomePage/Clock";
-import Portfolio from "@/container/HomePage/Portfolio";
 import Partners from "@/container/HomePage/Partners";
+import BigPortfolio from "@/container/HomePage/BigPortfolio";
 
 function index() {
   const contactRef = useRef(null);
@@ -30,7 +30,7 @@ function index() {
       </div>
       <Faq />
       <Clock contactRef={contactRef} />
-      <Portfolio />
+      <BigPortfolio />
       {/* <Partners /> */}
       <Footer />
     </div>
