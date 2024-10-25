@@ -25,12 +25,12 @@ function MainHeader({ contactRef }) {
             yetakchilik qiling.
           </p>
           <div className="mt-[10%] flex felx-row gap-6 lg:justify-start justify-center items-center">
-            <button
-              onClick={scrollToContacts}
+            <Link
+              href="/Contactpage"
               className="bg-[#F5941F] w-full sm:w-auto text-white xl:px-6 px-4 py-3 rounded-lg font-medium"
             >
               Biz bilan bog'laning
-            </button>
+            </Link>
             {/* <Link className="w-full sm:w-auto border border-gray-300 text-white px-6 py-3 rounded-lg hover:bg-gray-700 font-medium">
               <a>Barcha xizmatlar</a>
             </Link> */}
