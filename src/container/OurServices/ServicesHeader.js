@@ -25,19 +25,19 @@ function ServicesHeader({ contactRef }) {
           </p>
           {/* Buttons */}
           <div
-            className="mt-[10%] flex flex-row gap-6 justify-center lg:justify-start items-center"
+            className="mt-[40px] flex flex-row gap-6 justify-center lg:justify-start items-center"
             data-aos="fade-up"
             data-aos-delay="300"
           >
             <Link
               href="/Contactpage"
-              className="bg-[#f5951fab] hover:bg-[#F5941F] text-white xl:px-6 px-4 py-3 rounded-lg font-medium text-center"
+              className="bg-[#F5941F] border-white border text-white xl:px-6 px-4 py-3 rounded-lg font-medium text-center"
             >
               Biz bilan bog'laning
             </Link>
             <Link
               href="/OurServices"
-              className="text-white xl:px-6 px-4 py-3 rounded-lg bg-[#f5951fab] hover:bg-[#F5941F] font-medium text-center"
+              className="text-white xl:px-6 px-4 py-3 rounded-lg border border-white hover:bg-[#F5941F]   font-medium text-center"
             >
               Barcha xizmatlar
             </Link>
