@@ -108,7 +108,10 @@ const Clock = ({ contactRef, formSubmitted }) => {
             </p>
 
             <div className="flex items-center justify-center space-x-4 sm:space-x-8 flex-wrap lg:flex-nowrap mb-8">
-              <div className="flex flex-col items-center text-[#D8D8D8]" data-aos="zoom-in">
+              <div
+                className="flex flex-col items-center text-[#D8D8D8]"
+                data-aos="zoom-in"
+              >
                 <div className="flex space-x-1 sm:space-x-2">
                   {formatDigits(time.hours).map((digit, index) => (
                     <div
@@ -122,12 +125,17 @@ const Clock = ({ contactRef, formSubmitted }) => {
                     </div>
                   ))}
                 </div>
-                <div className="mt-2 text-sm sm:text-lg text-center">Hours</div>
+                <div className="mt-2 text-sm sm:text-lg text-center">Soat</div>
               </div>
 
-              <span className="text-xl sm:text-2xl lg:text-3xl text-[#FAD007]">:</span>
+              <span className="text-xl sm:text-2xl lg:text-3xl text-[#FAD007]">
+                :
+              </span>
 
-              <div className="flex flex-col items-center text-[#D8D8D8]" data-aos="zoom-in">
+              <div
+                className="flex flex-col items-center text-[#D8D8D8]"
+                data-aos="zoom-in"
+              >
                 <div className="flex space-x-1 sm:space-x-2">
                   {formatDigits(time.minutes).map((digit, index) => (
                     <div
@@ -141,12 +149,16 @@ const Clock = ({ contactRef, formSubmitted }) => {
                     </div>
                   ))}
                 </div>
-                <div className="mt-2 text-sm sm:text-lg text-center">Minutes</div>
+                <div className="mt-2 text-sm sm:text-lg text-center">Minut</div>
               </div>
+              <span className="text-xl sm:text-2xl lg:text-3xl text-[#FAD007]">
+                :
+              </span>
 
-              <span className="text-xl sm:text-2xl lg:text-3xl text-[#FAD007]">:</span>
-
-              <div className="flex flex-col items-center text-[#D8D8D8]" data-aos="zoom-in">
+              <div
+                className="flex flex-col items-center text-[#D8D8D8]"
+                data-aos="zoom-in"
+              >
                 <div className="flex space-x-1 sm:space-x-2">
                   {formatDigits(time.seconds).map((digit, index) => (
                     <div
@@ -160,7 +172,9 @@ const Clock = ({ contactRef, formSubmitted }) => {
                     </div>
                   ))}
                 </div>
-                <div className="mt-2 text-sm sm:text-lg text-center">Seconds</div>
+                <div className="mt-2 text-sm sm:text-lg text-center">
+                  Sekund
+                </div>
               </div>
             </div>
 
