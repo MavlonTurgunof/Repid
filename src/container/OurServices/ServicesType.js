@@ -15,13 +15,13 @@ function ServicesType() {
       url: "https://golden-eld.com/",
     },
     {
-      image: "/img/Portfolio1.jpg",
+      image: "/img/Portfolio1.png",
       title: "Shaxsiy Brend",
       category: "Shaxsiy Brend",
       url: "https://instavibe.uz/",
     },
     {
-      image: "/img/Portfolio3.jpg",
+      image: "/img/portfolio3.png",
       title: "English Campus",
       category: "English Campus",
       url: "https://www.theneweducation.uz/",

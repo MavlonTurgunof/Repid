@@ -1,15 +1,15 @@
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import MainHeader from "@/container/HomePage/MainHeader";
 import Faq from "@/container/HomePage/Faq";
 import Team from "@/container/AboutUs/Team";
+import AboutHeader from "@/container/AboutUs/AboutHeader";
 
 function About() {
   return (
     <div>
       <Navbar />
-      <MainHeader />
+      <AboutHeader />
       {/* <About /> */}
       <Team />
       <Faq />

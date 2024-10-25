@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
-
-
 body {
   color: var(--foreground);
   background: var(--background);
@@ -24,15 +20,71 @@ body {
   }
 }
 .swiper-slide-active {
-  transform: scale(1.1); 
+  transform: scale(1.1);
   transition: transform 0.3s ease;
 }
 
 .swiper-slide {
-  opacity: 0.6; 
+  opacity: 0.6;
   transition: opacity 0.3s ease;
 }
 
 .swiper-slide-active {
   opacity: 1; /* Fully visible center slide */
+}
+
+/*700*/
+@font-face {
+  font-family: "BeVietnamPro-Bold";
+  src: url("../../public/fonts/BeVietnamPro-Bold.ttf") format("opentype");
+}
+/*600*/
+@font-face {
+  font-family: "BeVietnamPro-SemiBold";
+  src: url("../../public/fonts/BeVietnamPro-SemiBold.ttf") format("opentype");
+}
+/*500*/
+@font-face {
+  font-family: "BeVietnamPro-Medium";
+  src: url("../../public/fonts/BeVietnamPro-Medium.ttf") format("opentype");
+}
+/*400*/
+@font-face {
+  font-family: "BeVietnamPro-Regular";
+  src: url("../../public/fonts/BeVietnamPro-Regular.ttf") format("opentype");
+}
+/*300*/
+@font-face {
+  font-family: "BeVietnamPro-Light";
+  src: url("../../public/fonts/BeVietnamPro-Light.ttf") format("opentype");
+}
+/*Popins!*400*!*/
+@font-face {
+  font-family: "Poppins-Regular";
+  src: url("../../public/fonts/Poppins-Regular.ttf") format("opentype");
+}
+
+/*700*/
+h1 {
+  font-family: "BeVietnamPro-Bold", sans-serif !important;
+}
+/*600*/
+h2 {
+  font-family: "BeVietnamPro-SemiBold", sans-serif !important;
+}
+/*500*/
+h3 {
+  font-family: "BeVietnamPro-Medium", sans-serif !important;
+}
+/*400*/
+h4 {
+  font-family: "BeVietnamPro-Regular", sans-serif !important;
+}
+/*300*/
+h5 {
+  font-family: "BeVietnamPro-Light", sans-serif !important;
+}
+/*Poppins!*400*!*/
+h6 {
+  font-family: "Poppins-Regular", sans-serif !important;
 }

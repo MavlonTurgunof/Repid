@@ -1,13 +1,13 @@
 import Link from "next/link";
 import React from "react";
 
-function MainHeader({ contactRef }) {
+function AboutHeader({ contactRef }) {
   const scrollToContacts = () => {
     contactRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <header className="relative bg-cover bg-no-repeat  bg-[url('/img/Shade.png'),url('/img/MainHeader.png')] h-[600px] lg:h-[500px] md:h-[450px] sm:h-[400px] text-white">
+    <header className="relative bg-cover bg-no-repeat  bg-[url('/img/bg2.png'),url('/img/bg2.png')] h-[600px] lg:h-[500px] md:h-[450px] sm:h-[400px] text-white">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row px-4 h-full overflow-x-hidden">
         <div className="lg:text-left text-center lg:w-1/2 w-full xl:mt-[8%] mt-[20%] space-y-4 flex flex-col justify-center">
           <h1 className="text-[20px] font-bold sm:text-[18px]">
@@ -48,4 +48,4 @@ function MainHeader({ contactRef }) {
   );
 }
 
-export default MainHeader;
+export default AboutHeader;

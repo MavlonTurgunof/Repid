@@ -19,13 +19,13 @@ function Portfolio() {
       url: "https://golden-eld.com/",
     },
     {
-      image: "/img/Portfolio1.jpg",
+      image: "/img/portfolio1.png",
       title: "Shaxsiy Brend",
       category: "Shaxsiy Brend",
       url: "https://instavibe.uz/",
     },
     {
-      image: "/img/Portfolio3.jpg",
+      image: "/img/portfolio3.png",
       title: "English Campus",
       category: "English Campus",
       url: "https://www.theneweducation.uz/",
@@ -104,7 +104,6 @@ function Portfolio() {
           </h2>
         </div>
 
-        {/* Button Carousel for Mobile */}
         <div
           className="block lg:hidden mb-4 w-auto overflow-hidden"
           data-aos="fade-up"

@@ -19,13 +19,13 @@ function BigPortfolio() {
       url: "https://golden-eld.com/",
     },
     {
-      image: "/img/Portfolio1.jpg",
+      image: "/img/portfolio1.png",
       title: "Shaxsiy Brend",
       category: "Shaxsiy Brend",
       url: "https://instavibe.uz/",
     },
     {
-      image: "/img/Portfolio3.jpg",
+      image: "/img/portfolio3.png",
       title: "English Campus",
       category: "English Campus",
       url: "https://www.theneweducation.uz/",
@@ -38,9 +38,45 @@ function BigPortfolio() {
     },
     {
       image: "/img/Portfolio5.png",
-      title: "Portfolio",
-      category: "Design & Development",
-      url: "https://elements.envato.com/...",
+      title: "Bumen",
+      category: "Branding & Web",
+      url: "https://bumen-guw1i9ofn-oybeks-projects-ffe4c3af.vercel.app/",
+    },
+    {
+      image: "/img/Portfolio6.png",
+      title: "Chery",
+      category: "Branding & Business",
+      url: "https://golden-eld.com/",
+    },
+    {
+      image: "/img/Portfolio6.png",
+      title: "Croma - Agency",
+      category: "Branding & Web",
+      url: "https://golden-eld.com/",
+    },
+    {
+      image: "/img/Portfolio6.png",
+      title: "Croma - Agency",
+      category: "Branding & Web",
+      url: "https://golden-eld.com/",
+    },
+    {
+      image: "/img/Portfolio6.png",
+      title: "Croma - Agency",
+      category: "Branding & Web",
+      url: "https://golden-eld.com/",
+    },
+    {
+      image: "/img/Portfolio6.png",
+      title: "Croma - Agency",
+      category: "Branding & Web",
+      url: "https://golden-eld.com/",
+    },
+    {
+      image: "/img/Portfolio6.png",
+      title: "Croma - Agency",
+      category: "Branding & Web",
+      url: "https://golden-eld.com/",
     },
     {
       image: "/img/Portfolio6.png",
@@ -49,7 +85,7 @@ function BigPortfolio() {
       url: "https://golden-eld.com/",
     },
   ];
-  
+
   const buttons = [
     "All",
     "Web sayt",
