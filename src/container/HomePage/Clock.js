@@ -64,7 +64,7 @@ const Clock = ({ contactRef, formSubmitted }) => {
   };
 
   return (
-    <div className="py-8 px-4 sm:px-6 lg:px-8">
+    <div className="py-8 px-4 sm:px-6 lg:px-8 overflow-y-hidden">
       <div
         className="flex flex-col items-center justify-center h-auto text-black max-w-7xl mx-auto rounded-[26px] py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8"
         style={{
@@ -159,7 +159,7 @@ const Clock = ({ contactRef, formSubmitted }) => {
 
             <button
               onClick={scrollToContacts}
-              className="w-full sm:w-64 h-10 sm:h-12 bg-[#F5941F] text-white rounded-lg text-lg font-bold mt-6"
+              className=" sm:w-64 h-10 sm:h-12 bg-[#F5941F] text-white rounded-lg text-lg font-bold mt-6"
               data-aos="fade-up"
             >
               Murojaat qilish
