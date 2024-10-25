@@ -127,7 +127,7 @@ function Team() {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row mt-10 md:mt-20 overflow-x-hidden">
+    <div className="flex flex-col lg:flex-row mt-10 md:mt-20 overflow-hidden">
       <div className="container mx-auto md:pl-2 text-center md:text-left">
         <h1 className="text-4xl text-[#282B4C] sm:text-5xl md:text-6xl font-bold text-center mb-10">
           Bizning jamoamiz
