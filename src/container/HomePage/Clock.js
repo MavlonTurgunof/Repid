@@ -40,7 +40,7 @@ const Clock = ({ contactRef, formSubmitted }) => {
     const { hours, minutes, seconds } = time;
 
     if (hours === 0 && minutes === 0 && seconds === 0) {
-      return; 
+      return;
     }
 
     if (seconds > 0) {

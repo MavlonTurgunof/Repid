@@ -4,8 +4,8 @@ import React from "react";
 function ServicesHeader({ contactRef }) {
   const scrollToContacts = () => {
     contactRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
-
+  }; 
+ 
   return (
     <header className="relative bg-cover bg-no-repeat  bg-[url('/img/bg3.png'),url('/img/bg3.png')] h-[600px] lg:h-[500px] md:h-[450px] sm:h-[400px] text-white">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row px-4  overflow-x-hidden overflow-y-hidden">

@@ -13,19 +13,13 @@ function Portfolio() {
 
   const projects = [
     {
-      image: "/img/Portfolio2.jpg",
-      title: "GoldenEld All",
-      category: "GoldenEld all",
-      url: "https://golden-eld.com/",
-    },
-    {
-      image: "/img/portfolio1.png",
+      image: "/img/portfolio3.png",
       title: "Shaxsiy Brend",
       category: "Shaxsiy Brend",
       url: "https://instavibe.uz/",
     },
     {
-      image: "/img/portfolio3.png",
+      image: "/img/portfolio1.png",
       title: "English Campus",
       category: "English Campus",
       url: "https://www.theneweducation.uz/",
@@ -46,6 +40,12 @@ function Portfolio() {
       image: "/img/Portfolio6.png",
       title: "Chery",
       category: "Branding & Web",
+      url: "https://golden-eld.com/",
+    },
+    {
+      image: "/img/Portfolio2.jpg",
+      title: "GoldenEld All",
+      category: "GoldenEld all",
       url: "https://golden-eld.com/",
     },
   ];
@@ -162,10 +162,6 @@ function Portfolio() {
                   objectFit="cover"
                   className="rounded-lg"
                 />
-                <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-[#1D1C34] to-[#2B2F53] rounded-[6px]">
-                  <h3 className="text-lg font-semibold">{project.title}</h3>
-                  <p className="text-sm text-gray-400">{project.category}</p>
-                </div>
               </a>
             ))}
           </Slider>
@@ -173,25 +169,18 @@ function Portfolio() {
 
         <div className="hidden lg:grid grid-cols-1 md:grid-cols-3 xl:gap-8 lg:gap-4 justify-items-center">
           {projects.map((project, index) => (
-            <div
+            <a
               key={index}
-              className="overflow-hidden shadow-lg w-full h-[300px] bg-cover bg-center rounded-lg"
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative overflow-hidden shadow-lg w-full h-[400px] bg-cover bg-center rounded-lg"
               style={{ backgroundImage: `url(${project.image})` }}
               data-aos="zoom-in"
               data-aos-delay={`${index * 100}`}
             >
-              <div
-                className="mt-[55%] rounded-[6px] mx-[4%] p-[4%]"
-                style={{
-                  backgroundImage: `linear-gradient(270deg,  rgba(29,28,52,1) 30%, rgba(43,47,83,1) 100%)`,
-                }}
-              >
-                <a href={project.url} target="_blank" rel="noopener noreferrer">
-                  <h3 className="text-xl font-semibold">{project.title}</h3>
-                  <p className="text-sm text-gray-400">{project.category}</p>
-                </a>
-              </div>
-            </div>
+              {/* Additional content if needed */}
+            </a>
           ))}
         </div>
       </div>
