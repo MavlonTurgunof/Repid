@@ -40,7 +40,7 @@ const Clock = ({ contactRef, formSubmitted }) => {
     const { hours, minutes, seconds } = time;
 
     if (hours === 0 && minutes === 0 && seconds === 0) {
-      return;
+      return; 
     }
 
     if (seconds > 0) {
@@ -179,8 +179,8 @@ const Clock = ({ contactRef, formSubmitted }) => {
 
             <button
               onClick={scrollToContacts}
-              className=" sm:w-64 h-10 sm:h-12 bg-[#F5941F] text-white rounded-lg text-lg font-bold mt-6"
-              data-aos="fade-up"
+              className=" sm:w-64 h-10 sm:h-12 bg-[#F5941F] text-white rounded-lg md:text-lg px-5 md:px-0 font-bold mt-6"
+              // data-aos="fade-up"
             >
               Murojaat qilish
             </button>
