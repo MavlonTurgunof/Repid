@@ -3,6 +3,7 @@ import { AiOutlinePlus, AiOutlineClose } from "react-icons/ai";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+
 const faqs = [
   {
     id: 1,
@@ -49,8 +50,7 @@ function Faq() {
 
   return (
     <div className="container mx-auto px-4 lg:mb-20 mb-16">
-      {/* FAQ Section */}
-      <div className="mt-32 max-w-7xl mx-auto">
+      <div className="mt-16 md:mt-32 max-w-3xl lg:max-w-7xl mx-auto">
         {faqs.map((faq, index) => (
           <div
             key={index}
@@ -63,28 +63,23 @@ function Faq() {
               className="flex justify-between items-center w-full text-left"
               data-aos="fade-right"
             >
-              {/* Question Number and Text */}
-              <div className="flex items-center space-x-4">
+              <div className="flex items-center space-x-3 lg:space-x-4">
                 <div
-                  className={`text-2xl font-semibold ${
-                    activeIndex === index
-                      ? "text-[#7765c4] text-3xl"
-                      : "text-[#a1a1a1] text-3xl"
+                  className={`text-xl md:text-2xl lg:text-3xl font-semibold ${
+                    activeIndex === index ? "text-[#7765c4]" : "text-[#a1a1a1]"
                   }`}
                 >
                   {faq.id < 10 ? `0${faq.id}` : faq.id}
                 </div>
                 <div
-                  className={`text-lg md:text-xl font-semibold ${
+                  className={`text-sm md:text-lg lg:text-xl font-semibold ${
                     activeIndex === index ? "text-black" : "text-[#333333]"
                   }`}
                 >
                   {faq.question}
                 </div>
               </div>
-
-              {/* Icon for expanding/collapsing */}
-              <div className="text-xl ml-2">
+              <div className="text-lg md:text-xl lg:text-2xl ml-2">
                 {activeIndex === index ? (
                   <AiOutlineClose className="text-[#333333]" />
                 ) : (
@@ -92,9 +87,8 @@ function Faq() {
                 )}
               </div>
             </button>
-
             <div
-              className={`mt-4 text-gray-600 text-sm md:text-base transition-all duration-500 ease-in-out overflow-hidden ${
+              className={`mt-2 md:mt-4 text-gray-600 text-xs md:text-sm lg:text-base transition-all duration-500 ease-in-out overflow-hidden ${
                 activeIndex === index
                   ? "max-h-40 opacity-100"
                   : "max-h-0 opacity-0"

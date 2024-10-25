@@ -9,7 +9,6 @@ import MainHeader from "@/container/HomePage/MainHeader";
 import Clock from "@/container/HomePage/Clock";
 import Portfolio from "@/container/HomePage/Portfolio";
 import Partners from "@/container/HomePage/Partners";
-import { toast } from "react-toastify";
 
 function index() {
   const contactRef = useRef(null);
@@ -17,7 +16,6 @@ function index() {
 
   const handleFormSubmit = () => {
     setFormSubmitted(true);
-    // toast.success("Congratulations! You've received the discount!");
   };
 
   return (
