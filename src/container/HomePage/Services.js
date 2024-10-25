@@ -110,7 +110,6 @@ function Services() {
 
   return (
     <div className="container mx-auto px-5 md:px-10 lg:px-20 lg:mt-20 mt-4">
-      {/* Heading Section */}
       <div className="text-center mb-10">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#282B4C]">
           Bizning Xizmatlar
@@ -123,10 +122,10 @@ function Services() {
       <Slider {...settings} className="pb-10">
         {services.map((service) => (
           <div className="px-3" key={service.id}>
-            <div className="bg-white p-5 rounded-lg shadow-md">
-              <div className="flex h-full flex-col gap-5">
+            <div className="bg-white p-6 mb-4 rounded-lg shadow-md">
+              <div className="flex h-[400px] flex-col gap-5">
                 <div>
-                  <Image src={service.image} alt={service.title} width={500} height={300} /> {/* Set width and height */}
+                  <Image src={service.image} alt={service.title} width={500} height={300} /> 
                 </div>
                 <h4 className="text-xl font-bold">{service.title}</h4>
                 <p>{service.description}</p>

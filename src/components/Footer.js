@@ -2,8 +2,8 @@
 import React, { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import AOS from "aos"; // Import AOS for animations
-import "aos/dist/aos.css"; // Import AOS styles
+import AOS from "aos";
+import "aos/dist/aos.css";
 import Logo2 from "../../public/icon/Logo2.svg";
 import Facebook from "../../public/icon/facebook.svg";
 import Instagram from "../../public/icon/instagram.svg";
