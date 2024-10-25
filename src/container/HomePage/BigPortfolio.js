@@ -40,7 +40,7 @@ function BigPortfolio() {
       image: "/img/Portfolio6.svg",
       title: "Chery",
       category: "Branding & Business",
-      url: "https://golden-eld.com/",
+      url: "#",
     },
     {
       image: "/img/Portfolio7.svg",
