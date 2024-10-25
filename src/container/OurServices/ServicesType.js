@@ -1,6 +1,8 @@
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import React, { useState } from "react";
 import Slider from "react-slick";
+import AOS from "aos";
+import "aos/dist/aos.css"; // Import AOS styles
 
 function ServicesType() {
   const [selected, setSelected] = useState("All");
@@ -88,18 +90,22 @@ function ServicesType() {
     ],
   };
 
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
+
   return (
     <section className="bg-white text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-8">
+        <div className="text-center mb-8" data-aos="fade-up">
           <h2 className="text-[36px] sm:text-[42px] lg:text-[52px] text-[#282B4C] font-bold">
             Xizmat Turlari
           </h2>
         </div>
 
         {/* Button Carousel for Mobile */}
-        <div className="block lg:hidden mb-4 w-auto overflow-hidden">
+        <div className="block lg:hidden mb-4 w-auto overflow-hidden" data-aos="fade-up">
           <Slider {...buttonCarouselSettings}>
             {buttons.map((button) => (
               <div key={button} className="px-2">
@@ -119,7 +125,7 @@ function ServicesType() {
         </div>
 
         {/* Button Grid for Desktop */}
-        <div className="hidden lg:flex flex-row gap-4 mb-4">
+        <div className="hidden lg:flex flex-row gap-4 mb-4" data-aos="fade-up">
           {buttons.map((button) => (
             <button
               key={button}
@@ -135,7 +141,7 @@ function ServicesType() {
           ))}
         </div>
 
-        <div className="block lg:hidden overflow-hidden">
+        <div className="block lg:hidden overflow-hidden" data-aos="fade-up">
           <Slider {...settings}>
             {projects.map((project, index) => (
               <a
@@ -164,13 +170,14 @@ function ServicesType() {
           {projects.map((project, index) => (
             <div
               key={index}
-              className=" overflow-hidden shadow-lg w-full h-[300px] bg-cover bg-center  rounded-lg"
+              className="overflow-hidden shadow-lg w-full h-[300px] bg-cover bg-center rounded-lg"
               style={{ backgroundImage: `url(${project.image})` }}
+              data-aos="fade-up"
             >
               <div
                 className="mt-[55%] rounded-[6px] mx-[4%] p-[4%]"
                 style={{
-                  backgroundImage: `linear-gradient(270deg,  rgba(29,28,52,1) 30%, rgba(43,47,83,1) 100%)`,
+                  backgroundImage: `linear-gradient(270deg, rgba(29,28,52,1) 30%, rgba(43,47,83,1) 100%)`,
                 }}
               >
                 <a href={project.url} target="_blank" rel="noopener noreferrer">

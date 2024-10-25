@@ -1,11 +1,73 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Slider from "react-slick";
-import Image1 from "../../../public/img/image1.png";
-import Image2 from "../../../public/img/image2.png";
-import Image3 from "../../../public/img/image3.png";
 
 function Services() {
+  const [services, setServices] = useState([]);
+
+  const servicesNew = [
+    {
+      "id": 1,
+      "title": "App Xizmati",
+      "description": "APP xizmati mobil foydalanuvchilar uchun qulay va funksional ilovalarni yaratish va qo‘llab-quvvatlashni ta'minlaydi.",
+      "image": "/img/image1.png"
+    },
+    {
+      "id": 2,
+      "title": "Web sayt Xizmatimiz",
+      "description": "Web sayt kompaniyani internetda ko'rinadigan qilib, savdo, muloqot, va marketing imkoniyatlarini kengaytirish uchun muhim vositadir.",
+      "image": "/img/image2.png"
+    },
+    {
+      "id": 3,
+      "title": "Naming Xizmati",
+      "description": "Bu kompaniyalar, mahsulotlar, xizmatlar yoki brendlar uchun nom tanlash jarayonidir. Yaxshi nom bozordagi pozitsiyasiga katta ta’sir ko‘rsatadi.",
+      "image": "/img/image3.png"
+    },
+    {
+      "id": 4,
+      "title": "Logo Xizmati",
+      "description": "Bu kompaniyalar, mahsulotlar, xizmatlar yoki brendlar uchun nom tanlash jarayonidir. Yaxshi nom bozordagi pozitsiyasiga katta ta’sir ko‘rsatadi.",
+      "image": "/img/image3.png"
+    },
+    {
+      "id": 5,
+      "title": "Brendbook va Guidebook",
+      "description": "Brendbook — brendning umumiy ko‘rinishi va o‘ziga xosligini belgilaydi, Guidebook esa brendni qanday boshqarish va ishga tushirish bo‘yicha amaliy ko'rsatma.",
+      "image": "/img/image3.png"
+    },
+    {
+      "id": 6,
+      "title": "SEO Xizmati",
+      "description": "SEOning asosiy maqsadi — saytni qidiruv natijalarining yuqori pozitsiyalariga chiqarish orqali ko‘proq organik trafik jalb qilishdir.",
+      "image": "/img/image3.png"
+    },
+    {
+      "id": 7,
+      "title": "CRM Xizmati",
+      "description": "Mijozlar bilan munosabatlarni boshqarish tizimi bo‘lib, kompaniyalarga mijozlar bilan aloqalarni yaxshilash, savdo jarayonlarini optimallashtirish imkonini beradi.",
+      "image": "/img/image3.png"
+    },
+    {
+      "id": 8,
+      "title": "Telegram Bot Xizmati",
+      "description": "Telegram botlar kompaniyalar va foydalanuvchilar o‘rtasidagi aloqani yaxshilash, ko‘plab vazifalarni qilishda foydali vosita hisoblanadi.",
+      "image": "/img/image3.png"
+    },
+    {
+      "id": 9,
+      "title": "Yandex Eats, Uzum Tezkor, Express24 ga ulab berish xizmati",
+      "description": "Bu kompaniyalar bilan shartnoma qilish va dastafka xizmatini yo'lga qo'yish.",
+      "image": "/img/image3.png"
+    },
+    {
+      "id": 10,
+      "title": "SMM Xizmati",
+      "description": "Biz sizning brendingizni ijtimoiy tarmoqlarda kengaytirib beramiz. Kontent yaratish va reklama kampaniyalarini boshqarishda ko‘maklashib, biznesingizni yangi bosqichga olib chiqamiz.",
+      "image": "/img/image3.png"
+    }
+  ];
+
   const settings = {
     dots: false,
     infinite: true,
@@ -28,6 +90,24 @@ function Services() {
     ],
   };
 
+  useEffect(() => {
+    const fetchServices = async () => {
+      try {
+        const response = await fetch("/services.json");
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const data = await response.json();
+        setServices(data);
+      } catch (error) {
+        console.error("Failed to fetch services, using default data", error);
+        setServices(servicesNew); 
+      }
+    };
+
+    fetchServices();
+  }, []);
+
   return (
     <div className="container mx-auto px-5 md:px-10 lg:px-20 lg:mt-20 mt-4">
       {/* Heading Section */}
@@ -40,197 +120,23 @@ function Services() {
         </p>
       </div>
 
-      <Slider {...settings} className="pb-10 overflow-hidden">
-        {/* Service Card 1 */}
-        <div className="px-3">
-          <div className="bg-white p-7 rounded-lg shadow-md">
-            <div className="flex h-full flex-col gap-5">
-              <div>
-                <Image src={Image1} alt="Service 1" />
+      <Slider {...settings} className="pb-10">
+        {services.map((service) => (
+          <div className="px-3" key={service.id}>
+            <div className="bg-white p-5 rounded-lg shadow-md">
+              <div className="flex h-full flex-col gap-5">
+                <div>
+                  <Image src={service.image} alt={service.title} width={500} height={300} /> {/* Set width and height */}
+                </div>
+                <h4 className="text-xl font-bold">{service.title}</h4>
+                <p>{service.description}</p>
               </div>
-              <h4 className="text-xl font-bold">App Xizmati</h4>
-              <p>
-                APP xizmati mobil foydalanuvchilar uchun qulay va funksional
-                ilovalarni yaratish va qo‘llab-quvvatlashni ta'minlaydi.
-              </p>
+              <button className="mt-4 border border-gray-500 p-2 rounded-md text-xl w-full">
+                Malumotlar
+              </button>
             </div>
-            <button className="mt-4 border border-gray-500 p-2 rounded-md text-xl w-full">
-              Malumotlar
-            </button>
           </div>
-        </div>
-        {/* Service Card 2 */}
-        <div className="px-3">
-          <div className="bg-white p-5 rounded-lg shadow-md">
-            <div className="flex h-full flex-col gap-5">
-              <div>
-                <Image src={Image2} alt="Service 2" />
-              </div>
-              <h4 className="text-xl font-bold">Web sayt Xizmatimiz </h4>
-              <p>
-                Web sayt kompaniyani internetda ko'rinadigan qilib, savdo,
-                muloqot, va marketing imkoniyatlarini kengaytirish uchun muhim
-                vositadir.
-              </p>
-            </div>
-            <button className="mt-4 border border-gray-500 p-2 rounded-md text-xl w-full">
-              Malumotlar
-            </button>
-          </div>
-        </div>
-        {/* Service Card 3 */}
-        <div className="px-3">
-          <div className="bg-white p-5 rounded-lg shadow-md">
-            <div className="flex h-full flex-col gap-5">
-              <div>
-                <Image src={Image3} alt="Service 3" />
-              </div>
-              <h4 className="text-xl font-bold">Naming Xizmati</h4>
-              <p>
-                Bu kompaniyalar, mahsulotlar, xizmatlar yoki brendlar uchun nom
-                tanlash jarayonidir. Yaxshi nom bozordagi pozitsiyasiga katta
-                ta’sir ko‘rsatadi.
-              </p>
-            </div>
-            <button className="mt-4 border border-gray-500 p-2 rounded-md text-xl w-full">
-              Malumotlar
-            </button>
-          </div>
-        </div>
-        {/* Service Card 4 */}
-        <div className="px-3">
-          <div className="bg-white p-5 rounded-lg shadow-md">
-            <div className="flex h-full flex-col gap-5">
-              <div>
-                <Image src={Image3} alt="Service 4" />
-              </div>
-              <h4 className="text-xl font-bold">Logo Xizmati</h4>
-              <p>
-                Bu kompaniyalar, mahsulotlar, xizmatlar yoki brendlar uchun nom
-                tanlash jarayonidir. Yaxshi nom bozordagi pozitsiyasiga katta
-                ta’sir ko‘rsatadi.
-              </p>
-            </div>
-            <button className="mt-4 border border-gray-500 p-2 rounded-md text-xl w-full">
-              Malumotlar
-            </button>
-          </div>
-        </div>
-        {/* Service Card 5 */}
-        <div className="px-3">
-          <div className="bg-white p-5 rounded-lg shadow-md">
-            <div className="flex h-full flex-col gap-5">
-              <div>
-                <Image src={Image3} alt="Service 3" />
-              </div>
-              <h4 className="text-xl font-bold">Brendbook va Guidebook</h4>
-              <p>
-                Brendbook — brendning umumiy ko‘rinishi va o‘ziga xosligini
-                belgilaydi, Guidebook esa brendni qanday boshqarish va ishga
-                tushirish bo‘yicha amaliy ko'rsatma.
-              </p>
-            </div>
-            <button className="mt-4 border border-gray-500 p-2 rounded-md text-xl w-full">
-              Malumotlar
-            </button>
-          </div>
-        </div>
-        {/* Service Card 5 */}
-        <div className="px-3">
-          <div className="bg-white p-5 rounded-lg shadow-md">
-            <div className="flex h-full flex-col gap-5">
-              <div>
-                <Image src={Image3} alt="Service 3" />
-              </div>
-              <h4 className="text-xl font-bold">SEO Xizmati</h4>
-              <p>
-                SEOning asosiy maqsadi — saytni qidiruv natijalarining yuqori
-                pozitsiyalariga chiqarish orqali ko‘proq organik trafik jalb
-                qilishdir.
-              </p>
-            </div>
-            <button className="mt-4 border border-gray-500 p-2 rounded-md text-xl w-full">
-              Malumotlar
-            </button>
-          </div>
-        </div>
-        {/* Service Card 6 */}
-        <div className="px-3">
-          <div className="bg-white p-5 rounded-lg shadow-md">
-            <div className="flex h-full flex-col gap-5">
-              <div>
-                <Image src={Image3} alt="Service 3" />
-              </div>
-              <h4 className="text-xl font-bold">CRM Xizmati</h4>
-              <p>
-                Mijozlar bilan munosabatlarni boshqarish tizimi bo‘lib,
-                kompaniyalarga mijozlar bilan aloqalarni yaxshilash, savdo
-                jarayonlarini optimallashtirish imkonini beradi.
-              </p>
-            </div>
-            <button className="mt-4 border border-gray-500 p-2 rounded-md text-xl w-full">
-              Malumotlar
-            </button>
-          </div>
-        </div>{" "}
-        {/* Service Card 6 */}
-        <div className="px-3">
-          <div className="bg-white p-5 rounded-lg shadow-md">
-            <div className="flex h-full flex-col gap-5">
-              <div>
-                <Image src={Image3} alt="Service 3" />
-              </div>
-              <h4 className="text-xl font-bold">Telegram Bot Xizmati</h4>
-              <p>
-                Telegram botlar kompaniyalar va foydalanuvchilar o‘rtasidagi
-                aloqani yaxshilash, ko‘plab vazifalarni qilishda foydali vosita
-                hisoblanadi.
-              </p>
-            </div>
-            <button className="mt-4 border border-gray-500 p-2 rounded-md text-xl w-full">
-              Malumotlar
-            </button>
-          </div>
-        </div>
-        {/* Service Card 6 */}
-        <div className="px-3">
-          <div className="bg-white p-[20px] rounded-lg shadow-md">
-            <div className="flex h-full flex-col gap-5">
-              <div>
-                <Image src={Image3} alt="Service 3" />
-              </div>
-              <h4 className="text-xl font-bold">
-                Yandex Eats , Uzum Tezkor , Express24 ga ulab berish xizmati
-              </h4>
-              <p>
-                Bu kompaniyalar bilan shartnoma qilish va dastafka xizmatini
-                yo'lga qo'yish.
-              </p>
-            </div>
-            <button className="mt-4 border border-gray-500 p-2 rounded-md text-xl w-full">
-              Malumotlar
-            </button>
-          </div>
-        </div>{" "}
-        <div className="px-3">
-          <div className="bg-white p-[20px] rounded-lg shadow-md">
-            <div className="flex h-full flex-col gap-5">
-              <div>
-                <Image src={Image3} alt="Service 3" />
-              </div>
-              <h4 className="text-xl font-bold">SMM Xizmati</h4>
-              <p>
-                Biz sizning brendingizni ijtimoiy tarmoqlarda kengaytirib
-                beramiz. Kontent yaratish va reklama kampaniyalarini
-                boshqarishda ko‘maklashib, biznesingizni yangi bosqichga olib
-                chiqamiz.
-              </p>
-            </div>
-            <button className="mt-4 border border-gray-500 p-2 rounded-md text-xl w-full">
-              Malumotlar
-            </button>
-          </div>
-        </div>
+        ))}
       </Slider>
     </div>
   );

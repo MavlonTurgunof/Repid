@@ -1,9 +1,15 @@
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function Portfolio() {
   const [selected, setSelected] = useState("All");
+
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
 
   const projects = [
     {
@@ -61,7 +67,7 @@ function Portfolio() {
     slidesToScroll: 1,
     responsive: [
       {
-        breakpoint: 1024, // For mobile version
+        breakpoint: 1024,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -74,12 +80,12 @@ function Portfolio() {
     dots: false,
     infinite: false,
     speed: 500,
-    slidesToShow: 3, // Show 3 buttons at once on mobile
+    slidesToShow: 3,
     slidesToScroll: 1,
-    arrows: false, // Disable arrows for mobile
+    arrows: false,
     responsive: [
       {
-        breakpoint: 1024, // Only for smaller screens
+        breakpoint: 1024,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
@@ -92,14 +98,17 @@ function Portfolio() {
     <section className="bg-white text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-8">
+        <div className="text-center mb-8" data-aos="fade-up">
           <h2 className="text-[36px] sm:text-[42px] lg:text-[52px] text-[#282B4C] font-bold">
             Portfolio
           </h2>
         </div>
 
         {/* Button Carousel for Mobile */}
-        <div className="block lg:hidden mb-4 w-auto overflow-hidden">
+        <div
+          className="block lg:hidden mb-4 w-auto overflow-hidden"
+          data-aos="fade-up"
+        >
           <Slider {...buttonCarouselSettings}>
             {buttons.map((button) => (
               <div key={button} className="px-2">
@@ -119,7 +128,7 @@ function Portfolio() {
         </div>
 
         {/* Button Grid for Desktop */}
-        <div className="hidden lg:flex flex-row gap-4 mb-4">
+        <div className="hidden lg:flex flex-row gap-4 mb-4" data-aos="fade-up">
           {buttons.map((button) => (
             <button
               key={button}
@@ -144,6 +153,8 @@ function Portfolio() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="relative overflow-hidden shadow-lg w-full h-[400px]"
+                data-aos="zoom-in"
+                data-aos-delay={`${index * 100}`}
               >
                 <Image
                   src={project.image}
@@ -165,8 +176,10 @@ function Portfolio() {
           {projects.map((project, index) => (
             <div
               key={index}
-              className=" overflow-hidden shadow-lg w-full h-[300px] bg-cover bg-center  rounded-lg"
+              className="overflow-hidden shadow-lg w-full h-[300px] bg-cover bg-center rounded-lg"
               style={{ backgroundImage: `url(${project.image})` }}
+              data-aos="zoom-in"
+              data-aos-delay={`${index * 100}`}
             >
               <div
                 className="mt-[55%] rounded-[6px] mx-[4%] p-[4%]"

@@ -1,4 +1,4 @@
-// Form2.js
+// Form.js
 import React, { useState } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
@@ -12,12 +12,15 @@ function Form({ onSubmit }) {
     phone: "",
     textarea: "",
   });
+  
   const SENDING_TEXT = JSON.stringify(inputValue).replace(/[\\^+[\]{}"-]/g, "");
   const url = `https://api.telegram.org/bot${REACT_APP_BOT_TOKEN}/sendMessage?chat_id=${REACT_APP_CHAT_ID}&parse_mode=html&text=${SENDING_TEXT}`;
+  
   const handleChange = (e) => {
     const { name, value } = e.target;
     setInputValue({ ...inputValue, [name]: value });
   };
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
@@ -29,13 +32,16 @@ function Form({ onSubmit }) {
       .catch((err) => toast.error(err.message))
       .finally(() => setInputValue({ name: "", phone: "", textarea: "" }));
   };
+  
   return (
     <div>
       <form
         onSubmit={handleSubmit}
         className="space-y-4 lg:w-[600px] lg:mb-0 mb-20"
+        data-aos="fade-up" // Animation for the entire form
+        data-aos-duration="1000" // Duration of the animation
       >
-        <div>
+        <div data-aos="fade-right" data-aos-duration="1000">
           <input
             type="text"
             name="name"
@@ -46,7 +52,7 @@ function Form({ onSubmit }) {
           />
         </div>
 
-        <div>
+        <div data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
           <input
             type="tel"
             name="phone"
@@ -57,7 +63,7 @@ function Form({ onSubmit }) {
           />
         </div>
 
-        <div>
+        <div data-aos="fade-right" data-aos-duration="1000" data-aos-delay="400">
           <textarea
             name="textarea"
             value={inputValue.textarea}
@@ -68,12 +74,14 @@ function Form({ onSubmit }) {
           ></textarea>
         </div>
 
-        <button
-          type="submit"
-          className="w-full bg-[#f48c06] text-white py-3 rounded-lg hover:bg-[#e07c04] transition-all"
-        >
-          Yuborish
-        </button>
+        <div data-aos="fade-right" data-aos-duration="1000" data-aos-delay="600">
+          <button
+            type="submit"
+            className="w-full bg-[#f48c06] text-white py-3 rounded-lg hover:bg-[#e07c04] transition-all"
+          >
+            Yuborish
+          </button>
+        </div>
       </form>
       <ToastContainer />
     </div>

@@ -1,7 +1,9 @@
-import React from "react";
+// Footer.js
+import React, { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import AOS from "aos";
+import AOS from "aos"; // Import AOS for animations
+import "aos/dist/aos.css"; // Import AOS styles
 import Logo2 from "../../public/icon/Logo2.svg";
 import Facebook from "../../public/icon/facebook.svg";
 import Instagram from "../../public/icon/instagram.svg";
@@ -12,12 +14,16 @@ import PhoneIcon from "../../public/icon/phone.svg";
 function Footer() {
   const currentYear = new Date().getFullYear();
 
+  useEffect(() => {
+    AOS.init(); 
+  }, []);
+
   return (
     <footer className="">
-      <div className="overflow-hidden bg-[#222341] py-10  text-white">
+      <div className="overflow-hidden bg-[#222341] py-10 text-white">
         <div className="container mx-auto px-6 lg:px-20">
           <div className="grid-cols-1 flex-col gap-8 max-md:flex max-md:items-center max-md:justify-center md:grid md:grid-cols-3">
-            <div className="flex flex-col items-start gap-4">
+            <div className="flex flex-col items-start gap-4" data-aos="fade-right" data-aos-duration="1000">
               <Link href={"#"}>
                 <Image
                   src={Logo2}
@@ -28,74 +34,73 @@ function Footer() {
                 />
               </Link>
               <div className="mt-4 flex items-center justify-center space-x-4 max-md:mb-6 max-md:w-full max-md:gap-10">
-                <Link href={"/"} className="max-md:scale-125">
+                <Link href={"/"} className="max-md:scale-125" data-aos="zoom-in" data-aos-duration="1000">
                   <Image
                     src={Telegram}
                     width={30}
                     height={30}
-                    alt="facebook icon"
+                    alt="Telegram icon"
                   />
                 </Link>
                 <Link
                   href={"https://www.instagram.com/repid.agency/"}
-                  className="max-md:scale-125"
-                >
+                  className="max-md:scale-125" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
                   <Image
                     src={Instagram}
                     width={30}
                     height={30}
-                    alt="facebook icon"
+                    alt="Instagram icon"
                   />
                 </Link>
-                <Link href="/" className="max-md:scale-125">
+                <Link href="/" className="max-md:scale-125" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400">
                   <Image
                     src={YouTube}
                     width={30}
                     height={30}
-                    alt="facebook icon"
+                    alt="YouTube icon"
                   />
                 </Link>
-                <Link href="/" className="max-md:scale-125">
+                <Link href="/" className="max-md:scale-125" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="600">
                   <Image
                     src={Facebook}
                     width={30}
                     height={30}
-                    alt="facebook icon"
+                    alt="Facebook icon"
                   />
                 </Link>
               </div>
             </div>
 
-            <div className="max-md:hidden">
+            <div className="max-md:hidden" data-aos="fade-up" data-aos-duration="1000">
               <h3 className="mb-6 text-xl font-semibold">Pages</h3>
               <ul className="mt-12 space-y-4">
                 <li>
                   <Link href="/" className="hover:text-gray-300">
-                    Home
+                    Biz haqimizda
                   </Link>
                 </li>
                 <li>
-                  <Link href="/" className="hover:text-gray-300">
-                    About
+                  <Link href="/Aboutpage" className="hover:text-gray-300">
+                    Jamoamiz
                   </Link>
                 </li>
                 <li>
-                  <Link href="/" className="hover:text-gray-300">
-                    Our services
+                  <Link href="/OurService" className="hover:text-gray-300">
+                    Xizmatlarimiz
                   </Link>
                 </li>
                 <li>
-                  <Link href="/" className="hover:text-gray-300">
+                  <Link href="/Portfolio" className="hover:text-gray-300">
                     Portfolio
                   </Link>
                 </li>
               </ul>
             </div>
 
-            <div>
-              <h3 className="mb-12 text-lg font-semibold max-md:hidden">
+            <div data-aos="fade-up" data-aos-duration="1000" className="flex flex-col items-start">
+              <Link href="/Contactpage" className="mb-12 text-lg font-semibold max-md:hidden">
                 Contact
-              </h3>
+              </Link>
               <p className="mb-4 text-lg max-md:hidden">Contact Us</p>
               <ul className="space-y-8 max-md:space-y-7">
                 <li className="flex items-center space-x-2 max-md:justify-center max-md:gap-2">
@@ -110,7 +115,7 @@ function Footer() {
                     (97) 101-66-00
                   </Link>
                 </li>
-                <li className="flex items-center space-x-2  max-md:justify-center max-md:gap-2">
+                <li className="flex items-center space-x-2 max-md:justify-center max-md:gap-2">
                   <Image
                     src={PhoneIcon}
                     width={35}

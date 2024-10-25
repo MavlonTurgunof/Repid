@@ -4,10 +4,9 @@ import Form from "./Form";
 
 const Contact = ({ handleFormSubmit }) => {
   return (
-    <div className="bg-[url('/img/contact.png')] h-[800px] bg-no-repeat bg-center bg-cover p-5">
+    <div className="bg-[url('/img/contact.png')] h-[700px] bg-no-repeat bg-center bg-cover p-5">
       {/* Content Section */}
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row h-full w-full justify-between container mx-auto space-y-5 lg:space-y-0 lg:mt-[15%]">
-        {/* Left Section: Contact Info */}
+      <div className="max-w-7xl  flex flex-col lg:flex-row h-full w-full justify-between container mx-auto space-y-5 lg:space-y-0 lg:mt-[15%]">
         <div className="text-white lg:w-1/2 w-full text-center lg:text-left space-y-5">
           <h2 className="text-4xl lg:text-5xl font-bold mb-4 max-sm:text-3xl">
             Biz bilan <span className="text-[#f48c06]">bog'lanish </span>

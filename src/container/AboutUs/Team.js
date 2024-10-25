@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
 import Link from "next/link";
+import AOS from "aos"; // Import AOS
+import "aos/dist/aos.css"; // Import AOS styles
 
 const coworkers = [
   {
@@ -43,7 +45,7 @@ const coworkers = [
     },
   },
   {
-    id: "3",
+    id: "4",
     name: "Soliyev Nodirbek",
     position: "SEO Mutahasisi",
     img: "img/Nodirbek.png",
@@ -56,7 +58,7 @@ const coworkers = [
     },
   },
   {
-    id: "3",
+    id: "5",
     name: "Afzal Pulatov",
     position: "UX/UI Dizayner",
     img: "img/Afzal.png",
@@ -69,7 +71,7 @@ const coworkers = [
     },
   },
   {
-    id: "3",
+    id: "6",
     name: "Anvar Maqsudov",
     position: "Grafik Dizayner",
     img: "img/Anvar.png",
@@ -82,7 +84,7 @@ const coworkers = [
     },
   },
   {
-    id: "3",
+    id: "7",
     name: "Shahzod Burhanov",
     position: "Flutter Dasturchisi",
     img: "img/Shahzod.png",
@@ -95,7 +97,7 @@ const coworkers = [
     },
   },
   {
-    id: "3",
+    id: "8",
     name: "Mavlon Turgunov",
     position: "Frontend Dastuchisi",
     img: "img/Mavlon.png",
@@ -110,6 +112,10 @@ const coworkers = [
 ];
 
 function Team() {
+  useEffect(() => {
+    AOS.init(); 
+  }, []);
+
   const renderStars = (rating) => {
     return Array(rating)
       .fill(0)
@@ -129,18 +135,21 @@ function Team() {
         <div className="container overflow-visible mx-auto py-10">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {coworkers.map((coworker) => (
-              <div key={coworker.id} className="text-center px-4">
+              <div
+                key={coworker.id}
+                className="text-center px-4"
+                data-aos="fade-up" // AOS animation
+                data-aos-duration="800" // Duration of the animation
+              >
                 <div className="cursor-pointer group">
                   <div className="relative overflow-hidden flex justify-center items-center h-[300px]">
                     <img
                       src={coworker.img}
                       alt={coworker.name}
-                      className=" object-contain h-[300px] w-96 rounded-lg transition duration-300 ease-in-out bg-gradient-to-r from-[#2B2F5399] to-[#2B2F5399]"
+                      className="object-contain h-[300px] w-96 rounded-lg transition duration-300 ease-in-out bg-gradient-to-r from-[#2B2F5399] to-[#2B2F5399]"
                     />
                   </div>
-                  <h2 className="mt-4 text-lg font-semibold">
-                    {coworker.name}
-                  </h2>
+                  <h2 className="mt-4 text-lg font-semibold">{coworker.name}</h2>
                   <p className="text-gray-500">{coworker.position}</p>
                   <div className="mt-2">{renderStars(coworker.rating)}</div>
                   <div className="flex justify-center space-x-4 mt-4">
