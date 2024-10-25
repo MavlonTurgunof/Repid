@@ -44,7 +44,7 @@ function Portfolio() {
     },
     {
       image: "/img/Portfolio6.png",
-      title: "Croma - Agency",
+      title: "Chery",
       category: "Branding & Web",
       url: "https://golden-eld.com/",
     },

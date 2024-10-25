@@ -31,7 +31,7 @@ function index() {
       <Faq />
       <Clock contactRef={contactRef} />
       <Portfolio />
-      <Partners />
+      {/* <Partners /> */}
       <Footer />
     </div>
   );

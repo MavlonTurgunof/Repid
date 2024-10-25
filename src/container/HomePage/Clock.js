@@ -39,9 +39,8 @@ const Clock = ({ contactRef, formSubmitted }) => {
   const updateTime = () => {
     const { hours, minutes, seconds } = time;
 
-    // Check if the countdown has finished
     if (hours === 0 && minutes === 0 && seconds === 0) {
-      return; // Keep the time at 00:00:00 and stop updating
+      return; 
     }
 
     if (seconds > 0) {

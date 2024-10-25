@@ -25,19 +25,17 @@ function AboutHeader({ contactRef }) {
           </p>
           {/* Buttons */}
           <div
-            className="mt-[10%] flex flex-row gap-6 justify-center lg:justify-start items-center"
-            data-aos="fade-up"
-            data-aos-delay="300"
+            className="mt-[40px] flex flex-row gap-6 justify-center lg:justify-start items-center"
           >
             <Link
               href="/Contactpage"
-              className="bg-[#F5941F] text-white xl:px-6 px-4 py-3 rounded-lg font-medium text-center"
+              className="bg-[#F5941F] text-white xl:px-6 px-4 py-3 mt-7 rounded-lg font-medium text-center"
             >
               Biz bilan bog'laning
             </Link>
             <Link
               href="/OurServices"
-              className="border border-gray-300 text-white xl:px-6 px-4 py-3 rounded-lg hover:bg-gray-700 font-medium text-center"
+              className="border border-gray-300 text-white xl:px-6 px-4 py-3 mt-7  rounded-lg hover:bg-gray-700 font-medium text-center"
             >
               Barcha xizmatlar
             </Link>
