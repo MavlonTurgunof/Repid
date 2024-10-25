@@ -180,7 +180,6 @@ const Clock = ({ contactRef, formSubmitted }) => {
             <button
               onClick={scrollToContacts}
               className=" sm:w-64 h-10 sm:h-12 bg-[#F5941F] text-white rounded-lg md:text-lg px-5 md:px-0 font-bold mt-6"
-              // data-aos="fade-up"
             >
               Murojaat qilish
             </button>

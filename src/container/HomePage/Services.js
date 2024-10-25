@@ -7,65 +7,75 @@ function Services() {
 
   const servicesNew = [
     {
-      "id": 1,
-      "title": "App Xizmati",
-      "description": "APP xizmati mobil foydalanuvchilar uchun qulay va funksional ilovalarni yaratish va qo‘llab-quvvatlashni ta'minlaydi.",
-      "image": "/img/image1.png"
+      id: 1,
+      title: "App Xizmati",
+      description:
+        "APP xizmati mobil foydalanuvchilar uchun qulay va funksional ilovalarni yaratish va qo‘llab-quvvatlashni ta'minlaydi.",
+      image: "/img/image1.png",
     },
     {
-      "id": 2,
-      "title": "Web sayt Xizmatimiz",
-      "description": "Web sayt kompaniyani internetda ko'rinadigan qilib, savdo, muloqot, va marketing imkoniyatlarini kengaytirish uchun muhim vositadir.",
-      "image": "/img/image2.png"
+      id: 2,
+      title: "Web sayt Xizmatimiz",
+      description:
+        "Web sayt kompaniyani internetda ko'rinadigan qilib, savdo, muloqot, va marketing imkoniyatlarini kengaytirish uchun muhim vositadir.",
+      image: "/img/image2.png",
     },
     {
-      "id": 3,
-      "title": "Naming Xizmati",
-      "description": "Bu kompaniyalar, mahsulotlar, xizmatlar yoki brendlar uchun nom tanlash jarayonidir. Yaxshi nom bozordagi pozitsiyasiga katta ta’sir ko‘rsatadi.",
-      "image": "/img/image3.png"
+      id: 3,
+      title: "Naming Xizmati",
+      description:
+        "Bu kompaniyalar, mahsulotlar, xizmatlar yoki brendlar uchun nom tanlash jarayonidir. Yaxshi nom bozordagi pozitsiyasiga katta ta’sir ko‘rsatadi.",
+      image: "/img/image3.png",
     },
     {
-      "id": 4,
-      "title": "Logo Xizmati",
-      "description": "Bu kompaniyalar, mahsulotlar, xizmatlar yoki brendlar uchun nom tanlash jarayonidir. Yaxshi nom bozordagi pozitsiyasiga katta ta’sir ko‘rsatadi.",
-      "image": "/img/image3.png"
+      id: 4,
+      title: "Logo Xizmati",
+      description:
+        "bu kompaniya, brend yoki mahsulotning o'ziga xos vizual identifikatsiyasini yaratish jarayonidir. Yaxshi logo kompaniyaning asosiy qadriyatlarini, missiyasini va biznesini vizual tarzda aks ettiradi.",
+      image: "/img/image3.png",
     },
     {
-      "id": 5,
-      "title": "Brendbook va Guidebook",
-      "description": "Brendbook — brendning umumiy ko‘rinishi va o‘ziga xosligini belgilaydi, Guidebook esa brendni qanday boshqarish va ishga tushirish bo‘yicha amaliy ko'rsatma.",
-      "image": "/img/image3.png"
+      id: 5,
+      title: "Brendbook va Guidebook",
+      description:
+        "Brendbook — brendning umumiy ko‘rinishi va o‘ziga xosligini belgilaydi, Guidebook esa brendni qanday boshqarish va ishga tushirish bo‘yicha amaliy ko'rsatma.",
+      image: "/img/image3.png",
     },
     {
-      "id": 6,
-      "title": "SEO Xizmati",
-      "description": "SEOning asosiy maqsadi — saytni qidiruv natijalarining yuqori pozitsiyalariga chiqarish orqali ko‘proq organik trafik jalb qilishdir.",
-      "image": "/img/image3.png"
+      id: 6,
+      title: "SEO Xizmati",
+      description:
+        "SEOning asosiy maqsadi — saytni qidiruv natijalarining yuqori pozitsiyalariga chiqarish orqali ko‘proq organik trafik jalb qilishdir.",
+      image: "/img/image3.png",
     },
     {
-      "id": 7,
-      "title": "CRM Xizmati",
-      "description": "Mijozlar bilan munosabatlarni boshqarish tizimi bo‘lib, kompaniyalarga mijozlar bilan aloqalarni yaxshilash, savdo jarayonlarini optimallashtirish imkonini beradi.",
-      "image": "/img/image3.png"
+      id: 7,
+      title: "CRM Xizmati",
+      description:
+        "Mijozlar bilan munosabatlarni boshqarish tizimi bo‘lib, kompaniyalarga mijozlar bilan aloqalarni yaxshilash, savdo jarayonlarini optimallashtirish imkonini beradi.",
+      image: "/img/image3.png",
     },
     {
-      "id": 8,
-      "title": "Telegram Bot Xizmati",
-      "description": "Telegram botlar kompaniyalar va foydalanuvchilar o‘rtasidagi aloqani yaxshilash, ko‘plab vazifalarni qilishda foydali vosita hisoblanadi.",
-      "image": "/img/image3.png"
+      id: 8,
+      title: "Telegram Bot Xizmati",
+      description:
+        "Telegram botlar kompaniyalar va foydalanuvchilar o‘rtasidagi aloqani yaxshilash, ko‘plab vazifalarni qilishda foydali vosita hisoblanadi.",
+      image: "/img/image3.png",
     },
     {
-      "id": 9,
-      "title": "Yandex Eats, Uzum Tezkor, Express24 ga ulab berish xizmati",
-      "description": "Bu kompaniyalar bilan shartnoma qilish va dastafka xizmatini yo'lga qo'yish.",
-      "image": "/img/image3.png"
+      id: 9,
+      title: "Yandex Eats, Uzum Tezkor, Express24 ga ulab berish xizmati",
+      description:
+        "Bu kompaniyalar bilan shartnoma qilish va dastafka xizmatini yo'lga qo'yish.",
+      image: "/img/image3.png",
     },
     {
-      "id": 10,
-      "title": "SMM Xizmati",
-      "description": "Biz sizning brendingizni ijtimoiy tarmoqlarda kengaytirib beramiz. Kontent yaratish va reklama kampaniyalarini boshqarishda ko‘maklashib, biznesingizni yangi bosqichga olib chiqamiz.",
-      "image": "/img/image3.png"
-    }
+      id: 10,
+      title: "SMM Xizmati",
+      description:
+        "Biz sizning brendingizni ijtimoiy tarmoqlarda kengaytirib beramiz. Kontent yaratish va reklama kampaniyalarini boshqarishda ko‘maklashib, biznesingizni yangi bosqichga olib chiqamiz.",
+      image: "/img/image3.png",
+    },
   ];
 
   const settings = {
@@ -101,7 +111,7 @@ function Services() {
         setServices(data);
       } catch (error) {
         console.error("Failed to fetch services, using default data", error);
-        setServices(servicesNew); 
+        setServices(servicesNew);
       }
     };
 
@@ -125,7 +135,12 @@ function Services() {
             <div className="bg-white p-6 mb-4 rounded-lg shadow-md">
               <div className="flex h-[400px] flex-col gap-5">
                 <div>
-                  <Image src={service.image} alt={service.title} width={500} height={300} /> 
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    width={500}
+                    height={300}
+                  />
                 </div>
                 <h4 className="text-xl font-bold">{service.title}</h4>
                 <p>{service.description}</p>

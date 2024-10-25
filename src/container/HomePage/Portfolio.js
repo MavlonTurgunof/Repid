@@ -13,13 +13,13 @@ function Portfolio() {
 
   const projects = [
     {
-      image: "/img/portfolio3.png",
+      image: "/img/portfolio3.jpg",
       title: "Shaxsiy Brend",
       category: "Shaxsiy Brend",
       url: "https://instavibe.uz/",
     },
     {
-      image: "/img/portfolio1.png",
+      image: "/img/portfolio1.jpg",
       title: "English Campus",
       category: "English Campus",
       url: "https://www.theneweducation.uz/",
@@ -31,13 +31,13 @@ function Portfolio() {
       url: "https://www.saidoff-academy.uz/",
     },
     {
-      image: "/img/Portfolio5.png",
+      image: "/img/Portfolio5.jpg",
       title: "Portfolio",
       category: "Design & Development",
       url: "https://elements.envato.com/...",
     },
     {
-      image: "/img/Portfolio6.png",
+      image: "/img/Portfolio6.jpg",
       title: "Chery",
       category: "Branding & Web",
       url: "https://golden-eld.com/",
