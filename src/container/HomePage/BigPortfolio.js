@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { GrFormPrevious } from "react-icons/gr";
+import { GrFormNext } from "react-icons/gr";
 
 function BigPortfolio() {
   const [selected, setSelected] = useState("All");
@@ -95,12 +97,58 @@ function BigPortfolio() {
     "CRM",
   ];
 
+  const PrevArrow = ({ onClick }) => (
+    <div
+      className={`slick-prev:before z-10 flex slick-arrow absolute top-[45%] bg-[#fff] left-[10px]`}
+      onClick={onClick}
+      style={{
+        color: "#F7941D",
+        borderRadius: "50%",
+        width: "40px",
+        height: "40px",
+        alignItems: "center",
+        justifyContent: "center",
+        zIndex: 1,
+        cursor: "pointer",
+        boxShadow: "0 2px 10px rgba(0, 0, 0, 0.3)",
+      }}
+    >
+      <div className="scale-150">
+        <GrFormPrevious className="text-[20px]" />
+      </div>
+    </div>
+  );
+
+  const NextArrow = ({ onClick }) => (
+    <div
+      className={`slick-next:before z-10 flex slick-arrow absolute top-[45%] bg-[#fff] right-[10px]`}
+      onClick={onClick}
+      style={{
+        color: "#F7941D",
+        borderRadius: "50%",
+        width: "40px",
+        height: "40px",
+        alignItems: "center",
+        justifyContent: "center",
+        zIndex: 1,
+        cursor: "pointer",
+        boxShadow: "0 2px 10px rgba(0, 0, 0, 0.3)",
+      }}
+    >
+      <div className="scale-150">
+        <GrFormNext className="text-[20px]" />
+      </div>
+    </div>
+  );
+
   const settings = {
     dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow />,
     responsive: [
       {
         breakpoint: 1024,
@@ -131,7 +179,7 @@ function BigPortfolio() {
   };
 
   return (
-    <section className="bg-white text-white py-12">
+    <section className="bg-white text-white py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-8" data-aos="fade-up">

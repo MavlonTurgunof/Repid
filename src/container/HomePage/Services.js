@@ -173,7 +173,7 @@ function Services() {
   }, []);
 
   return (
-    <div className="container mx-auto px-5 md:px-10 lg:px-20 lg:mt-20 mt-4">
+    <div className="container mx-auto px-5 md:px-10 lg:px-20">
       <div className="text-center mb-6 md:mb-10">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#282B4C]">
           Bizning Xizmatlar

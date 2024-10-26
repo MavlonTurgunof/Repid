@@ -28,15 +28,15 @@ function index() {
 
       <div>
         <MainHeader contactRef={contactRef} />
-        <Clock contactRef={contactRef} formSubmitted={formSubmitted} />
         <WhyUs />
+        <Clock contactRef={contactRef} formSubmitted={formSubmitted} />
         <Services />
+        <BigPortfolio />
         <div ref={contactRef}>
           <Contact handleFormSubmit={handleFormSubmit} />
         </div>
         <Faq />
         <Clock contactRef={contactRef} />
-        <BigPortfolio />
         {/* <Partners /> */}
         <Footer />
       </div>

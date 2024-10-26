@@ -34,7 +34,7 @@ const Navbar = () => {
   return (
     <nav className="flex justify-between items-center py-4 px-8 container mx-auto relative z-50">
       {/* Logo */}
-      <div className="flex items-center space-x-2"  data-aos="fade-down">
+      <div className="flex items-center space-x-2"  data-aos="fade-right">
         <Link href="/">
           <Image
             src={menuOpen ? ActiveLogo : Logo}
@@ -47,15 +47,14 @@ const Navbar = () => {
 
       {/* Desktop Navigation */}
       <div className="hidden md:flex space-x-8 text-[#1D1E5A] font-semibold text-lg lg:text-xl">
-        <Link href="/" className={pathname === "/" ? "text-[#F7941D]" : "hover:text-[#1d1e5ab1]"}  data-aos="fade-down" data-aos-delay="100">
+        <Link href="/" className={pathname === "/" ? "text-[#F7941D]" : "hover:text-[#1d1e5ab1]"}  data-aos="fade-down">
           Biz haqimizda
         </Link>
         <Link
           href="/about"
           className={pathname === "/about" ? "text-[#F7941D]" : "hover:text-[#1d1e5ab1]"}
           data-aos="fade-down"
-          data-aos-delay="200"
-          
+          data-aos-delay="100"
         >
           Jamoamiz
         </Link>
@@ -63,8 +62,7 @@ const Navbar = () => {
           href="/services"
           className={pathname === "/services" ? "text-[#F7941D]" : "hover:text-[#1d1e5ab1]"}
           data-aos="fade-down"
-          data-aos-delay="300"
-          
+          data-aos-delay="200"
         >
           Xizmatlarimiz
         </Link>
@@ -72,8 +70,7 @@ const Navbar = () => {
           href="/Portfolio"
           className={pathname === "/Portfolio" ? "text-[#F7941D]" : "hover:text-[#1d1e5ab1]"}
           data-aos="fade-down"
-          data-aos-delay="400"
-          
+          data-aos-delay="300"
         >
           Portfolio
         </Link>
@@ -81,15 +78,13 @@ const Navbar = () => {
           href="/contact"
           className={pathname === "/contact" ? "text-[#F7941D]" : "hover:text-[#1d1e5ab1]"}
           data-aos="fade-down"
-          data-aos-delay="500"
-          
+          data-aos-delay="400"
         >
           Bog'lanish
         </Link>
       </div>
-
       {/* Registration Button for Desktop */}
-      <div className="hidden md:flex" data-aos="fade-down"  data-aos-delay="600">
+      <div className="hidden md:flex" data-aos="fade-left">
         <button
           className="bg-[#F7941D] text-white font-semibold py-2 px-6 rounded-md transition duration-200 hover:bg-[#E67C14]"
           onClick={toggleModal}
@@ -126,40 +121,49 @@ const Navbar = () => {
             <Link
               href="/"
               className="text-xl font-semibold text-white hover:text-[#F7941D]"
-              data-aos="fade-up"
+              data-aos="fade-right"
               onClick={toggleMenu} 
+              data-aos-duration="500"
             >
               Biz haqimizda
             </Link>
             <Link
               href="/about"
               className="text-xl font-semibold text-white hover:text-[#F7941D]"
-              data-aos="fade-up"
+              data-aos="fade-right"
               onClick={toggleMenu}
+              data-aos-delay="100"
+              data-aos-duration="500"
             >
               Jamoamiz
             </Link>
             <Link
               href="/services"
               className="text-xl font-semibold text-white hover:text-[#F7941D]"
-              data-aos="fade-up"
+              data-aos="fade-right"
               onClick={toggleMenu}
+              data-aos-delay="200"
+              data-aos-duration="500"
             >
               Xizmatlarimiz
             </Link>
             <Link
               href="/Portfolio"
               className="text-xl font-semibold text-white hover:text-[#F7941D]"
-              data-aos="fade-up"
+              data-aos="fade-right"
               onClick={toggleMenu}
+              data-aos-delay="300"
+              data-aos-duration="500"
             >
               Portfolio
             </Link>
             <Link
               href="/contact"
               className="text-xl font-semibold text-white hover:text-[#F7941D]"
-              data-aos="fade-up"
+              data-aos="fade-right"
               onClick={toggleMenu}
+              data-aos-delay="400"
+              data-aos-duration="500"
             >
               Bog'lanish
             </Link>
