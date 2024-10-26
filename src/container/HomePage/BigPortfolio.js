@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Head from "next/head";
 
 function BigPortfolio() {
   const [selected, setSelected] = useState("All");
@@ -132,122 +131,96 @@ function BigPortfolio() {
   };
 
   return (
-    <>
-      <Head>
-        <title>
-          Portfolio - Web Development, Design, and Branding Projects
-        </title>
-        <meta
-          name="description"
-          content="Veb-ishlab chiqish, dizayn xizmatlari, brending va biznes loyihalari, jumladan, shaxsiy brendlar koʻrsatadigan portfelimizni oʻrganing."
-        />
-        <meta
-          name="keywords"
-          content="portfolio, web sayt yaratish, web dizayn, branding, biznes loyihlar, shaxsiy brend, CRM, mobil ilovalar, Telegram botlar"
-        />
-      </Head>
+    <section className="bg-white text-white py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="text-center mb-8" data-aos="fade-up">
+          <h2 className="text-[36px] sm:text-[42px] lg:text-[52px] text-[#282B4C] font-bold">
+            Portfolio
+          </h2>
+        </div>
 
-      <section className="bg-white text-white py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Header */}
-          <div className="text-center mb-8" data-aos="fade-up">
-            <h2 className="text-[36px] sm:text-[42px] lg:text-[52px] text-[#282B4C] font-bold">
-              Portfolio
-            </h2>
-          </div>
-
-          {/* Carousel for Mobile */}
-          <div
-            className="block lg:hidden mb-4 w-auto overflow-hidden"
-            data-aos="fade-up"
-          >
-            <Slider {...buttonCarouselSettings}>
-              {buttons.map((button) => (
-                <div key={button} className="px-2">
-                  <button
-                    onClick={() => setSelected(button)}
-                    className={`text-[10px] w-full px-4 py-2 rounded-full border border-gray-300 transition-transform transform ${
-                      selected === button
-                        ? "bg-[#1D1C34] text-white scale-110"
-                        : "bg-white text-black hover:scale-105"
-                    }`}
-                  >
-                    {button}
-                  </button>
-                </div>
-              ))}
-            </Slider>
-          </div>
-
-          {/* Button Grid for Desktop */}
-          <div
-            className="hidden lg:flex flex-row gap-4 mb-4"
-            data-aos="fade-up"
-          >
+        <div
+          className="block lg:hidden mb-4 w-auto overflow-hidden"
+          data-aos="fade-up"
+        >
+          <Slider {...buttonCarouselSettings}>
             {buttons.map((button) => (
-              <button
-                key={button}
-                onClick={() => setSelected(button)}
-                className={`w-full px-4 py-2 rounded-full border border-gray-300 transition-transform transform ${
-                  selected === button
-                    ? "bg-[#1D1C34] text-white scale-110"
-                    : "bg-white text-black hover:scale-105"
-                }`}
-              >
-                {button}
-              </button>
-            ))}
-          </div>
-
-          {/* Portfolio Projects */}
-          <div className="block lg:hidden overflow-hidden">
-            <Slider {...settings}>
-              {projects.map((project, index) => (
-                <a
-                  key={index}
-                  href={project.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="relative overflow-hidden shadow-lg w-full h-[400px]"
-                  data-aos="zoom-in"
-                  data-aos-delay={`${index * 100}`}
+              <div key={button} className="px-2">
+                <button
+                  onClick={() => setSelected(button)}
+                  className={`text-[10px] w-full px-4 py-2 rounded-full border border-gray-300 transition-transform transform ${
+                    selected === button
+                      ? "bg-[#1D1C34] text-white scale-110"
+                      : "bg-white text-black hover:scale-105"
+                  }`}
                 >
-                  <Image
-                    src={project.image}
-                    alt={`${project.title} - ${project.category}`}
-                    layout="fill"
-                    objectFit="cover"
-                    className="rounded-lg"
-                  />
-                </a>
-              ))}
-            </Slider>
-          </div>
+                  {button}
+                </button>
+              </div>
+            ))}
+          </Slider>
+        </div>
 
-          {/* Desktop Grid for Projects */}
-          <div className="hidden lg:grid grid-cols-1 md:grid-cols-3 xl:gap-8 lg:gap-4 justify-items-center">
+        {/* Button Grid for Desktop */}
+        <div className="hidden lg:flex flex-row gap-4 mb-4" data-aos="fade-up">
+          {buttons.map((button) => (
+            <button
+              key={button}
+              onClick={() => setSelected(button)}
+              className={`w-full px-4 py-2 rounded-full border border-gray-300 transition-transform transform ${
+                selected === button
+                  ? "bg-[#1D1C34] text-white scale-110"
+                  : "bg-white text-black hover:scale-105"
+              }`}
+            >
+              {button}
+            </button>
+          ))}
+        </div>
+
+        <div className="block lg:hidden overflow-hidden">
+          <Slider {...settings}>
             {projects.map((project, index) => (
               <a
                 key={index}
                 href={project.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="relative overflow-hidden shadow-lg w-full h-[400px] bg-cover bg-center rounded-lg"
-                style={{ backgroundImage: `url(${project.image})` }}
+                className="relative overflow-hidden shadow-lg w-full h-[400px]"
                 data-aos="zoom-in"
                 data-aos-delay={`${index * 100}`}
               >
-                {/* <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
-                  <p className="text-white text-lg font-semibold">
-                    {project.title}
-                  </p>
-                </div> */}
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-lg"
+                />
               </a>
             ))}
-          </div>
+          </Slider>
         </div>
-      </section>
-    </>
+
+        <div className="hidden lg:grid grid-cols-1 md:grid-cols-3 xl:gap-8 lg:gap-4 justify-items-center">
+          {projects.map((project, index) => (
+            <a
+              key={index}
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative overflow-hidden shadow-lg w-full h-[400px] bg-cover bg-center rounded-lg"
+              style={{ backgroundImage: `url(${project.image})` }}
+              data-aos="zoom-in"
+              data-aos-delay={`${index * 100}`}
+            >
+              {/* Additional content if needed */}
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
 
