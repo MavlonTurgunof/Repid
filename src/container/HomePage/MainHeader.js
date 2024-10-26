@@ -30,14 +30,14 @@ function MainHeader({ contactRef }) {
             data-aos-delay="300"
           >
             <Link
-              href="/Contactpage"
-              className="bg-[#F5941F] text-white xl:px-6 px-4 py-3 rounded-lg font-medium text-center"
+              href="/contact"
+              className="bg-[#F5941F] hover:bg-[#E67C14] duration-150 text-white xl:px-6 px-4 py-3 rounded-lg font-medium text-center"
             >
               Biz bilan bog'laning
             </Link>
             <Link
-              href="/OurServices"
-              className="border border-gray-300 text-white xl:px-6 px-4 py-3 rounded-lg hover:bg-gray-700 font-medium text-center"
+              href="/services"
+              className="border border-gray-300 text-white xl:px-6 px-4 py-3 rounded-lg hover:bg-gray-700 duration-150 font-medium text-center"
             >
               Barcha xizmatlar
             </Link>

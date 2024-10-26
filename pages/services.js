@@ -8,7 +8,6 @@ import React from "react";
 function OurServices() {
   return (
     <div>
-      <Navbar />
       <ServicesHeader />
       <Services />
       <ServicesType />

@@ -4,7 +4,6 @@ import WhyUs from "@/container/HomePage/WhyUs";
 import Footer from "@/components/Footer";
 import Contact from "@/container/Contacts/Contact";
 import Faq from "@/container/HomePage/Faq";
-import Navbar from "@/components/Navbar";
 import MainHeader from "@/container/HomePage/MainHeader";
 import Clock from "@/container/HomePage/Clock";
 import Partners from "@/container/HomePage/Partners";
@@ -28,7 +27,6 @@ function index() {
       </Head>
 
       <div>
-        <Navbar />
         <MainHeader contactRef={contactRef} />
         <Clock contactRef={contactRef} formSubmitted={formSubmitted} />
         <WhyUs />

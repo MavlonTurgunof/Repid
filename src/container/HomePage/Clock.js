@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { FaCircleCheck } from "react-icons/fa6";
 import { toast } from "react-toastify";
-import AOS from "aos";
 
 const Clock = ({ contactRef, formSubmitted }) => {
   const [time, setTime] = useState({
@@ -13,22 +11,38 @@ const Clock = ({ contactRef, formSubmitted }) => {
 
   useEffect(() => {
     const savedStatus = localStorage.getItem("discountStatus");
+    const savedEndTime = localStorage.getItem("discountEndTime");
+
     if (savedStatus) {
       setDiscountStatus(savedStatus);
       return;
     }
 
-    const countdown = setInterval(() => {
-      updateTime();
-    }, 1000);
-
-    if (time.hours === 0 && time.minutes === 0 && time.seconds === 0) {
-      clearInterval(countdown);
-      handleMissedDiscount();
+    if (savedEndTime) {
+      const remainingTime = calculateRemainingTime(savedEndTime);
+      if (remainingTime.total > 0) {
+        setTime(remainingTime);
+      } else {
+        setTime({ hours: 0, minutes: 0, seconds: 0 });
+      }
+    } else {
+      const endTime = Date.now() + 3600000; // 1 hour from now
+      localStorage.setItem("discountEndTime", endTime);
     }
 
+    const countdown = setInterval(() => {
+      const endTime = localStorage.getItem("discountEndTime");
+      const remainingTime = calculateRemainingTime(endTime);
+      if (remainingTime.total > 0) {
+        setTime(remainingTime);
+      } else {
+        clearInterval(countdown);
+        setTime({ hours: 0, minutes: 0, seconds: 0 });
+      }
+    }, 1000);
+
     return () => clearInterval(countdown);
-  }, [time]);
+  }, []);
 
   useEffect(() => {
     if (formSubmitted && !discountStatus) {
@@ -36,32 +50,20 @@ const Clock = ({ contactRef, formSubmitted }) => {
     }
   }, [formSubmitted]);
 
-  const updateTime = () => {
-    const { hours, minutes, seconds } = time;
+  const calculateRemainingTime = (endTime) => {
+    const total = endTime - Date.now();
+    const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((total / (1000 * 60)) % 60);
+    const seconds = Math.floor((total / 1000) % 60);
 
-    if (hours === 0 && minutes === 0 && seconds === 0) {
-      return; 
-    }
-
-    if (seconds > 0) {
-      setTime({ ...time, seconds: seconds - 1 });
-    } else if (minutes > 0) {
-      setTime({ hours, minutes: minutes - 1, seconds: 59 });
-    } else if (hours > 0) {
-      setTime({ hours: hours - 1, minutes: 59, seconds: 59 });
-    }
+    return { total, hours, minutes, seconds };
   };
 
   const handleDiscountGranted = () => {
     setDiscountStatus("granted");
     localStorage.setItem("discountStatus", "granted");
+    localStorage.removeItem("discountEndTime");
     toast.success("Congratulations! You've received the discount!");
-  };
-
-  const handleMissedDiscount = () => {
-    setDiscountStatus("missed");
-    localStorage.setItem("discountStatus", "missed");
-    toast.error("You missed the discount!");
   };
 
   const formatDigits = (value) => String(value).padStart(2, "0").split("");
@@ -76,115 +78,101 @@ const Clock = ({ contactRef, formSubmitted }) => {
         style={{
           backgroundImage: `linear-gradient(135deg, rgba(43,47,83,1) 0%, rgba(29,28,52,1) 100%)`,
         }}
-        data-aos="fade-up"
+        data-aos="flip-up"
       >
-        {discountStatus === "granted" && (
-          <p className="text-[#28a745] text-xl sm:text-2xl text-center font-bold mb-6">
-            Siz allaqachon chegirma olgansiz!
+        <div className="flex flex-col items-center justify-center">
+          <h1
+            className="text-2xl sm:text-3xl lg:text-5xl font-extrabold mb-4 sm:mb-6 lg:mb-8 text-center max-w-[600px] text-[#F5941F]"
+            data-aos="fade-right"
+          >
+            Aksiya!
+          </h1>
+          <p
+            className="text-[#D8D8D8] mb-4 sm:mb-6 lg:mb-10 w-full max-w-[790px] text-center px-4 sm:px-6"
+            data-aos="fade-left"
+          >
+            Agar hoziroq murojaat qilsangiz, barcha xizmatlarimizga 30% chegirma
+            taqdim etiladi. Shoshiling, imkoniyatni qo‘ldan boy bermang!
           </p>
-        )}
-        {discountStatus === "missed" && (
-          <p className="text-[#dc3545] text-xl sm:text-2xl text-center font-bold mb-6">
-            Siz imkonni qoldan chiqardingiz!
-          </p>
-        )}
 
-        {discountStatus === null && (
-          <div className="flex flex-col items-center justify-center">
-            <h1
-              className="text-2xl sm:text-3xl lg:text-5xl font-extrabold mb-4 sm:mb-6 lg:mb-8 text-center max-w-[600px] text-[#F5941F]"
-              data-aos="fade-right"
+          <div className="flex items-center justify-center gap-[25px] max-[750px]:flex-col mb-8">
+            <div
+              className="flex flex-col items-center text-[#D8D8D8]"
+              data-aos="zoom-in"
             >
-              Aksiya!
-            </h1>
-            <p
-              className="text-[#D8D8D8] mb-4 sm:mb-6 lg:mb-10 w-full max-w-[790px] text-center px-4 sm:px-6"
-              data-aos="fade-left"
-            >
-              Agar hoziroq murojaat qilsangiz, barcha xizmatlarimizga 30%
-              chegirma taqdim etiladi. Shoshiling, imkoniyatni qo‘ldan boy
-              bermang!
-            </p>
-
-            <div className="flex items-center justify-center space-x-4 sm:space-x-8 flex-wrap lg:flex-nowrap mb-8">
               <div
-                className="flex flex-col items-center text-[#D8D8D8]"
-                data-aos="zoom-in"
+                className="w-[280px] min-[750px]:w-[200px] h-[200px] flex items-center flex-col justify-center rounded-[20px]"
+                style={{
+                  backgroundImage: `linear-gradient(135deg, rgba(27, 51, 81, 0.3) 30%, rgba(155, 97, 149, 0.3) 70%)`,
+                }}
               >
-                <div className="flex space-x-1 sm:space-x-2">
+                <div className="flex items-center">
                   {formatDigits(time.hours).map((digit, index) => (
-                    <div
-                      key={`hour-${index}`}
-                      className="p-2 sm:p-4 rounded-xl shadow-lg text-2xl sm:text-4xl lg:text-6xl w-12 sm:w-16 lg:w-24 h-12 sm:h-16 lg:h-24 flex justify-center items-center"
-                      style={{
-                        backgroundImage: `linear-gradient(135deg, rgba(27, 51, 81, 0.3) 30%, rgba(155, 97, 149, 0.3) 70%)`,
-                      }}
-                    >
+                    <p key={index} className="text-[80px] font-black">
                       {digit}
-                    </div>
+                    </p>
                   ))}
                 </div>
-                <div className="mt-2 text-sm sm:text-lg text-center">Soat</div>
-              </div>
-
-              <span className="text-xl sm:text-2xl lg:text-3xl text-[#FAD007]">
-                :
-              </span>
-
-              <div
-                className="flex flex-col items-center text-[#D8D8D8]"
-                data-aos="zoom-in"
-              >
-                <div className="flex space-x-1 sm:space-x-2">
-                  {formatDigits(time.minutes).map((digit, index) => (
-                    <div
-                      key={`minute-${index}`}
-                      className="p-2 sm:p-4 rounded-xl shadow-lg text-2xl sm:text-4xl lg:text-6xl w-12 sm:w-16 lg:w-24 h-12 sm:h-16 lg:h-24 flex justify-center items-center"
-                      style={{
-                        backgroundImage: `linear-gradient(135deg, rgba(27, 51, 81, 0.3) 30%, rgba(155, 97, 149, 0.3) 70%)`,
-                      }}
-                    >
-                      {digit}
-                    </div>
-                  ))}
-                </div>
-                <div className="mt-2 text-sm sm:text-lg text-center">Minut</div>
-              </div>
-              <span className="text-xl sm:text-2xl lg:text-3xl text-[#FAD007]">
-                :
-              </span>
-
-              <div
-                className="flex flex-col items-center text-[#D8D8D8]"
-                data-aos="zoom-in"
-              >
-                <div className="flex space-x-1 sm:space-x-2">
-                  {formatDigits(time.seconds).map((digit, index) => (
-                    <div
-                      key={`second-${index}`}
-                      className="p-2 sm:p-4 rounded-xl shadow-lg text-2xl sm:text-4xl lg:text-6xl w-12 sm:w-16 lg:w-24 h-12 sm:h-16 lg:h-24 flex justify-center items-center"
-                      style={{
-                        backgroundImage: `linear-gradient(135deg, rgba(27, 51, 81, 0.3) 30%, rgba(155, 97, 149, 0.3) 70%)`,
-                      }}
-                    >
-                      {digit}
-                    </div>
-                  ))}
-                </div>
-                <div className="mt-2 text-sm sm:text-lg text-center">
-                  Sekund
+                <div className="mt-2 text-[16px] text-center font-light">
+                  Soat
                 </div>
               </div>
             </div>
 
-            <button
-              onClick={scrollToContacts}
-              className=" sm:w-64 h-10 sm:h-12 bg-[#F5941F] text-white rounded-lg md:text-lg px-5 md:px-0 font-bold mt-6"
+            <div
+              className="flex flex-col items-center text-[#D8D8D8]"
+              data-aos="zoom-in"
             >
-              Murojaat qilish
-            </button>
+              <div
+                className="w-[280px] min-[750px]:w-[200px] h-[200px] flex items-center flex-col justify-center rounded-[20px]"
+                style={{
+                  backgroundImage: `linear-gradient(135deg, rgba(27, 51, 81, 0.3) 30%, rgba(155, 97, 149, 0.3) 70%)`,
+                }}
+              >
+                <div className="flex items-center">
+                  {formatDigits(time.minutes).map((digit, index) => (
+                    <p key={index} className="text-[80px] font-black">
+                      {digit}
+                    </p>
+                  ))}
+                </div>
+                <div className="mt-2 text-[16px] text-center font-light">
+                  Minut
+                </div>
+              </div>
+            </div>
+
+            <div
+              className="flex flex-col items-center text-[#D8D8D8]"
+              data-aos="zoom-in"
+            >
+              <div
+                className="w-[280px] min-[750px]:w-[200px] h-[200px] flex items-center flex-col justify-center rounded-[20px]"
+                style={{
+                  backgroundImage: `linear-gradient(135deg, rgba(27, 51, 81, 0.3) 30%, rgba(155, 97, 149, 0.3) 70%)`,
+                }}
+              >
+                <div className="flex items-center">
+                  {formatDigits(time.seconds).map((digit, index) => (
+                    <p key={index} className="text-[80px] font-black">
+                      {digit}
+                    </p>
+                  ))}
+                </div>
+                <div className="mt-2 text-[16px] text-center font-light">
+                  Sekund
+                </div>
+              </div>
+            </div>
           </div>
-        )}
+
+          <button
+            onClick={scrollToContacts}
+            className="bg-[#FFFFFF0D] border border-[#fff] text-white rounded-lg px-9 py-3 mt-5"
+          >
+            Murojaat qilish
+          </button>
+        </div>
       </div>
     </div>
   );

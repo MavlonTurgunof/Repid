@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import "@/styles/global.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Navbar from "@/components/Navbar";
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
@@ -18,7 +19,12 @@ function MyApp({ Component, pageProps }) {
     gtag("config", "G-4H11K248F7");
   }, []);
 
-  return <Component {...pageProps} />;
+  return (
+    <>
+      <Navbar />
+      <Component {...pageProps} />
+    </>
+  );
 }
 
 export default MyApp;
