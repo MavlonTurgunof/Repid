@@ -122,7 +122,7 @@ function Services() {
   return (
     <>
       <Head>
-        <title>Bizning Xizmatlar | REpid Agency</title>
+        <title> Repid Agency</title>
         <meta
           name="description"
           content="Bizning xizmatlarimiz: mobil ilovalar, web saytlar, brend dizayni, SEO va boshqa ko'plab xizmatlar. Bizning xizmatlarimiz yordamida biznesingizni rivojlantiring."

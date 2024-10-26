@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import Head from "next/head";
 
-function Services() {
+function OurServices() {
   return (
     <div>
       <Head>
@@ -58,4 +58,4 @@ function Services() {
   );
 }
 
-export default Services;
+export default OurServices;
