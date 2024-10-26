@@ -28,7 +28,7 @@ function Footer() {
               data-aos="fade-right"
               data-aos-duration="1000"
             >
-              <Link href={"#"}>
+              <Link href={"/"}>
                 <Image
                   src={Logo2}
                   alt="Logo"
