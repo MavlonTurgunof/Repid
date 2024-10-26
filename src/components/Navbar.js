@@ -69,8 +69,8 @@ const Navbar = () => {
           Xizmatlarimiz
         </Link>
         <Link
-          href="/portfolio"
-          className={pathname === "/portfolio" ? "text-[#F7941D]" : "hover:text-[#1d1e5ab1]"}
+          href="/Portfolio"
+          className={pathname === "/Portfolio" ? "text-[#F7941D]" : "hover:text-[#1d1e5ab1]"}
           data-aos="fade-down"
           data-aos-delay="400"
           
@@ -148,7 +148,7 @@ const Navbar = () => {
               Xizmatlarimiz
             </Link>
             <Link
-              href="/portfolio"
+              href="/Portfolio"
               className="text-xl font-semibold text-white hover:text-[#F7941D]"
               data-aos="fade-up"
               onClick={toggleMenu}
