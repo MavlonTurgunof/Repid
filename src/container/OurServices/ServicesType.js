@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Head from "next/head";
 
 function Portfolio() {
   const [selected, setSelected] = useState("All");
@@ -96,8 +97,20 @@ function Portfolio() {
 
   return (
     <section className="bg-white text-white py-12">
+      <Head>
+        <title>Repid Agency - Portfolio</title>
+        <meta
+          name="description"
+          content="Explore the portfolio of Repid Agency showcasing diverse IT services, including web design, branding, mobile applications, and more."
+        />
+        <meta
+          name="keywords"
+          content="Portfolio, IT services, web design, branding, mobile applications"
+        />
+        <link rel="canonical" href="https://www.repid.uz/Portfolio" />
+      </Head>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
         <div className="text-center mb-8" data-aos="fade-up">
           <h2 className="text-[36px] sm:text-[42px] lg:text-[52px] text-[#282B4C] font-bold">
             Bizning Xizmatlarimiz
@@ -157,7 +170,7 @@ function Portfolio() {
               >
                 <Image
                   src={project.image}
-                  alt={project.title}
+                  alt={`Project: ${project.title}`}
                   layout="fill"
                   objectFit="cover"
                   className="rounded-lg"
@@ -178,9 +191,8 @@ function Portfolio() {
               style={{ backgroundImage: `url(${project.image})` }}
               data-aos="zoom-in"
               data-aos-delay={`${index * 100}`}
-            >
-              {/* Additional content if needed */}
-            </a>
+              aria-label={`Visit project: ${project.title}`}
+            ></a>
           ))}
         </div>
       </div>

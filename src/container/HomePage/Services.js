@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Slider from "react-slick";
+import Head from "next/head";
 
 function Services() {
   const [services, setServices] = useState([]);
@@ -119,40 +120,53 @@ function Services() {
   }, []);
 
   return (
-    <div className="container mx-auto px-5 md:px-10 lg:px-20 lg:mt-20 mt-4">
-      <div className="text-center mb-10">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#282B4C]">
-          Bizning Xizmatlar
-        </h1>
-        <p className="text-lg md:text-xl text-gray-500 mt-2">
-          Biz sizga o'zimizning xizmatlarimizni taklif qilamiz.
-        </p>
-      </div>
+    <>
+      <Head>
+        <title>Bizning Xizmatlar | REpid Agency</title>
+        <meta
+          name="description"
+          content="Bizning xizmatlarimiz: mobil ilovalar, web saytlar, brend dizayni, SEO va boshqa ko'plab xizmatlar. Bizning xizmatlarimiz yordamida biznesingizni rivojlantiring."
+        />
+        <meta
+          name="keywords"
+          content="mobil ilovalar, web rivojlantirish, SEO xizmatlari, CRM Xizmati, Telegram botlar, brending xizmatlari, logo yasab berish, ijtimoiy media marketing, raqamli marketing, e-commerce, SMM"
+        />
+      </Head>
+      <div className="container mx-auto px-5 md:px-10 lg:px-20 lg:mt-20 mt-4">
+        <div className="text-center mb-10">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#282B4C]">
+            Bizning Xizmatlar
+          </h1>
+          <p className="text-lg md:text-xl text-gray-500 mt-2">
+            Biz sizga o'zimizning xizmatlarimizni taklif qilamiz.
+          </p>
+        </div>
 
-      <Slider {...settings} className="pb-10">
-        {services.map((service) => (
-          <div className="px-3" key={service.id}>
-            <div className="bg-white p-6 mb-4 rounded-lg shadow-md">
-              <div className="flex h-[400px] flex-col gap-5">
-                <div>
-                  <Image
-                    src={service.image}
-                    alt={service.title}
-                    width={500}
-                    height={300}
-                  />
+        <Slider {...settings} className="pb-10">
+          {services.map((service) => (
+            <div className="px-3" key={service.id}>
+              <div className="bg-white p-6 mb-4 rounded-lg shadow-md">
+                <div className="flex h-[400px] flex-col gap-5">
+                  <div>
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      width={500}
+                      height={300}
+                    />
+                  </div>
+                  <h4 className="text-xl font-bold">{service.title}</h4>
+                  <p>{service.description}</p>
                 </div>
-                <h4 className="text-xl font-bold">{service.title}</h4>
-                <p>{service.description}</p>
+                <button className="mt-4 border border-gray-500 p-2 rounded-md text-xl w-full">
+                  Malumotlar
+                </button>
               </div>
-              <button className="mt-4 border border-gray-500 p-2 rounded-md text-xl w-full">
-                Malumotlar
-              </button>
             </div>
-          </div>
-        ))}
-      </Slider>
-    </div>
+          ))}
+        </Slider>
+      </div>
+    </>
   );
 }
 

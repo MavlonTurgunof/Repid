@@ -9,6 +9,7 @@ import MainHeader from "@/container/HomePage/MainHeader";
 import Clock from "@/container/HomePage/Clock";
 import Partners from "@/container/HomePage/Partners";
 import BigPortfolio from "@/container/HomePage/BigPortfolio";
+import Head from "next/head";
 
 function index() {
   const contactRef = useRef(null);
@@ -19,21 +20,29 @@ function index() {
   };
 
   return (
-    <div>
-      <Navbar />
-      <MainHeader contactRef={contactRef} />
-      <Clock contactRef={contactRef} formSubmitted={formSubmitted} />
-      <WhyUs />
-      <Services />
-      <div ref={contactRef}>
-        <Contact handleFormSubmit={handleFormSubmit} />
+    <>
+      <Head>
+        <title>Saidoff</title>
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
+
+      <div>
+        <Navbar />
+        <MainHeader contactRef={contactRef} />
+        <Clock contactRef={contactRef} formSubmitted={formSubmitted} />
+        <WhyUs />
+        <Services />
+        <div ref={contactRef}>
+          <Contact handleFormSubmit={handleFormSubmit} />
+        </div>
+        <Faq />
+        <Clock contactRef={contactRef} />
+        <BigPortfolio />
+        {/* <Partners /> */}
+        <Footer />
       </div>
-      <Faq />
-      <Clock contactRef={contactRef} />
-      <BigPortfolio />
-      {/* <Partners /> */}
-      <Footer />
-    </div>
+    </>
   );
 }
 
