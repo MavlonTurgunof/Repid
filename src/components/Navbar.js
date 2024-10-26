@@ -128,7 +128,7 @@ const Navbar = () => {
               Biz haqimizda
             </Link>
             <Link
-              href="/Aboutpage"
+              href="/about"
               className="text-xl font-semibold text-white hover:text-[#F7941D]"
               data-aos="fade-up"
               onClick={toggleMenu}
@@ -136,7 +136,7 @@ const Navbar = () => {
               Jamoamiz
             </Link>
             <Link
-              href="/OurServices"
+              href="/services"
               className="text-xl font-semibold text-white hover:text-[#F7941D]"
               data-aos="fade-up"
               onClick={toggleMenu}
@@ -144,7 +144,7 @@ const Navbar = () => {
               Xizmatlarimiz
             </Link>
             <Link
-              href="/Portfolio"
+              href="/portfolio"
               className="text-xl font-semibold text-white hover:text-[#F7941D]"
               data-aos="fade-up"
               onClick={toggleMenu}
@@ -152,7 +152,7 @@ const Navbar = () => {
               Portfolio
             </Link>
             <Link
-              href="/Contactpage"
+              href="/contact"
               className="text-xl font-semibold text-white hover:text-[#F7941D]"
               data-aos="fade-up"
               onClick={toggleMenu}

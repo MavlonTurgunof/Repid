@@ -109,17 +109,17 @@ function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/Aboutpage" className="hover:text-gray-300">
+                  <Link href="/about" className="hover:text-gray-300">
                     Jamoamiz
                   </Link>
                 </li>
                 <li>
-                  <Link href="/OurService" className="hover:text-gray-300">
+                  <Link href="/services" className="hover:text-gray-300">
                     Xizmatlarimiz
                   </Link>
                 </li>
                 <li>
-                  <Link href="/Portfolio" className="hover:text-gray-300">
+                  <Link href="/portfolio" className="hover:text-gray-300">
                     Portfolio
                   </Link>
                 </li>
@@ -132,7 +132,7 @@ function Footer() {
               className="flex flex-col items-start"
             >
               <Link
-                href="/Contactpage"
+                href="/contact"
                 className="mb-12 text-lg font-semibold max-md:hidden"
               >
                 Bizga hoziroq qo'ng'iroq qiling
