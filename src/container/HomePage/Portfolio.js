@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
@@ -96,6 +97,17 @@ function Portfolio() {
 
   return (
     <section className="bg-white text-white py-12">
+      <Head>
+        <title>Portfolio - Repid Agency</title>
+        <meta
+          name="description"
+          content="Explore the portfolio of REpid Agency showcasing web design, branding, and app development projects."
+        />
+        <meta
+          name="keywords"
+          content="portfolio, web design, branding, mobile app development, Telegram bot, CRM services, design services"
+        />
+      </Head>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-8" data-aos="fade-up">
@@ -157,7 +169,7 @@ function Portfolio() {
               >
                 <Image
                   src={project.image}
-                  alt={project.title}
+                  alt={`${project.title} - Portfolio Project`}
                   layout="fill"
                   objectFit="cover"
                   className="rounded-lg"
@@ -179,7 +191,6 @@ function Portfolio() {
               data-aos="zoom-in"
               data-aos-delay={`${index * 100}`}
             >
-              {/* Additional content if needed */}
             </a>
           ))}
         </div>
