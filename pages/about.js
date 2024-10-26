@@ -8,7 +8,6 @@ import AboutHeader from "@/container/AboutUs/AboutHeader";
 function About() {
   return (
     <div>
-      <Navbar />
       <AboutHeader />
       {/* <About /> */}
       <Team />

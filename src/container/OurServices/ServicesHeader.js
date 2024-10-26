@@ -31,13 +31,13 @@ function ServicesHeader({ contactRef }) {
           >
             <Link
               href="/Contactpage"
-              className="bg-[#F5941F]  text-white xl:px-6 px-4 py-3 rounded-lg font-medium text-center"
+              className="bg-[#F5941F] hover:bg-[#E67C14] duration-150 text-white xl:px-6 px-4 py-3 rounded-lg font-medium text-center"
             >
               Biz bilan bog'laning
             </Link>
             <Link
               href="/OurServices"
-              className="text-white  xl:px-6 px-4 py-3 rounded-lg border border-white hover:bg-[#F5941F]   font-medium text-center"
+              className="border border-gray-300 duration-150 text-white xl:px-6 px-4 py-3 mt-7  rounded-lg hover:bg-gray-700 font-medium text-center"
             >
               Barcha xizmatlar
             </Link>

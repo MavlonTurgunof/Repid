@@ -76,7 +76,7 @@ const Clock = ({ contactRef, formSubmitted }) => {
         style={{
           backgroundImage: `linear-gradient(135deg, rgba(43,47,83,1) 0%, rgba(29,28,52,1) 100%)`,
         }}
-        data-aos="fade-up"
+        data-aos="flip-up"
       >
         {discountStatus === "granted" && (
           <p className="text-[#28a745] text-xl sm:text-2xl text-center font-bold mb-6">

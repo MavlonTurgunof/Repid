@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Slider from "react-slick";
+import { GrFormPrevious } from "react-icons/gr";
+import { GrFormNext } from "react-icons/gr";
 
 function Services() {
   const [services, setServices] = useState([]);
@@ -78,12 +80,60 @@ function Services() {
     },
   ];
 
+  const PrevArrow = ({ onClick }) => (
+    <div
+      className={`slick-prev:before flex slick-arrow absolute top-[40%] bg-[#fff] -left-[20px]`}
+      onClick={onClick}
+      style={{
+        color: "#F7941D",
+        borderRadius: "50%",
+        width: "40px",
+        height: "40px",
+        alignItems: "center",
+        justifyContent: "center",
+        zIndex: 1,
+        cursor: "pointer",
+        boxShadow: "0 2px 10px rgba(0, 0, 0, 0.3)",
+      }}
+    >
+      <div className="scale-150">
+        <GrFormPrevious className="text-[20px]" />
+      </div>
+    </div>
+  );
+
+  const NextArrow = ({ onClick }) => (
+    <div
+      className={`slick-next:before flex slick-arrow absolute top-[40%] bg-[#fff] -right-[15px]`}
+      onClick={onClick}
+      style={{
+        color: "#F7941D",
+        borderRadius: "50%",
+        width: "40px",
+        height: "40px",
+        alignItems: "center",
+        justifyContent: "center",
+        zIndex: 1,
+        cursor: "pointer",
+        boxShadow: "0 2px 10px rgba(0, 0, 0, 0.3)",
+      }}
+    >
+      <div className="scale-150">
+        <GrFormNext className="text-[20px]"/>
+      </div>
+    </div>
+  );
+
   const settings = {
     dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    prevArrow: <PrevArrow/>,
+    nextArrow: <NextArrow/>,
     responsive: [
       {
         breakpoint: 1024,
@@ -95,6 +145,10 @@ function Services() {
         breakpoint: 600,
         settings: {
           slidesToShow: 1,
+          centerMode: true,
+          swipe: true,
+          prevArrow: false,
+          nextArrow: false,
         },
       },
     ],
@@ -120,7 +174,7 @@ function Services() {
 
   return (
     <div className="container mx-auto px-5 md:px-10 lg:px-20 lg:mt-20 mt-4">
-      <div className="text-center mb-10">
+      <div className="text-center mb-6 md:mb-10">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#282B4C]">
           Bizning Xizmatlar
         </h1>
@@ -132,8 +186,8 @@ function Services() {
       <Slider {...settings} className="pb-10">
         {services.map((service) => (
           <div className="px-3" key={service.id}>
-            <div className="bg-white p-6 mb-4 rounded-lg shadow-md">
-              <div className="flex h-[400px] flex-col gap-5">
+            <div className="bg-white p-3 md:p-5 mb-4 rounded-lg shadow-lg">
+              <div className="flex h-[370px] md:h-[400px] flex-col  md:gap-4 gap-2">
                 <div>
                   <Image
                     src={service.image}
@@ -142,10 +196,10 @@ function Services() {
                     height={300}
                   />
                 </div>
-                <h4 className="text-xl font-bold">{service.title}</h4>
+                <h4 className="text-[18px] md:text-xl font-bold">{service.title}</h4>
                 <p>{service.description}</p>
               </div>
-              <button className="mt-4 border border-gray-500 p-2 rounded-md text-xl w-full">
+              <button className="mt-4 border border-gray-500 hover:border-[#F7941D] hover:text-[#F7941D] duration-200 p-2 rounded-md text-xl w-full">
                 Malumotlar
               </button>
             </div>

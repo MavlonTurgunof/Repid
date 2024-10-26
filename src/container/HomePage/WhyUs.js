@@ -18,8 +18,7 @@ function WhyUs() {
         aynan biz?
       </h3>
       <p className="my-2 mb-10 text-center text-lg  text-gray-600 max-md:mb-14 max-md:text-base font-semibold">
-        Zamonaviy kasblarni o'rganib Yirik daromad sari qadam tashlashingizda.
-        Repid sizga ko'maklashadi.
+         Bizning kompaniyamiz xizmatlaridan foydalaning va biznesingizni yangi bosqichga olib chiqing!
       </p>
       <div className="grid grid-cols-3 gap-5 pb-20 max-xl:grid-cols-2 max-md:grid-cols-1">
         <div className="h-full">

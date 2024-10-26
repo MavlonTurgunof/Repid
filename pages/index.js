@@ -20,7 +20,6 @@ function index() {
 
   return (
     <div>
-      <Navbar />
       <MainHeader contactRef={contactRef} />
       <Clock contactRef={contactRef} formSubmitted={formSubmitted} />
       <WhyUs />

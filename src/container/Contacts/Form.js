@@ -41,7 +41,7 @@ function Form({ onSubmit }) {
         data-aos="fade-up" // Animation for the entire form
         data-aos-duration="1000" // Duration of the animation
       >
-        <div data-aos="fade-right" data-aos-duration="1000">
+        <div data-aos="fade-up" data-aos-duration="1000">
           <input
             type="text"
             name="name"
@@ -52,7 +52,7 @@ function Form({ onSubmit }) {
           />
         </div>
 
-        <div data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
+        <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
           <input
             type="tel"
             name="phone"
@@ -63,7 +63,7 @@ function Form({ onSubmit }) {
           />
         </div>
 
-        <div data-aos="fade-right" data-aos-duration="1000" data-aos-delay="400">
+        <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
           <textarea
             name="textarea"
             value={inputValue.textarea}
@@ -74,7 +74,7 @@ function Form({ onSubmit }) {
           ></textarea>
         </div>
 
-        <div data-aos="fade-right" data-aos-duration="1000" data-aos-delay="600">
+        <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
           <button
             type="submit"
             className="w-full bg-[#f48c06] text-white py-3 rounded-lg hover:bg-[#e07c04] transition-all"

@@ -6,7 +6,6 @@ import ContactUs from "@/container/Contacts/Contact";
 function Contact() {
   return (
     <div>
-      <Navbar />
       <ContactUs />
       <Footer />
     </div>
