@@ -63,13 +63,13 @@ function Portfolio() {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
+    slidesToShow: 1.5,
     slidesToScroll: 1,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 1.5,
           slidesToScroll: 1,
         },
       },
@@ -100,7 +100,7 @@ function Portfolio() {
         {/* Header */}
         <div className="text-center mb-8" data-aos="fade-up">
           <h2 className="text-[36px] sm:text-[42px] lg:text-[52px] text-[#282B4C] font-bold">
-            Portfolio
+            Portfolioooo
           </h2>
         </div>
 

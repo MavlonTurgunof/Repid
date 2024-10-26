@@ -1,13 +1,15 @@
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React from "react";
 
 function MainHeader({ contactRef }) {
   const scrollToContacts = () => {
     contactRef.current?.scrollIntoView({ behavior: "smooth" });
   };
+  const pathname = usePathname()
 
   return (
-    <header className="relative bg-cover bg-no-repeat placeholder:  bg-[url('/img/Shade.png'),url('/img/MainHeader.png')] h-[600px] lg:h-[500px] md:h-[450px] sm:h-[400px] text-white">
+    <header className={`relative bg-cover bg-no-repeat placeholder: h-[600px] lg:h-[500px] md:h-[450px] sm:h-[400px] text-white ${pathname === "/" ? "bg-[url('/img/MainHeader.png')]" : "bg-[url('/img/portfolio-bg-image.png')]"}`}>
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row px-4 h-full overflow-y-hidden overflow-x-hidden">
         <div className="lg:text-left text-center lg:w-1/2 w-full xl:mt-[8%] mt-[10%] space-y-4 flex flex-col justify-center">
           <h1 className="text-[20px] font-bold sm:text-[18px]">

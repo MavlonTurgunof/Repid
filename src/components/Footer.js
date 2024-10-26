@@ -24,7 +24,7 @@ function Footer() {
         <div className="container mx-auto px-6 lg:px-20">
           <div className="grid-cols-1 flex-col gap-8 max-md:flex max-md:items-center max-md:justify-center md:grid md:grid-cols-3">
             <div
-              className="flex flex-col items-start gap-4"
+              className="flex flex-col items-center md:items-start gap-4"
               data-aos="fade-right"
               data-aos-duration="1000"
             >
