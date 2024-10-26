@@ -119,7 +119,7 @@ function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/portfolio" className="hover:text-gray-300">
+                  <Link href="/Portfolio" className="hover:text-gray-300">
                     Portfolio
                   </Link>
                 </li>
