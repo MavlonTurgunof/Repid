@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { toast } from "react-toastify";
-import Container from "@/components/container";
 
 const Clock = ({ contactRef, formSubmitted }) => {
   const [time, setTime] = useState({
@@ -73,112 +72,109 @@ const Clock = ({ contactRef, formSubmitted }) => {
   };
 
   return (
-    <section>
-      <Container>
-        <div
-          className="flex flex-col items-center justify-center h-auto text-black rounded-[26px] sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8"
-          style={{
-            backgroundImage: `linear-gradient(135deg, rgba(43,47,83,1) 0%, rgba(29,28,52,1) 100%)`,
-          }}
-          data-aos="flip-up"
-        >
-          <div className="flex flex-col items-center justify-center">
-            <h1
-              className="text-2xl sm:text-3xl lg:text-5xl font-extrabold mb-4 sm:mb-6 lg:mb-8 text-center max-w-[600px] text-[#F5941F]"
-              data-aos="fade-right"
+    <div className="pb-40 px-4 sm:px-6 lg:px-8 overflow-x-hidden">
+      <div
+        className="flex flex-col items-center justify-center h-auto text-black max-w-7xl mx-auto rounded-[26px] py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8"
+        style={{
+          backgroundImage: `linear-gradient(135deg, rgba(43,47,83,1) 0%, rgba(29,28,52,1) 100%)`,
+        }}
+        data-aos="flip-up"
+      >
+        <div className="flex flex-col items-center justify-center">
+          <h1
+            className="text-2xl sm:text-3xl lg:text-5xl font-extrabold mb-4 sm:mb-6 lg:mb-8 text-center max-w-[600px] text-[#F5941F]"
+            data-aos="fade-right"
+          >
+            Aksiya!
+          </h1>
+          <p
+            className="text-[#D8D8D8] mb-4 sm:mb-6 lg:mb-10 w-full max-w-[790px] text-center px-4 sm:px-6"
+            data-aos="fade-left"
+          >
+            Agar hoziroq murojaat qilsangiz, barcha xizmatlarimizga 30% chegirma
+            taqdim etiladi. Shoshiling, imkoniyatni qo‘ldan boy bermang!
+          </p>
+
+          <div className="flex items-center justify-center gap-[25px] max-[750px]:flex-col mb-8">
+            <div
+              className="flex flex-col items-center text-[#D8D8D8]"
+              data-aos="zoom-in"
             >
-              Aksiya!
-            </h1>
-            <p
-              className="text-[#D8D8D8] mb-4 sm:mb-6 lg:mb-10 w-full max-w-[790px] text-center px-4 sm:px-6"
-              data-aos="fade-left"
-            >
-              Agar hoziroq murojaat qilsangiz, barcha xizmatlarimizga 30%
-              chegirma taqdim etiladi. Shoshiling, imkoniyatni qo‘ldan boy
-              bermang!
-            </p>
-
-            <div className="flex items-center justify-center gap-[25px] max-[750px]:flex-col mb-8">
               <div
-                className="flex flex-col items-center text-[#D8D8D8]"
-                data-aos="zoom-in"
+                className="w-[280px] min-[750px]:w-[200px] h-[200px] flex items-center flex-col justify-center rounded-[20px]"
+                style={{
+                  backgroundImage: `linear-gradient(135deg, rgba(27, 51, 81, 0.3) 30%, rgba(155, 97, 149, 0.3) 70%)`,
+                }}
               >
-                <div
-                  className="w-[280px] min-[750px]:w-[200px] h-[200px] flex items-center flex-col justify-center rounded-[20px]"
-                  style={{
-                    backgroundImage: `linear-gradient(135deg, rgba(27, 51, 81, 0.3) 30%, rgba(155, 97, 149, 0.3) 70%)`,
-                  }}
-                >
-                  <div className="flex items-center">
-                    {formatDigits(time.hours).map((digit, index) => (
-                      <p key={index} className="text-[80px] font-black">
-                        {digit}
-                      </p>
-                    ))}
-                  </div>
-                  <div className="mt-2 text-[16px] text-center font-light">
-                    Soat
-                  </div>
+                <div className="flex items-center">
+                  {formatDigits(time.hours).map((digit, index) => (
+                    <p key={index} className="text-[80px] font-black">
+                      {digit}
+                    </p>
+                  ))}
                 </div>
-              </div>
-
-              <div
-                className="flex flex-col items-center text-[#D8D8D8]"
-                data-aos="zoom-in"
-              >
-                <div
-                  className="w-[280px] min-[750px]:w-[200px] h-[200px] flex items-center flex-col justify-center rounded-[20px]"
-                  style={{
-                    backgroundImage: `linear-gradient(135deg, rgba(27, 51, 81, 0.3) 30%, rgba(155, 97, 149, 0.3) 70%)`,
-                  }}
-                >
-                  <div className="flex items-center">
-                    {formatDigits(time.minutes).map((digit, index) => (
-                      <p key={index} className="text-[80px] font-black">
-                        {digit}
-                      </p>
-                    ))}
-                  </div>
-                  <div className="mt-2 text-[16px] text-center font-light">
-                    Minut
-                  </div>
-                </div>
-              </div>
-
-              <div
-                className="flex flex-col items-center text-[#D8D8D8]"
-                data-aos="zoom-in"
-              >
-                <div
-                  className="w-[280px] min-[750px]:w-[200px] h-[200px] flex items-center flex-col justify-center rounded-[20px]"
-                  style={{
-                    backgroundImage: `linear-gradient(135deg, rgba(27, 51, 81, 0.3) 30%, rgba(155, 97, 149, 0.3) 70%)`,
-                  }}
-                >
-                  <div className="flex items-center">
-                    {formatDigits(time.seconds).map((digit, index) => (
-                      <p key={index} className="text-[80px] font-black">
-                        {digit}
-                      </p>
-                    ))}
-                  </div>
-                  <div className="mt-2 text-[16px] text-center font-light">
-                    Sekund
-                  </div>
+                <div className="mt-2 text-[16px] text-center font-light">
+                  Soat
                 </div>
               </div>
             </div>
 
-            <button
-              onClick={scrollToContacts}
-              className="bg-[#FFFFFF0D] border border-[#fff] text-white rounded-lg px-9 py-3 mt-5"
+            <div
+              className="flex flex-col items-center text-[#D8D8D8]"
+              data-aos="zoom-in"
             >
-              Murojaat qilish
-            </button>
+              <div
+                className="w-[280px] min-[750px]:w-[200px] h-[200px] flex items-center flex-col justify-center rounded-[20px]"
+                style={{
+                  backgroundImage: `linear-gradient(135deg, rgba(27, 51, 81, 0.3) 30%, rgba(155, 97, 149, 0.3) 70%)`,
+                }}
+              >
+                <div className="flex items-center">
+                  {formatDigits(time.minutes).map((digit, index) => (
+                    <p key={index} className="text-[80px] font-black">
+                      {digit}
+                    </p>
+                  ))}
+                </div>
+                <div className="mt-2 text-[16px] text-center font-light">
+                  Minut
+                </div>
+              </div>
+            </div>
+
+            <div
+              className="flex flex-col items-center text-[#D8D8D8]"
+              data-aos="zoom-in"
+            >
+              <div
+                className="w-[280px] min-[750px]:w-[200px] h-[200px] flex items-center flex-col justify-center rounded-[20px]"
+                style={{
+                  backgroundImage: `linear-gradient(135deg, rgba(27, 51, 81, 0.3) 30%, rgba(155, 97, 149, 0.3) 70%)`,
+                }}
+              >
+                <div className="flex items-center">
+                  {formatDigits(time.seconds).map((digit, index) => (
+                    <p key={index} className="text-[80px] font-black">
+                      {digit}
+                    </p>
+                  ))}
+                </div>
+                <div className="mt-2 text-[16px] text-center font-light">
+                  Sekund
+                </div>
+              </div>
+            </div>
           </div>
+
+          <button
+            onClick={scrollToContacts}
+            className="bg-[#FFFFFF0D] border border-[#fff] text-white rounded-lg px-9 py-3 mt-5"
+          >
+            Murojaat qilish
+          </button>
         </div>
-      </Container>
-    </section>
+      </div>
+    </div>
   );
 };
 
