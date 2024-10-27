@@ -3,7 +3,6 @@ import Image from "next/image";
 import Slider from "react-slick";
 import { GrFormPrevious } from "react-icons/gr";
 import { GrFormNext } from "react-icons/gr";
-import Container from "@/components/container";
 
 function Services() {
   const [services, setServices] = useState([]);
@@ -83,7 +82,7 @@ function Services() {
 
   const PrevArrow = ({ onClick }) => (
     <div
-      className={`slick-prev:before flex slick-arrow absolute top-[50%] bg-[#fff] -left-[50px]`}
+      className={`slick-prev:before flex slick-arrow absolute top-[40%] bg-[#fff] -left-[20px]`}
       onClick={onClick}
       style={{
         color: "#F7941D",
@@ -105,7 +104,7 @@ function Services() {
 
   const NextArrow = ({ onClick }) => (
     <div
-      className={`slick-next:before flex slick-arrow absolute top-[52%] bg-[#fff] -right-[50px]`}
+      className={`slick-next:before flex slick-arrow absolute top-[40%] bg-[#fff] -right-[15px]`}
       onClick={onClick}
       style={{
         color: "#F7941D",
@@ -139,10 +138,7 @@ function Services() {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 2.5,
-          swipe: true,
-          prevArrow: false,
-          nextArrow: false,
+          slidesToShow: 2,
         },
       },
       {
@@ -177,49 +173,45 @@ function Services() {
   }, []);
 
   return (
-    <section className="py-14 md:py-20">
-      <Container>
-        <div className="text-center mb-6 md:mb-10">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#282B4C]">
-            Bizning Xizmatlar
-          </h1>
-          <p className="text-lg md:text-xl text-gray-500 mt-2">
-            Biz sizga o'zimizning xizmatlarimizni taklif qilamiz.
-          </p>
-        </div>
+    <div className="container mx-auto px-[26px] md:px-10 lg:px-20">
+      <div className="text-center mb-6 md:mb-10">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#282B4C]">
+          Bizning Xizmatlar
+        </h1>
+        <p className="text-lg md:text-xl text-gray-500 mt-2">
+          Biz sizga o'zimizning xizmatlarimizni taklif qilamiz.
+        </p>
+      </div>
 
-        <Slider {...settings} className="pb-10">
-          {services.map((service) => (
-            <div className="px-3" key={service.id}>
-              <div className="bg-white border md:border-none rounded-t-[30px] rounded-b-[24px] rounded-lg">
-                <div className="flex h-[370px] md:h-[400px] flex-col md:gap-4 gap-2">
-                  <div>
-                    <Image
-                      className="rounded-[30px]"
-                      src={service.image}
-                      alt={service.title}
-                      width={500}
-                      height={300}
-                    />
-                  </div>
-                  <h4 className="text-[18px] px-4 md:p-0 text-center md:text-start md:text-xl font-bold">
-                    {service.title}
-                  </h4>
-                  <p className="text-center md:text-start px-4 md:p-0 text-[14px] md:text-[16px] text-[#4A4A4A]">
-                    {service.description}
-                  </p>
+      <Slider {...settings} className="pb-10">
+        {services.map((service) => (
+          <div className="px-3" key={service.id}>
+            <div className="bg-white md:p-5 border md:border-none rounded-t-[30px] rounded-b-[24px] mb-4 rounded-lg">
+              <div className="flex h-[370px] md:h-[400px] flex-col  md:gap-4 gap-2">
+                <div>
+                  <Image
+                    className="rounded-[30px]"
+                    src={service.image}
+                    alt={service.title}
+                    width={500}
+                    height={300}
+                  />
                 </div>
-                <div className="px-4 pb-4 md:p-0">
-                  <button className="md:mt-4 md:w-[184px] border border-gray-500 hover:border-[#F7941D] hover:text-[#F7941D] duration-200 p-2 rounded-2xl md:rounded-lg text-xl w-full">
-                    Malumotlar
-                  </button>
-                </div>
+                <h4 className="text-[18px] px-4 md:p-0 text-center md:text-start md:text-xl font-bold">
+                  {service.title}
+                </h4>
+                <p className="text-center md:text-start px-4 md:p-0 text-[14px] md:text-[16px] text-[#4A4A4A]">{service.description}</p>
+              </div>
+              <div className="p-4 md:p-0">
+                <button className="md:mt-8 mt-3 md:w-[184px] border border-gray-500 hover:border-[#F7941D] hover:text-[#F7941D] duration-200 p-2 rounded-2xl md:rounded-lg text-xl w-full">
+                  Malumotlar
+                </button>
               </div>
             </div>
-          ))}
-        </Slider>
-      </Container>
-    </section>
+          </div>
+        ))}
+      </Slider>
+    </div>
   );
 }
 
