@@ -107,7 +107,7 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {menuOpen && (
         <div
-          className="fixed top-0 left-0 w-full h-screen bg-[#1D1E5A] z-50 flex flex-col py-6 px-8"
+          className="fixed z-50 top-0 left-0 w-full h-screen bg-[#1D1E5A] flex flex-col py-6 px-8"
           data-aos="slide-in"
         >
           <div className="flex justify-between items-center">

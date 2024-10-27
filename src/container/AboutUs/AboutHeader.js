@@ -7,8 +7,8 @@ function AboutHeader({ contactRef }) {
   };
 
   return (
-    <header className="bg-cover -z-50 bg-no-repeat bg-[url('/img/bg2.png'),url('/img/bg2.png')] h-[510px] lg:h-[500px] md:h-[450px] text-white">
-      <div className="z-50 relative max-w-7xl mx-auto flex flex-col md:flex-row px-4 h-full overflow-x-hidden">
+    <header className="bg-cover bg-no-repeat bg-[url('/img/bg2.png'),url('/img/bg2.png')] h-[510px] lg:h-[500px] md:h-[450px] text-white">
+      <div className="relative max-w-7xl mx-auto flex flex-col md:flex-row px-4 h-full overflow-x-hidden">
         <div className="lg:text-left text-center lg:w-1/2 w-full xl:mt-[8%] mt-[20%] space-y-4 flex flex-col justify-center">
           <h1 className="text-[20px] font-bold sm:text-[18px]">
             Texnologiyalar va Innovatsiya Markazi
