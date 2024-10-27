@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import Services from "@/container/HomePage/Services";
 import WhyUs from "@/container/HomePage/WhyUs";
 import Footer from "@/components/Footer";
@@ -10,7 +10,7 @@ import Partners from "@/container/HomePage/Partners";
 import BigPortfolio from "@/container/HomePage/BigPortfolio";
 import Head from "next/head";
 
-function index() {
+function HomePage() {
   const contactRef = useRef(null);
   const [formSubmitted, setFormSubmitted] = useState(false);
 
@@ -21,10 +21,23 @@ function index() {
   return (
     <>
       <Head>
-        <title>Saidoff</title>
+        {/* Basic Meta Tags */}
+        <title>Repid Agency</title>
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        {/* Open Graph Meta Tags for Social Sharing */}
+        <meta property="og:title" content="Repid Agency" />
+        <meta property="og:description" content="Welcome to Repid Agency, providing top-tier services to boost your business." />
         <meta property="og:image" content="https://www.repid.uz/repid.png" />
+        <meta property="og:url" content="https://www.repid.uz/" />
+        <meta property="og:type" content="website" />
+
+        {/* Twitter Card Meta Tags (Optional) */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Repid Agency" />
+        <meta name="twitter:description" content="Welcome to Repid Agency, providing top-tier services to boost your business." />
+        <meta name="twitter:image" content="https://www.repid.uz/repid.png" />
       </Head>
 
       <div>
@@ -33,11 +46,11 @@ function index() {
         <Clock contactRef={contactRef} formSubmitted={formSubmitted} />
         <Services />
         <BigPortfolio />
+        <Faq />
+        {/* Uncomment the Contact and Partners components if needed */}
         {/* <div ref={contactRef}>
           <Contact handleFormSubmit={handleFormSubmit} />
         </div> */}
-        <Faq />
-        <Clock contactRef={contactRef} />
         {/* <Partners /> */}
         <Footer />
       </div>
@@ -45,4 +58,4 @@ function index() {
   );
 }
 
-export default index;
+export default HomePage;
