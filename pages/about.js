@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import Faq from "@/container/HomePage/Faq";
 import Team from "@/container/AboutUs/Team";
 import AboutHeader from "@/container/AboutUs/AboutHeader";
+import Head from "next/head";
 
 function About() {
   return (
@@ -42,7 +43,7 @@ function About() {
           content="https://opengraph.b-cdn.net/production/images/b1a4cc19-cfd8-42bf-afbe-7c6d08755781.jpg?token=UVywB6mQQK1NOyHt-cSg1xJpM3Zd0QcbmAFpux2YDaw&height=380&width=864&expires=33266045777"
         />
       </Head>
-      
+
       <div>
         <AboutHeader />
         {/* <About /> */}
