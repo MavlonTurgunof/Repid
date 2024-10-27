@@ -3,6 +3,7 @@ import { AiOutlinePlus, AiOutlineClose } from "react-icons/ai";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Head from "next/head";
+import Container from "@/components/container";
 
 const faqs = [
   {
@@ -62,8 +63,8 @@ function Faq() {
         />
         <meta name="author" content="Repid Agency" />
       </Head>
-      <div className="container mx-auto px-4 lg:mb-20 mb-16">
-        <div className="mt-16 md:mt-32 max-w-3xl lg:max-w-7xl mx-auto">
+      <section className="pb-20">
+        <Container className="">
           {faqs.map((faq, index) => (
             <div
               key={index}
@@ -113,8 +114,8 @@ function Faq() {
               </div>
             </div>
           ))}
-        </div>
-      </div>
+        </Container>
+      </section>
     </>
   );
 }

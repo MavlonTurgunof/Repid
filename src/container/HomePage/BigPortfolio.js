@@ -5,6 +5,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { GrFormPrevious } from "react-icons/gr";
 import { GrFormNext } from "react-icons/gr";
+import Container from "@/components/container";
 
 function BigPortfolio() {
   const [selected, setSelected] = useState("All");
@@ -171,7 +172,7 @@ function BigPortfolio() {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 2.5,
           slidesToScroll: 1,
         },
       },
@@ -179,8 +180,8 @@ function BigPortfolio() {
   };
 
   return (
-    <section className="bg-white text-white py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="bg-white text-white pb-20">
+      <Container>
         {/* Header */}
         <div className="text-center mb-8" data-aos="fade-up">
           <h2 className="text-[36px] sm:text-[42px] lg:text-[52px] text-[#282B4C] font-bold">
@@ -189,7 +190,7 @@ function BigPortfolio() {
         </div>
 
         <div
-          className="block lg:hidden mb-4 w-auto overflow-hidden"
+          className="block lg:hidden mb-8 w-auto overflow-hidden"
           data-aos="fade-up"
         >
           <Slider {...buttonCarouselSettings}>
@@ -211,7 +212,7 @@ function BigPortfolio() {
         </div>
 
         {/* Button Grid for Desktop */}
-        <div className="hidden lg:flex flex-row gap-4 mb-4" data-aos="fade-up">
+        <div className="hidden lg:flex flex-row gap-4 mb-8" data-aos="fade-up">
           {buttons.map((button) => (
             <button
               key={button}
@@ -267,7 +268,7 @@ function BigPortfolio() {
             </a>
           ))}
         </div>
-      </div>
+      </Container>
     </section>
   );
 }
