@@ -160,7 +160,7 @@ function Footer() {
                     className="max-md:translate-y-1 max-md:scale-125"
                   />
                   <Link href={"tel:+998971016600"} className="max-md:text-3xl">
-                    (97) 770-04-78
+                    (97) 770-04-87
                   </Link>
                 </li>
               </ul>

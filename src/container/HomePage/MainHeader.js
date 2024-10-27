@@ -9,7 +9,7 @@ function MainHeader({ contactRef }) {
   const pathname = usePathname()
 
   return (
-    <header className={`relative bg-cover bg-no-repeat placeholder: h-[600px] lg:h-[500px] md:h-[450px] sm:h-[400px] text-white ${pathname === "/" ? "bg-[url('/img/MainHeader.png')]" : "bg-[url('/img/portfolio-bg-image.png')]"}`}>
+    <header className={`relative bg-cover bg-no-repeat placeholder: h-[460px] lg:h-[500px] md:h-[450px] text-white ${pathname === "/" ? "bg-[url('/img/MainHeader.png')]" : "bg-[url('/img/portfolio-bg-image.png')]"}`}>
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row px-4 h-full overflow-y-hidden overflow-x-hidden">
         <div className="lg:text-left text-center lg:w-1/2 w-full xl:mt-[8%] mt-[10%] space-y-4 flex flex-col justify-center">
           <h1 className="text-[20px] font-bold sm:text-[18px]">
@@ -27,7 +27,7 @@ function MainHeader({ contactRef }) {
           </p>
           {/* Buttons */}
           <div
-            className="mt-[20%] flex flex-row gap-6 justify-center lg:justify-start items-center"
+            className="mt-[20%] flex flex-row gap-4 md:gap-6 justify-center lg:justify-start items-center"
             data-aos="fade-up"
             data-aos-delay="300"
           >
