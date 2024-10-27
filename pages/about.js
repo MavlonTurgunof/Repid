@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import Faq from "@/container/HomePage/Faq";
 import Team from "@/container/AboutUs/Team";
 import AboutHeader from "@/container/AboutUs/AboutHeader";
+import Head from "next/head";
 
 function About() {
   return (
