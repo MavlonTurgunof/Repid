@@ -51,7 +51,7 @@ function Faq() {
   return (
     <>
       <Head>
-        <title>Ko'p beriladigan savollar</title>
+        <title>Repid Agency | Ko'p beriladigan savollar</title>
         <meta
           name="description"
           content="Agentlikning IT xizmatlari bo'yicha tez-tez so'raladigan savollari."
@@ -60,7 +60,7 @@ function Faq() {
           name="keywords"
           content="IT xizmatlari, web-sayt, mobil ilovalar, CRM tizimlari, SMM xizmatlari, brend yaratish"
         />
-        <meta name="author" content="REpid Agency" />
+        <meta name="author" content="Repid Agency" />
       </Head>
       <div className="container mx-auto px-4 lg:mb-20 mb-16">
         <div className="mt-16 md:mt-32 max-w-3xl lg:max-w-7xl mx-auto">

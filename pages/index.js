@@ -24,6 +24,7 @@ function index() {
         <title>Saidoff</title>
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta property="og:image" content="https://www.repid.uz/repid.png" />
       </Head>
 
       <div>
