@@ -26,7 +26,7 @@ const Contact = ({ handleFormSubmit }) => {
                   </p>
                   <div className="flex items-center gap-3 lg:justify-start">
                     <LuMail className="text-[28px]" />
-                    <a href="repidagency@gmail.com">repidagency@gmail.com</a>
+                    <a href="mailto:repidagency@gmail.com" target="_blank">repidagency@gmail.com</a>
                   </div>
                 </div>
               </div>
