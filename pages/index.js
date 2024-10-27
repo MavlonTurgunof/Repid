@@ -62,11 +62,11 @@ function HomePage() {
         <Clock contactRef={contactRef} formSubmitted={formSubmitted} />
         <Services />
         <BigPortfolio />
-        <Faq />
         {/* Uncomment the Contact and Partners components if needed */}
-        {/* <div ref={contactRef}>
+        <div ref={contactRef}>
           <Contact handleFormSubmit={handleFormSubmit} />
-        </div> */}
+        </div>
+        <Faq />
         {/* <Partners /> */}
         <Footer />
       </div>

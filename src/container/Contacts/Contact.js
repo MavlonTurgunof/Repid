@@ -1,14 +1,15 @@
 import Form from "./Form";
 import { GrLocation } from "react-icons/gr";
 import { LuPhone, LuMail } from "react-icons/lu";
+import Container from "@/components/container";
 
 const Contact = ({ handleFormSubmit }) => {
   return (
-    <div className="bg-[url('/img/contact.png')] h-[700px] bg-no-repeat bg-center bg-cover p-5">
-      <div className="container mx-auto">
+    <section className="bg-[url('/img/contact.png')] h-[600px] bg-no-repeat bg-center bg-cover mb-[80px] md:pb-[100px]">
+      <Container>
         <div className="flex justify-center">
           {/* Content Section */}
-          <div className="mt-20 md:mt-0 max-w-7xl flex flex-col lg:flex-row h-full w-full justify-between space-y-5 lg:space-y-0 lg:mt-[15%]">
+          <div className="pt-10 lg:pt-32 max-w-7xl flex flex-col lg:flex-row h-full w-full justify-between space-y-5 lg:space-y-0">
             <div className="text-white lg:w-1/2 w-full text-center lg:text-left space-y-5">
               <h2 className="text-4xl lg:text-5xl font-bold mb-4 max-sm:text-3xl">
                 Biz bilan <span className="text-[#f48c06]">bog'lanish </span>
@@ -33,8 +34,8 @@ const Contact = ({ handleFormSubmit }) => {
             <Form onSubmit={handleFormSubmit} />
           </div>
         </div>
-      </div>
-    </div>
+      </Container>
+    </section>
   );
 };
 
