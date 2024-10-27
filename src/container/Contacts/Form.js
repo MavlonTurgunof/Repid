@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
+import { FiUser } from "react-icons/fi";
+import { LuPhone } from "react-icons/lu";
 import "react-toastify/dist/ReactToastify.css";
 
 function Form({ onSubmit }) {
@@ -41,25 +43,27 @@ function Form({ onSubmit }) {
         data-aos="fade-up" // Animation for the entire form
         data-aos-duration="700" // Duration of the animation
       >
-        <div data-aos="fade-up" data-aos-duration="700">
+        <div className="relative" data-aos="fade-up" data-aos-duration="700">
+          <FiUser className="text-[28px] absolute left-2 top-[10px] text-[#F48C06]" />
           <input
             type="text"
             name="name"
             value={inputValue.name}
             onChange={handleChange}
             placeholder="Ismingizni kiriting"
-            className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#f48c06] text-black"
+            className="w-full pt-3 pl-14 pr-3 pb-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#f48c06] text-black"
           />
         </div>
 
-        <div data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
+        <div className="relative" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
+          <LuPhone className="text-[28px] top-[10px] absolute left-2 text-[#F48C06]" />
           <input
             type="tel"
             name="phone"
             value={inputValue.phone}
             onChange={handleChange}
             placeholder="+998 99 000 00 00"
-            className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#f48c06] text-black"
+            className="w-full pt-3 pl-14 pr-3 pb-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#f48c06] text-black"
           />
         </div>
 
@@ -71,7 +75,7 @@ function Form({ onSubmit }) {
             placeholder="O'zingiz xohlagan xizmatni ayting"
             rows="4"
             className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#f48c06] text-black"
-          ></textarea>
+          />
         </div>
 
         <div data-aos="fade-up" data-aos-duration="700" data-aos-delay="600">

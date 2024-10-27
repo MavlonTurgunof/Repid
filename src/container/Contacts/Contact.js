@@ -1,6 +1,6 @@
-import { useState } from "react";
-import Link from "next/link";
 import Form from "./Form";
+import { GrLocation } from "react-icons/gr";
+import { LuPhone, LuMail } from "react-icons/lu";
 
 const Contact = ({ handleFormSubmit }) => {
   return (
@@ -13,20 +13,21 @@ const Contact = ({ handleFormSubmit }) => {
               <h2 className="text-4xl lg:text-5xl font-bold mb-4 max-sm:text-3xl">
                 Biz bilan <span className="text-[#f48c06]">bog'lanish </span>
               </h2>
-              <div className="flex flex-col space-y-4 text-lg">
-                <p className="flex items-center justify-center lg:justify-start">
-                  <i className="fas fa-phone-alt mr-2"></i> +998 97 101 6600
-                </p>
-                <p className="flex items-center justify-center lg:justify-start">
-                  <i className="fas fa-map-marker-alt mr-2"></i>Tashkent,
-                  Uzbekistan
-                </p>
-                <Link
-                  href="repidagency@gmail.com"
-                  className="flex items-center justify-center lg:justify-start"
-                >
-                  <i className="fas fa-globe mr-2"></i> repidagency@gmail.com
-                </Link>
+              <div className="flex  justify-center lg:justify-start">
+                <div className="flex flex-col space-y-4 text-lg">
+                  <p className="flex items-center gap-3 lg:justify-start">
+                    <LuPhone className="text-[28px]" />
+                    <a href="tel:+998971016600">+998 97 101 6600</a>
+                  </p>
+                  <p className="flex items-center gap-3 lg:justify-start">
+                    <GrLocation className="text-[28px]" />
+                    <p>Tashkent, Uzbekistan</p>
+                  </p>
+                  <div className="flex items-center gap-3 lg:justify-start">
+                    <LuMail className="text-[28px]" />
+                    <a href="repidagency@gmail.com">repidagency@gmail.com</a>
+                  </div>
+                </div>
               </div>
             </div>
             <Form onSubmit={handleFormSubmit} />

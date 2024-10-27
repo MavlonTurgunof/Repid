@@ -149,7 +149,7 @@ function Team() {
           <h1 className="text-4xl text-[#282B4C] sm:text-5xl md:text-6xl font-bold text-center mb-10">
             Bizning jamoamiz
           </h1>
-          <p className="text-center text-gray-700 mb-8">
+          <p className="text-center text-gray-700 mb-8 px-4">
             Bizning mutaxassislardan iborat jamoamiz - sizning biznes
             maqsadlaringizga erishishda yordam beradi. Oʻz sohasida yetakchi
             texnologiya va marketing ekspertlari bilan tanishing.

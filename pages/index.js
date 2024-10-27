@@ -32,9 +32,9 @@ function index() {
         <Clock contactRef={contactRef} formSubmitted={formSubmitted} />
         <Services />
         <BigPortfolio />
-        <div ref={contactRef}>
+        {/* <div ref={contactRef}>
           <Contact handleFormSubmit={handleFormSubmit} />
-        </div>
+        </div> */}
         <Faq />
         <Clock contactRef={contactRef} />
         {/* <Partners /> */}
