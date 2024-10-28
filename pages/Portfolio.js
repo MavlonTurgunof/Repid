@@ -11,7 +11,7 @@ function Portfolio() {
         <title>Repid Agency</title>
         <meta
           name="description"
-          content="Welcome to Repid Agency, providing top-tier services to boost your business."
+          content="Repid agenstvaga xush kelibsiz! Biz sizga o'zimizning xizmatlarimizni taklif qilamiz"
         />
 
         {/* Facebook Meta Tags */}
@@ -20,7 +20,7 @@ function Portfolio() {
         <meta property="og:title" content="Repid Agency" />
         <meta
           property="og:description"
-          content="Welcome to Repid Agency, providing top-tier services to boost your business."
+          content="Repid agenstvaga xush kelibsiz! Biz sizga o'zimizning xizmatlarimizni taklif qilamiz"
         />
         <meta
           property="og:image"
@@ -34,7 +34,7 @@ function Portfolio() {
         <meta name="twitter:title" content="Repid Agency" />
         <meta
           name="twitter:description"
-          content="Welcome to Repid Agency, providing top-tier services to boost your business."
+          content="Repid agenstvaga xush kelibsiz! Biz sizga o'zimizning xizmatlarimizni taklif qilamiz"
         />
         <meta
           name="twitter:image"
