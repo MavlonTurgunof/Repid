@@ -4,11 +4,12 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 const logos = [
-  { name: "SilSila", imgSrc: "/img/Sisila.png" },
-  { name: "Wave", imgSrc: "/img/proline.png" },
-  { name: "Proline", imgSrc: "/img/wavefun.png" },
-  { name: "Siolla", imgSrc: "/img/doradesign.png" },
-  { name: "Dora Design", imgSrc: "/img/convertkit.png" },
+  { name: "SilSila", imgSrc: "/icon/bumen-logo.svg" },
+  { name: "Wave", imgSrc: "/icon/saidoff-logo.svg" },
+  { name: "Proline", imgSrc: "/icon/Chere-logo.svg" },
+  { name: "SilSila", imgSrc: "/icon/bumen-logo.svg" },
+  { name: "Wave", imgSrc: "/icon/saidoff-logo.svg" },
+  { name: "Proline", imgSrc: "/icon/Chere-logo.svg" },
 ];
 
 const Partners = () => {
@@ -18,7 +19,7 @@ const Partners = () => {
 
   return (
     <div
-      className="bg-transparent py-20 container mx-auto overflow-hidden"
+      className="bg-transparent pb-14 md:pb-20"
       data-aos="fade-up"
     >
       <h3
