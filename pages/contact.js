@@ -10,7 +10,7 @@ function Contact() {
         <title>Repid Agency</title>
         <meta
           name="description"
-          content="Repid agenstvaga xush kelibsiz! Biz sizga o'zimizning xizmatlarimizni taklif qilamiz"
+          content="repid agenstvaga xush kelibsiz! Biz sizga o'zimizning xizmatlarimizni taklif qilamiz"
         />
 
         <meta property="og:url" content="https://repid.uz/" />
@@ -18,7 +18,7 @@ function Contact() {
         <meta property="og:title" content="Repid Agency" />
         <meta
           property="og:description"
-          content="Repid agenstvaga xush kelibsiz! Biz sizga o'zimizning xizmatlarimizni taklif qilamiz"
+          content="repid agenstvaga xush kelibsiz! Biz sizga o'zimizning xizmatlarimizni taklif qilamiz"
         />
         <meta
           property="og:image"
@@ -34,7 +34,7 @@ function Contact() {
         <meta name="twitter:title" content="repid agency" />
         <meta
           name="twitter:description"
-          content="Repid agenstvaga xush kelibsiz! Biz sizga o'zimizning xizmatlarimizni taklif qilamiz"
+          content="repid agenstvaga xush kelibsiz! Biz sizga o'zimizning xizmatlarimizni taklif qilamiz"
         />
         <meta
           name="twitter:image"

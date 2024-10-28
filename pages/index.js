@@ -24,7 +24,7 @@ function HomePage() {
         <title>Repid Agency</title>
         <meta
           name="description"
-          content="Repid agenstvaga xush kelibsiz! Biz sizga o'zimizning xizmatlarimizni taklif qilamiz"
+          content="Repid agency ga xush kelibsiz! Biz sizga o'zimizning xizmatlarimizni taklif qilamiz"
         />
 
         <meta property="og:url" content="https://repid.uz/" />
@@ -32,7 +32,7 @@ function HomePage() {
         <meta property="og:title" content="Repid Agency" />
         <meta
           property="og:description"
-          content="Repid agenstvaga xush kelibsiz! Biz sizga o'zimizning xizmatlarimizni taklif qilamiz"
+          content="repid agency ga  xush kelibsiz! Biz sizga o'zimizning xizmatlarimizni taklif qilamiz"
         />
         <meta
           property="og:image"
@@ -48,7 +48,7 @@ function HomePage() {
         <meta name="twitter:title" content="repid gency" />
         <meta
           name="twitter:description"
-          content="Repid agenstvaga xush kelibsiz! Biz sizga o'zimizning xizmatlarimizni taklif qilamiz"
+          content="repid agency ga xush kelibsiz! Biz sizga o'zimizning xizmatlarimizni taklif qilamiz"
         />
         <meta
           name="twitter:image"

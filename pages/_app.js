@@ -22,12 +22,13 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
+
       <Head>
         {/* HTML Meta Tags */}
         <title>Repid Agency</title>
         <meta
           name="description"
-          content="Welcome to Repid Agency, providing top-tier services to boost your business."
+          content="repid agency ga xush kelibsiz! Biz sizga o'zimizning xizmatlarimizni taklif qilamiz."
         />
 
         {/* Facebook Meta Tags */}
@@ -36,7 +37,7 @@ function MyApp({ Component, pageProps }) {
         <meta property="og:title" content="Repid Agency" />
         <meta
           property="og:description"
-          content="Welcome to Repid Agency, providing top-tier services to boost your business."
+          content="repid agency xush kelibsiz! Biz sizga o'zimizning xizmatlarimizni taklif qilamiz."
         />
         <meta
           property="og:image"
@@ -50,7 +51,7 @@ function MyApp({ Component, pageProps }) {
         <meta name="twitter:title" content="Repid Agency" />
         <meta
           name="twitter:description"
-          content="Welcome to Repid Agency, providing top-tier services to boost your business."
+          content="repid agency ga xush kelibsiz! Biz sizga o'zimizning xizmatlarimizni taklif qilamiz."
         />
         <meta
           name="twitter:image"

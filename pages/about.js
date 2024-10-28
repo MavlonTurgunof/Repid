@@ -12,7 +12,7 @@ function About() {
         <title>Repid Agency</title>
         <meta
           name="description"
-          content="Welcome to repid agency, providing top-tier services to boost your business."
+          content="repid agency ga xush kelibsiz! Biz sizga o'zimizning xizmatlarimizni taklif qilamiz."
         />
 
         <meta property="og:url" content="https://repid.uz/" />
@@ -20,7 +20,7 @@ function About() {
         <meta property="og:title" content="Repid Agency" />
         <meta
           property="og:description"
-          content="Welcome to repid agency, providing top-tier services to boost your business."
+          content="repid agency ga xush kelibsiz! Biz sizga o'zimizning xizmatlarimizni taklif qilamiz."
         />
         <meta
           property="og:image"
@@ -36,7 +36,7 @@ function About() {
         <meta name="twitter:title" content="repid agency" />
         <meta
           name="twitter:description"
-          content="Welcome to repid agency, providing top-tier services to boost your business."
+          content="repid agency ga xush kelibsiz! Biz sizga o'zimizning xizmatlarimizni taklif qilamiz."
         />
         <meta
           name="twitter:image"
