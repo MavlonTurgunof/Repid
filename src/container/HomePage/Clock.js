@@ -26,7 +26,7 @@ const Clock = ({ contactRef, formSubmitted }) => {
         setTime({ hours: 0, minutes: 0, seconds: 0 });
       }
     } else {
-      const endTime = Date.now() + 7200000; // 1 hour from now
+      const endTime = Date.now() + 3600000; // 1 hour from now
       localStorage.setItem("discountEndTime", endTime);
     }
 
