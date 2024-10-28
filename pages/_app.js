@@ -17,7 +17,7 @@ function MyApp({ Component, pageProps }) {
       window.dataLayer.push(arguments);
     }
     gtag("js", new Date());
-    gtag("config", "G-4H11K248F7");
+    gtag("config", "G-KN63RJ1S92");
   }, []);
 
   return (
