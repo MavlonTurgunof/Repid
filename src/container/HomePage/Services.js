@@ -157,7 +157,7 @@ function Services() {
   useEffect(() => {
     const fetchServices = async () => {
       try {
-        const response = await fetch("/services.json");
+        const response = await fetch("/services");
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
@@ -200,7 +200,9 @@ function Services() {
                 <h4 className="text-[18px] px-4 md:p-0 text-center md:text-start md:text-xl font-bold">
                   {service.title}
                 </h4>
-                <p className="text-center md:text-start px-4 md:p-0 text-[14px] md:text-[16px] text-[#4A4A4A]">{service.description}</p>
+                <p className="text-center md:text-start px-4 md:p-0 text-[14px] md:text-[16px] text-[#4A4A4A]">
+                  {service.description}
+                </p>
               </div>
               <div className="p-4 md:p-0">
                 <button className="md:mt-8 mt-3 md:w-[184px] border border-gray-500 hover:border-[#F7941D] hover:text-[#F7941D] duration-200 p-2 rounded-2xl md:rounded-lg text-xl w-full">
