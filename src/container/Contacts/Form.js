@@ -6,35 +6,35 @@ import { FiUser } from "react-icons/fi";
 import { LuPhone } from "react-icons/lu";
 import "react-toastify/dist/ReactToastify.css";
 
-function Form({ onSubmit }) {
-  const REACT_APP_BOT_TOKEN = "7898444291:AAEsP2fA6hz1YgRflnx0qt3faxXq7ovhblg";
-  const REACT_APP_CHAT_ID = "1589263429";
-  const [inputValue, setInputValue] = useState({
-    name: "",
-    phone: "",
-    textarea: "",
-  });
-  
-  const SENDING_TEXT = JSON.stringify(inputValue).replace(/[\\^+[\]{}"-]/g, "");
-  const url = `https://api.telegram.org/bot${REACT_APP_BOT_TOKEN}/sendMessage?chat_id=${REACT_APP_CHAT_ID}&parse_mode=html&text=${SENDING_TEXT}`;
-  
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setInputValue({ ...inputValue, [name]: value });
-  };
-  
+function Form() {
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [comment, setComment] = useState("");
+
+  const botToken = "7298372846:AAG8e18_Kg_GoobvxWCRj1dGR30HonOewhE";
+  const chatId = "5050378120";
+
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const payload = {
+      chat_id: chatId,
+      text: `New client!\n\nName: ${name}\nPhone: ${phone}\nComment: ${comment}`,
+    };
+
     axios
-      .post(url)
-      .then((r) => {
-        toast.success("Rahmat: " + inputValue.name);
-        onSubmit(); // Call the onSubmit prop function to stop the clock
+      .post(`https://api.telegram.org/bot${botToken}/sendMessage`, payload)
+      .then(() => {
+        setName("");
+        setPhone("");
+        setComment("");
+        toast.success("Ma'lumotlaringiz yuborildi!");
       })
-      .catch((err) => toast.error(err.message))
-      .finally(() => setInputValue({ name: "", phone: "", textarea: "" }));
+      .catch((e) => {
+        console.log(e);
+      });
   };
-  
+
   return (
     <div>
       <form
@@ -48,33 +48,38 @@ function Form({ onSubmit }) {
           <input
             type="text"
             name="name"
-            value={inputValue.name}
-            onChange={handleChange}
+            value={name}
+            onChange={(e) => setName(e.target.value)}
             placeholder="Ismingizni kiriting"
-            className="w-full pt-3 pl-14 pr-3 pb-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#f48c06] text-black"
+            className="w-full pt-3 pl-14 pr-3 pb-3 border rounded-lg focus:outline-none focus:ring-2 duration-200 focus:ring-[#f48c06] text-black"
           />
         </div>
 
-        <div className="relative" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
+        <div
+          className="relative"
+          data-aos="fade-up"
+          data-aos-duration="700"
+          data-aos-delay="200"
+        >
           <LuPhone className="text-[28px] top-[10px] absolute left-2 text-[#F48C06]" />
           <input
             type="tel"
             name="phone"
-            value={inputValue.phone}
-            onChange={handleChange}
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
             placeholder="+998 99 000 00 00"
-            className="w-full pt-3 pl-14 pr-3 pb-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#f48c06] text-black"
+            className="w-full pt-3 pl-14 pr-3 pb-3 border rounded-lg focus:outline-none focus:ring-2 duration-200 focus:ring-[#f48c06] text-black"
           />
         </div>
 
         <div data-aos="fade-up" data-aos-duration="700" data-aos-delay="400">
           <textarea
             name="textarea"
-            value={inputValue.textarea}
-            onChange={handleChange}
+            value={comment}
+            onChange={(e) => setComment(e.target.value)}
             placeholder="O'zingiz xohlagan xizmatni ayting"
             rows="4"
-            className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#f48c06] text-black"
+            className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 duration-200 focus:ring-[#f48c06] text-black"
           />
         </div>
 

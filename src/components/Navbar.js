@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import axios from "axios";
 import Link from "next/link";
 import Image from "next/image";
 import Logo from "../../public/icon/Logo.svg";
@@ -11,6 +12,7 @@ import Container from "./container";
 import { IoMdClose } from "react-icons/io";
 import { FiUser } from "react-icons/fi";
 import { LuPhone } from "react-icons/lu";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -53,10 +55,34 @@ const Navbar = () => {
     };
   }, [modalOpen]);
 
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [comment, setComment] = useState("");
+
+  const botToken = "7298372846:AAG8e18_Kg_GoobvxWCRj1dGR30HonOewhE";
+  const chatId = "5050378120";
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    setModalOpen(false);
-  }
+
+    const payload = {
+      chat_id: chatId,
+      text: `New client!\n\nName: ${name}\nPhone: ${phone}\nComment: ${comment}`,
+    };
+
+    axios
+      .post(`https://api.telegram.org/bot${botToken}/sendMessage`, payload)
+      .then(() => {
+        setName("");
+        setPhone("");
+        setComment("");
+        toast.success("Ma'lumotlaringiz yuborildi!");
+        setModalOpen(false);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  };
 
   return (
     <header>
@@ -255,16 +281,20 @@ const Navbar = () => {
                       <input
                         type="text"
                         name="name"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
                         placeholder="Ismingizni kiriting"
                         className="w-full pt-3 pl-12 pr-3 pb-3 border rounded-lg focus:outline-none focus:ring-2 duration-200 focus:ring-[#f48c06] text-black"
                       />
                     </div>
                     <div className="relative flex flex-col gap-2">
-                    <label className="text-[14px]">Telefon raqamingiz</label>
+                      <label className="text-[14px]">Telefon raqamingiz</label>
                       <LuPhone className="text-[28px] top-[40px] absolute left-3 text-[#F48C06]" />
                       <input
                         type="tel"
                         name="phone"
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
                         placeholder="+998 99 000 00 00"
                         className="w-full pt-3 pl-12 pr-3 pb-3 border rounded-lg focus:outline-none focus:ring-2 duration-200 focus:ring-[#f48c06] text-black"
                       />
@@ -273,6 +303,8 @@ const Navbar = () => {
                       <label className="text-[14px]">Fikringiz</label>
                       <textarea
                         name="textarea"
+                        value={comment}
+                        onChange={(e) => setComment(e.target.value)}
                         placeholder="O'zingiz xohlagan xizmatni ayting"
                         rows="4"
                         className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 duration-200 focus:ring-[#f48c06] text-black"
