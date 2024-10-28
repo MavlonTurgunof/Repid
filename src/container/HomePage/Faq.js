@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { AiOutlinePlus, AiOutlineClose } from "react-icons/ai";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Head from "next/head";
 import Container from "@/components/container";
 
 const faqs = [
@@ -51,18 +50,7 @@ function Faq() {
 
   return (
     <>
-      <Head>
-        <title>Repid Agency | Ko'p beriladigan savollar</title>
-        <meta
-          name="description"
-          content="Agentlikning IT xizmatlari bo'yicha tez-tez so'raladigan savollari."
-        />
-        <meta
-          name="keywords"
-          content="IT xizmatlari, web-sayt, mobil ilovalar, CRM tizimlari, SMM xizmatlari, brend yaratish"
-        />
-        <meta name="author" content="Repid Agency" />
-      </Head>
+      
       <section className="pb-20">
         <Container className="">
           {faqs.map((faq, index) => (
