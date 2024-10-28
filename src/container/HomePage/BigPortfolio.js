@@ -82,7 +82,7 @@ function BigPortfolio() {
       url: "#",
     },
     {
-      image: "/img/Portfolio2.jpg",
+      image: "/img/Portfolio2.svg",
       title: "GoldenEld All",
       category: "GoldenEld all",
       url: "https://golden-eld.com/",

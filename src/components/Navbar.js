@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Logo from "../../public/icon/Logo.svg";
@@ -8,12 +8,15 @@ import AOS from "aos";
 import "aos/dist/aos.css"; // Import AOS styles
 import { usePathname } from "next/navigation";
 import Container from "./container";
+import { IoMdClose } from "react-icons/io";
+import { FiUser } from "react-icons/fi";
+import { LuPhone } from "react-icons/lu";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
   const pathname = usePathname();
-  console.log(pathname);
+  const modalRef = useRef(null);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -31,6 +34,29 @@ const Navbar = () => {
       document.body.style.overflow = "auto"; // Re-enable scroll
     }
   }, [menuOpen]);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (modalRef.current && !modalRef.current.contains(event.target)) {
+        setModalOpen(false);
+      }
+    };
+
+    if (modalOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [modalOpen]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setModalOpen(false);
+  }
 
   return (
     <header>
@@ -208,50 +234,55 @@ const Navbar = () => {
           {/* Modal */}
           {modalOpen && (
             <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-              <div className="bg-white p-6 rounded-md w-11/12 md:w-1/2">
+              <div
+                ref={modalRef}
+                className="bg-white relative p-6 rounded-md w-[526px] mx-4"
+              >
+                <button
+                  onClick={toggleModal}
+                  className="p-[2px] hover:bg-gray-200 rounded-sm duration-200 absolute text-[24px] top-3 right-3"
+                >
+                  <IoMdClose className="text-[24px]" />
+                </button>
                 <h2 className="text-2xl font-semibold mb-4">
                   Ro'yxatdan o'tish
                 </h2>
-                <form>
-                  <div className="mb-4">
-                    <label className="block text-sm font-medium text-gray-700">
-                      Ismingizni
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="Enter Your Name"
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md"
-                    />
-                  </div>
-                  <div className="mb-4">
-                    <label className="block text-sm font-medium text-gray-700">
-                      Telefon raqamingiz
-                    </label>
-                    <input
-                      type="tel"
-                      placeholder="+998 99 500 50 50"
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md"
-                    />
-                  </div>
-                  <div className="mb-4">
-                    <label className="block text-sm font-medium text-gray-700">
-                      Fikringiz
-                    </label>
-                    <textarea
-                      placeholder="Tell me the interior you want"
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md"
-                    />
-                  </div>
-                  <div className="flex justify-end">
+                <form onSubmit={handleSubmit}>
+                  <div className="flex flex-col gap-y-5">
+                    <div className="relative flex flex-col gap-2">
+                      <label className="text-[14px]">Ismingiz</label>
+                      <FiUser className="text-[28px] absolute left-3 top-[40px] text-[#F48C06]" />
+                      <input
+                        type="text"
+                        name="name"
+                        placeholder="Ismingizni kiriting"
+                        className="w-full pt-3 pl-12 pr-3 pb-3 border rounded-lg focus:outline-none focus:ring-2 duration-200 focus:ring-[#f48c06] text-black"
+                      />
+                    </div>
+                    <div className="relative flex flex-col gap-2">
+                    <label className="text-[14px]">Telefon raqamingiz</label>
+                      <LuPhone className="text-[28px] top-[40px] absolute left-3 text-[#F48C06]" />
+                      <input
+                        type="tel"
+                        name="phone"
+                        placeholder="+998 99 000 00 00"
+                        className="w-full pt-3 pl-12 pr-3 pb-3 border rounded-lg focus:outline-none focus:ring-2 duration-200 focus:ring-[#f48c06] text-black"
+                      />
+                    </div>
+                    <div className="flex flex-col gap-2">
+                      <label className="text-[14px]">Fikringiz</label>
+                      <textarea
+                        name="textarea"
+                        placeholder="O'zingiz xohlagan xizmatni ayting"
+                        rows="4"
+                        className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 duration-200 focus:ring-[#f48c06] text-black"
+                      />
+                    </div>
                     <button
-                      type="button"
-                      onClick={toggleModal}
-                      className="mr-4 px-4 py-2 bg-gray-300 rounded-md"
+                      type="submit"
+                      className="w-full bg-[#f48c06] text-white py-3 rounded-lg hover:bg-[#e07c04] transition-all"
                     >
-                      Chiqish
-                    </button>
-                    <button className="px-4 py-2 bg-[#F7941D] text-white rounded-md">
-                      Jo'natish
+                      Yuborish
                     </button>
                   </div>
                 </form>
